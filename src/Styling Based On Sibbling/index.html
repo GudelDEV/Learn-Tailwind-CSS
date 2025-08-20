@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="
+    ../output.css"
+    />
+  </head>
+  <body>
+    <!-- Apa Itu Grup styling berdasarkan sibling
+    | Sibling Selector | Keterangan                               | Contoh                    |
+| ---------------- | ---------------------------------------- | ------------------------- |
+| `~`              | Seleksi elemen yang berada di sebelah kanan | `.sibling ~ .target {}`   |
+    | `+`              | Seleksi elemen yang berada tepat di sebelah kanan | `.sibling + .target {}`   |
+    -->
+    <h1 class="text-2xl font-bold mb-4">Styling Berdasarkan Sibling</h1>
+    <h1>Contoh Sibling Selector</h1>
+    <p>Dengan sibling selector, kita bisa kasih style ke elemen yang ada di sebelah kanan elemen lain.</p>
+    <div class="sibling bg-blue-200 p-4">
+      <p class="text-gray-800">Ini elemen sibling</p>
+      <p class="target text-gray-600">Ini elemen target yang akan diubah stylenya</p>
+    </div>
+    <p>Yang terjadi :</p>
+    <p>Elemen target di sebelah kanan elemen sibling akan berubah stylenya.</p>
+    <p>Jadi kita bisa bikin interaksi antar elemen yang ada di sebelah kanan.</p>
+    <hr />
+    <h1>Contoh Sibling Selector dengan Tailwind</h1>
+    <!-- Adjusment Siblinng (+) -->
+    <h1>1. Adjacent Sibling (+)</h1>
+    <input
+      type="checkbox"
+      id="cek"
+      class="peer hidden"
+    />
+    <label
+      for="cek"
+      class="cursor-pointer"
+      >Klik saya</label
+    >
+    <!-- Elemen setelah input -->
+    <div class="hidden peer-checked:block bg-green-200 p-4 mt-2">Checkbox dicentang → elemen ini muncul</div>
+    <p>Yang terjadi :</p>
+    <p>Ketika checkbox dicentang, elemen di sebelahnya muncul.</p>
+    <p>Jadi kita bisa bikin interaksi yang responsif terhadap aksi pengguna.</p>
+    <p>Penjelasan</p>
+    <p>1. peer → kasih state pada elemen (biasanya input).</p>
+    <p>2. peer-checked:* → sibling yang datang setelah peer akan berubah kalau peer dicentang.</p>
+    <hr />
+    <!-- General Sibling -->
+    <h1>2. General Sibling (~)</h1>
+    <p>Tailwind punya variant peer-has atau pakai peer juga.</p>
+    <p>Contoh: kalau input focus → semua sibling setelahnya berubah.</p>
+    <input
+      type="text"
+      class="peer border p-2"
+    />
+
+    <p class="mt-2 text-gray-500 peer-focus:text-blue-600">Ini berubah kalau input di atas fokus</p>
+    <p class="mt-2 text-gray-500 peer-focus:text-blue-600">Ini juga ikut berubah</p>
+    <p>➡️ Semua</p>
+    <p>setelah input ikut berubah karena pakai peer-focus.</p>
+  </body>
+</html>

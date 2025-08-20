@@ -54,12 +54,14 @@
     <p>first: → style khusus untuk elemen pertama dalam sebuah group/parent.</p>
     <p>last: → style khusus untuk elemen terakhir dalam sebuah group/parent.</p>
     <section class="flex gap-4 p-4">
-      <div class="w-16 h-16 bg-red-400 first:rounded-full"></div>
-      <div class="w-16 h-16 bg-green-400"></div>
-      <div class="w-16 h-16 bg-blue-400 last:border-4 last:border-black"></div>
+      <div class="w-16 h-16 bg-red-400 first:rounded-full">First & Last 1</div>
+      <div class="w-16 h-16 bg-green-400">First & Last 2</div>
+      <div class="w-16 h-16 bg-blue-400 last:border-4 last:border-black">First & Last 3</div>
     </section>
     <hr />
     <h1>odd & even</h1>
+    <p>odd: → style khusus untuk elemen dengan index ganjil dalam sebuah group/parent.</p>
+    <p>even: → style khusus untuk elemen dengan index genap dalam sebuah group/parent.</p>
     <table class="border border-gray-400">
       <tbody>
         <tr class="odd:bg-gray-100 even:bg-white">
@@ -77,6 +79,7 @@
       </tbody>
     </table>
     <h1>disabled</h1>
+    <p>disabled: → untuk memberi style pada elemen yang tidak aktif (disabled).</p>
     <button
       class="bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-400 disabled:cursor-not-allowed"
       disabled
@@ -85,6 +88,7 @@
     </button>
 
     <h1>required</h1>
+    <p>required: → untuk memberi style pada elemen form yang wajib diisi.</p>
     <input
       type="text"
       placeholder="Nama Lengkap"
@@ -133,10 +137,89 @@
 
       <button
         type="submit"
-        class="bg-blue-500 text-white px-4 py-2 rounded"
+        class="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer"
       >
         Kirim
       </button>
     </form>
+    <h1>Invalid</h1>
+    <p>invalid: → untuk memberi style pada elemen form yang tidak valid.</p>
+    <input
+      type="text"
+      placeholder="Masukkan teks"
+      class="border p-2 rounded invalid:border-red-500 invalid:bg-red-100"
+      required
+    />
+    <input
+      type="email"
+      placeholder="Masukkan email"
+      class="border p-2 rounded invalid:border-red-500 invalid:bg-red-100"
+      required
+    />
+
+    <h1>:has()</h1>
+    <p>:has() → untuk memberi style berdasarkan status atau konten elemen anakanya</p>
+    <p>syntac : has-[selector]:className"</p>
+    <!-- Contoh 1: default -->
+    <div class="border p-4">
+      <p class="text-gray-700">Ini elemen tanpa has:*</p>
+      <div class="mt-2 bg-blue-100 p-2">Anak 1</div>
+    </div>
+
+    <!-- Contoh 2: parent jadi kuning kalau ada anak dengan .bg-blue-200 -->
+    <div class="border p-4 has-[.bg-blue-200]:bg-yellow-100">
+      <p class="text-gray-700">Parent berubah kuning jika punya anak bg-blue-200</p>
+      <div class="mt-2 bg-blue-100 p-2">Anak 1</div>
+      <div class="mt-2 bg-blue-200 p-2">Anak 2</div>
+    </div>
+
+    <!-- Contoh 3: parent jadi hijau kalau ada anak terakhir .bg-blue-300 -->
+    <div class="border p-4 has-[.bg-blue-300]:bg-green-100">
+      <p class="text-gray-700">Parent berubah hijau jika punya anak bg-blue-300</p>
+      <div class="mt-2 bg-blue-100 p-2">Anak 1</div>
+      <div class="mt-2 bg-blue-200 p-2">Anak 2</div>
+      <div class="mt-2 bg-blue-300 p-2">Anak 3</div>
+    </div>
+    <!-- Contoh 4 jika has checked maka akan background akan berubah  -->
+    <div class="border p-4 has-[input:checked]:bg-green-100">
+      <p class="text-gray-700">Parent berubah hijau jika ada input yang dicentang</p>
+      <div class="mt-2">
+        <label class="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            class="w-5 h-5 text-blue-500 border-gray-300 rounded checked:bg-blue-500 checked:border-blue-500"
+          />
+          <span>Centang Saya</span>
+        </label>
+      </div>
+    </div>
+
+    <h1>Not()</h1>
+    <p>not() → untuk memberi style pada elemen yang tidak memiliki kelas tertentu.</p>
+    <p>syntac : not-[selector]:className"</p>
+    <div class="border p-4 not-has-[.bg-blue-200]:bg-green-100">
+      <p class="text-gray-700">Parent berubah hijau jika tidak punya anak .bg-blue-200</p>
+      <div class="mt-2 bg-blue-100 p-2">Anak 1</div>
+      <div class="mt-2 bg-blue-300 p-2">Anak 2</div>
+    </div>
+    <div class="border p-4 not-has-[.bg-blue-200]:bg-green-100">
+      <p class="text-gray-700">Parent berubah abuabu jika punya anak .bg-blue-200</p>
+      <div class="mt-2 bg-blue-100 p-2">Anak 1</div>
+      <div class="mt-2 bg-blue-200 p-2">Anak 2</div>
+    </div>
+
+    <h1>Penggunaan :has() dan not secara bersamaan :not()</h1>
+    <div class="border p-4 has-[input:checked]:bg-green-100 not-[input:checked]:bg-red-100">
+      <p class="text-gray-700">Parent berubah hijau jika ada input yang dicentang jika tidak di centang berubah menjadi merah</p>
+      <div class="mt-2">
+        <label class="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            class="w-5 h-5 text-blue-500 border-gray-300 rounded checked:bg-blue-500 checked:border-blue-500"
+          />
+          <span>Centang Saya</span>
+        </label>
+      </div>
+    </div>
   </body>
 </html>

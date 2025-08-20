@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- Pseudo Elements
+    | Pseudo-element | Keterangan                               | Contoh                    |
+| -------------- | ---------------------------------------- | ------------------------- |
+| `::before`     | Menambahkan konten sebelum elemen         | `::before:content-['']`    |
+| `::after`      | Menambahkan konten setelah elemen         | `::after
+:content-['']`     |
+| `::first-letter` | Mengubah huruf pertama elemen          | `::first-letter:text-2xl` |
+| `::first-line` | Mengubah baris pertama elemen            | `::first-line:text-red-500` |
+| `::placeholder` | Mengubah placeholder input              | `::placeholder:text-gray-500` |
+   ::selection | Mengubah elemen yang dipilih (misal: teks) | `::selection:bg-blue-500` |
+   ::backdrop | Mengubah elemen di belakang modal/dialog | `::backdrop:bg-gray-800` |
+   ::file | Mengubah input file | `::file:bg-gray-200` |
+   ::marker | Mengubah marker list (bullet/number) | `::marker:text-red-500` |
+   ::cue | Mengubah teks subtitle/video | `::cue:text-blue-500` |
+   -->
+
+    <h1>Before & After</h1>
+    <h1>::before & ::after</h1>
+    <p>Untuk menambahkan konten sebelum atau setelah elemen.</p>
+    <p>Tapi ⚠️ wajib aktifkan content terlebih dahulu (before:content-[''] atau after:content-['']), karena pseudo-element butuh konten.</p>
+    <div class="relative p-4 bg-gray-100">
+      <h2 class="text-lg font-bold">Judul Artikel</h2>
+      <p class="text-gray-600">Deskripsi artikel</p>
+      <span
+        class="absolute top-0 left-0 before:content-[''] before:absolute before:bg-blue-500 before:w-4 before:h-4 before:rounded-full after:content-[''] after:absolute after:bg-red-500 after:w-4 after:h-4 after:rounded-full after:right-0 after:top-0"
+      ></span>
+      <p class="mt-2">Yang terjadi :</p>
+      <p>Elemen sebelum (before) dan sesudah (after) ditambahkan di kiri atas dan kanan atas elemen.</p>
+      <p>Jadi bisa bikin efek dekoratif atau tambahan visual.</p>
+    </div>
+    <h1>Contoh Lain Before</h1>
+    <h2 class="relative text-xl font-bold before:content-[''] before:absolute before:-left-4 before:top-2 before:h-5 before:w-1 before:bg-blue-500">Judul Section</h2>
+    <h1>Contoh Lain After</h1>
+    <button class="relative px-4 py-2 bg-gray-200 rounded after:content-['NEW'] after:absolute after:-top-2 after:-right-3 after:bg-red-500 after:text-white after:text-xs after:px-2 after:py-0.5 after:rounded-full">Produk</button>
+    <h1>Contoh 3: Tooltip dengan before & after</h1>
+    <div class="relative group inline-block">
+      <button class="px-4 py-2 bg-blue-500 text-white rounded">Hover Me</button>
+
+      <!-- Tooltip -->
+      <span
+        class="absolute hidden group-hover:block bg-black text-white text-xs px-2 py-1 rounded -top-8 left-1/2 -translate-x-1/2 before:content-[''] before:absolute before:top-full before:left-1/2 before:-translate-x-1/2 before:border-8 before:border-transparent before:border-t-black"
+      >
+        Tooltip text
+      </span>
+    </div>
+    <p>➡️ Tooltip muncul saat hover dengan segitiga kecil (dibuat pakai before).</p>
+    <hr />
+    <h1>First Letter & First Line</h1>
+    <h1>::first-letter & ::first-line</h1>
+    <p>first-letter:* → style huruf pertama dalam sebuah block text.</p>
+    <p>first-line:* → style satu baris pertama dari sebuah block text.</p>
+    <h1>first-line</h1>
+    <p>Digunakan untuk memberi style hanya pada baris pertama.</p>
+    <p class="first-line:uppercase first-line:tracking-widest first-line:text-gray-700">
+      Tailwind CSS sangat fleksibel dan mendukung pseudo-class serta pseudo-element secara langsung, sehingga developer bisa membuat desain modern lebih efisien.
+    </p>
+    <p>➡️ Baris pertama akan uppercase, punya spacing lebih lebar, dan berwarna abu-abu, sedangkan baris berikutnya normal.</p>
+    <h1>first-letter</h1>
+    <p>Digunakan untuk memberi style hanya pada huruf pertama.</p>
+    <p class="first-letter:text-5xl first-letter:font-bold first-letter:text-blue-500 first-letter:mr-2">Tailwind CSS adalah utility-first framework yang sangat powerful untuk membangun UI modern dengan cepat dan konsisten.</p>
+    <p>➡️ Huruf T akan besar, bold, dan biru, seperti gaya drop-cap di artikel majalah.</p>
+    <h1>Kommbinasi First Letter dan First Line</h1>
+    <p class="first-line:uppercase first-line:tracking-wider first-letter:text-5xl first-letter:font-bold first-letter:text-red-500 first-letter:mr-2">
+      Belajar Tailwind CSS sangat menyenangkan karena menyediakan banyak sekali utility class termasuk dukungan pseudo-element seperti first-line dan first-letter.
+    </p>
+    <hr />
+    <h1>Placeholder</h1>
+    <p>placeholder:* → untuk memberi style pada placeholder input.</p>
+    <input
+      type="text"
+      placeholder="Masukkan nama Anda"
+      class="border p-2 placeholder:text-gray-500 placeholder:italic focus:outline-none focus:border-blue-500"
+    />
+    <p>➡️ Placeholder akan berwarna abu-abu dan italic, jadi lebih mudah dibaca.</p>
+    <hr />
+    <h1>Selection</h1>
+    <p>::selection → untuk memberi style pada teks yang dipilih (highlight).</p>
+    <div class="selection:bg-fuchsia-300 selection:text-fuchsia-900">
+      <p>
+        So I started to walk into the water. I won't lie to you boys, I was terrified. But I pressed on, and as I made my way past the breakers a strange calm came over me. I don't know if it was divine intervention or the kinship of all
+        living things but I tell you Jerry at that moment, I <em>was</em> a marine biologist.
+      </p>
+    </div>
+    <p>➡️ Teks yang dipilih akan punya background fuchsia dan teks berwarna fuchsia gelap.</p>
+    <hr />
+    <!-- <h1>Backdrop</h1>
+    <p>::backdrop → untuk memberi style pada elemen di belakang modal/dialog.</p>
+    <div class="fixed inset-0 bg-gray-800 bg-opacity-50 backdrop-blur-sm flex items-center justify-center">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-bold mb-4">Modal Title</h2>
+        <p class="text-gray-600 mb-4">This is a modal dialog with backdrop styling.</p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded">Close</button>
+      </div>
+    </div>
+    <p>➡️ Modal dengan backdrop semi-transparan dan blur, jadi fokus ke konten modal.</p> -->
+    <hr />
+    <h1>File Input</h1>
+    <p>::file → untuk memberi style pada input file.</p>
+    <input
+      type="file"
+      class="file:bg-gray-200 file:border-0 file:rounded-full file:px-4 file:py-2 file:text-sm file:font-semibold file:text-gray-700 hover:file:bg-gray-300"
+    />
+    <p>➡️ Input file dengan style khusus, jadi lebih menarik dan mudah digunakan.</p>
+    <hr />
+    <h1>Marker</h1>
+    <p>::marker → untuk memberi style pada marker list (bullet/number).</p>
+    <ul class="list-disc pl-5">
+      <li class="marker:text-red-500">Item 1</li>
+      <li class="marker:text-green-500">Item 2</li>
+      <li class="marker:text-blue-500">Item 3</li>
+    </ul>
+    <p>➡️ Marker list akan berwarna sesuai style yang diberikan, jadi lebih menarik.</p>
+  </body>
+</html>

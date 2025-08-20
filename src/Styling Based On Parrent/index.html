@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="
+    ../output.css"
+    />
+  </head>
+  <body>
+    <!-- Apa Itu Grup -->
+    <!-- group adalah utility Tailwind untuk membuat parent-child interaksi.
+Dengan group, kita bisa kasih style ke child berdasarkan state parent (hover, focus, dll). -->
+    <!-- ➡️ Jadi semacam "hubungan induk-anak" dalam styling. -->
+
+    <h1 class="text-2xl font-bold mb-4">Styling Berdasarkan Parent</h1>
+
+    <h1>Contoh Tanpa Menggunakan Grup untuk styling</h1>
+    <p>Kalau tidak pakai group, child tidak bisa tahu state parent.</p>
+    <p>Jadi styling hanya bisa jalan kalau child itu sendiri di-hover atau difokuskan.</p>
+    <div class="border p-4 rounded-lg hover:bg-gray-100 cursor-pointer">
+      <h2 class="text-lg font-bold text-gray-800 hover:text-blue-500">Judul Artikel</h2>
+      <p class="text-gray-600 hover:text-black">Deskripsi artikel</p>
+    </div>
+    <p>Yang terjadi :</p>
+    <p>Kalau hover parent → hanya background parent berubah (bg-gray-100).</p>
+    <p>Child tidak ikut berubah, kecuali kalau hover langsung di teksnya.</p>
+    <hr />
+    <h1>2. Dengan group</h1>
+    <p>Kalau pakai group, child bisa ikut berubah berdasarkan state parent (hover/focus/active).</p>
+    <p>Jadi kita bisa kasih style ke child berdasarkan state parent.</p>
+    <div class="group border p-4 rounded-lg hover:bg-gray-100 cursor-pointer">
+      <h2 class="text-lg font-bold text-gray-800 group-hover:text-blue-500">Judul Artikel</h2>
+      <p class="text-gray-600 group-hover:text-black">Deskripsi artikel</p>
+    </div>
+    <p>Yang Terjadi :</p>
+    <p>Kalau hover parent → background parent berubah + judul jadi biru + deskripsi jadi hitam.</p>
+    <p>Jadi satu aksi parent bisa mempengaruhi semua child.</p>
+  </body>
+</html>
