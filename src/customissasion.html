@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      href="./output.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Cara Customisasion Di tailwind</h1>
+    <p>Tailwind CSS menyediakan cara untuk mengcustomisasi class yang ada di Tailwind CSS. Kita bisa mengcustomisasi class yang ada di Tailwind CSS dengan cara membuat file <code>tailwind.config.js</code> di root project kita.</p>
+    <h1>Contoh 1</h1>
+    <!-- Synatax -->
+    <p>h-[value] : untuk mengcustomisasi Height</p>
+    <p>w-[value] : untuk mengcustomisasi Width</p>
+    <p>bg-[value] : untuk megustomisasi bacgkround</p>
+    <p>max-w-[value]: Custom max width</p>
+    <p>min-w-[value]: Custom min width</p>
+    <p>p-[value], m-[value]: Custom padding/margin</p>
+    <p>rounded-[value]: Custom border radius</p>
+    <p>text-[value] fontsize</p>
+    <p>text-[color] color</p>
+    <p>border-[color]</p>
+    <p>shadow-[value]</p>
+
+    <h1 class="h-[80px]">hello</h1>
+    <div class="max-w-[1200px]">...</div>
+    <div class="min-w-[300px]">...</div>
+    <div class="bg-[red]">...</div>
+    <div class="bg-[url('https://picsum.photos/200/300')]">...</div>
+    <div class="p-[20px]">...</div>
+    <div class="m-[20px]">...</div>
+    <div class="rounded-[20px]">...</div>
+    <div class="text-[20px]">...</div>
+    <div class="text-[red]">Hlloo</div>
+    <div class="border-[1px]">...</div>
+    <div class="shadow-[10px_10px_20px_rgba(0 ,0,0,0.5)]">...</div>
+    <h1 class="text-[20px] text-[red]">Hello</h1>
+    <h1 class="text-[20px] text-[red] bg-[url('https://picsum.photos/200/300')]">Hello</h1>
+    <h1 class="text-[20px] text-[red] bg-[url('https://picsum.photos/200/300')] h-[100px] w-[100px]">Hello</h1>
+
+    <h1>atau cara customisasi ukuran font yang tidak ada di preset</h1>
+  </body>
+</html>

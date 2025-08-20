@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- Pseduo Class
+    | Pseudo-class | Keterangan                               | Contoh                    |
+| ------------ | ---------------------------------------- | ------------------------- |
+| `hover:`     | Saat kursor berada di atas elemen        | `hover:bg-blue-500`       |
+| `focus:`     | Saat elemen mendapatkan fokus (klik/tab) | `focus:ring-2`            |
+| `active:`    | Saat elemen diklik & ditekan             | `active:scale-95`         |
+| `visited:`   | Link yang sudah dikunjungi               | `visited:text-purple-600` |
+| `first:`     | Elemen pertama dalam parent              | `first:mt-0`              |
+| `last:`      | Elemen terakhir dalam parent             | `last:mb-0`               |
+| `odd:`       | Elemen dengan index ganjil               | `odd:bg-gray-100`         |
+| `even:`      | Elemen dengan index genap                | `even:bg-gray-200`        |
+| `disabled:`  | Saat elemen disabled                     | `disabled:opacity-50`     |
+| `checked:`   | Input yang dicentang                     | `checked:bg-green-500`    |
+    required:    Untuk memberi style pada elemen form yang wajib diisi.
+    invalid    jika salah dalam mengisikan input
+    -->
+
+    <h1>Hover</h1>
+    <h1>hover:aksi yang akan di berikan</h1>
+    <button class="bg-sky-400 px-6 py-4 rounded-full hover:bg-sky-900">Simpan</button>
+    <hr />
+    <h1>focus</h1>
+    <h1>focus:aksi yang akan di berikan</h1>
+    <button class="bg-sky-400 px-6 py-4 rounded-full focus:bg-purple-700">Simpan</button>
+    <hr />
+    <h1>active</h1>
+    <h1>active:aksi yang akan di berikan</h1>
+    <button class="bg-sky-400 px-6 py-4 rounded-full active:scale-95 focus:ring-2 cursor-pointer">Simpan</button>
+    <hr />
+    <h1>visited</h1>
+    <h1>visited:aksi yang akan di berikan</h1>
+    <a
+      href="../border.html"
+      class="visited:text-blue-600 text-black"
+      >Klik Saya</a
+    >
+    <hr />
+    <h1>first & last</h1>
+    <p>first: → style khusus untuk elemen pertama dalam sebuah group/parent.</p>
+    <p>last: → style khusus untuk elemen terakhir dalam sebuah group/parent.</p>
+    <section class="flex gap-4 p-4">
+      <div class="w-16 h-16 bg-red-400 first:rounded-full"></div>
+      <div class="w-16 h-16 bg-green-400"></div>
+      <div class="w-16 h-16 bg-blue-400 last:border-4 last:border-black"></div>
+    </section>
+    <hr />
+    <h1>odd & even</h1>
+    <table class="border border-gray-400">
+      <tbody>
+        <tr class="odd:bg-gray-100 even:bg-white">
+          <td class="px-4 py-2">Baris 1</td>
+        </tr>
+        <tr class="odd:bg-gray-100 even:bg-white">
+          <td class="px-4 py-2">Baris 2</td>
+        </tr>
+        <tr class="odd:bg-gray-100 even:bg-white">
+          <td class="px-4 py-2">Baris 3</td>
+        </tr>
+        <tr class="odd:bg-gray-100 even:bg-white">
+          <td class="px-4 py-2">Baris 4</td>
+        </tr>
+      </tbody>
+    </table>
+    <h1>disabled</h1>
+    <button
+      class="bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-400 disabled:cursor-not-allowed"
+      disabled
+    >
+      Tombol Nonaktif
+    </button>
+
+    <h1>required</h1>
+    <input
+      type="text"
+      placeholder="Nama Lengkap"
+      class="border p-2 rounded required:border-red-500"
+      required
+    />
+    <label class="flex items-center space-x-2">
+      <input
+        type="checkbox"
+        class="w-5 h-5 text-blue-500 border-gray-300 rounded checked:bg-blue-500 checked:border-blue-500"
+      />
+      <span>Setuju</span>
+    </label>
+    <label class="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="gender"
+        class="w-5 h-5 text-pink-500 border-gray-300 checked:bg-pink-500 checked:border-pink-500"
+      />
+      <span>Perempuan</span>
+    </label>
+
+    <label class="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="gender"
+        class="w-5 h-5 text-blue-500 border-gray-300 checked:bg-blue-500 checked:border-blue-500"
+      />
+      <span>Laki-laki</span>
+    </label>
+    <form class="space-y-4">
+      <!-- Required tapi kosong -->
+      <input
+        type="text"
+        required
+        placeholder="Nama wajib diisi"
+        class="border p-2 rounded invalid:border-red-500 invalid:bg-red-100"
+      />
+
+      <!-- Email format salah -->
+      <input
+        type="email"
+        placeholder="Masukkan email"
+        class="border p-2 rounded invalid:border-red-500 invalid:bg-red-100"
+      />
+
+      <button
+        type="submit"
+        class="bg-blue-500 text-white px-4 py-2 rounded"
+      >
+        Kirim
+      </button>
+    </form>
+  </body>
+</html>

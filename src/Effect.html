@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      href="./output.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Box Shadow
+     Box Shadow memberikan efek bayangan di belakang elemen, membuatnya terlihat mengambang, berlapis, atau punya kedalaman (depth).
+    | Class Tailwind | Efek Bayangan                    |
+| -------------- | -------------------------------- |
+| `shadow-sm`    | Bayangan kecil                   |
+| `shadow`       | Default (sedang)                 |
+| `shadow-md`    | Medium (lebih jelas)             |
+| `shadow-lg`    | Besar                            |
+| `shadow-xl`    | Extra besar                      |
+| `shadow-2xl`   | Super besar                      |
+| `shadow-inner` | Bayangan ke dalam (inner shadow) |
+| `shadow-none`  | Tanpa bayangan                   |
+    -->
+    <h1>Contoh Dasar</h1>
+    <div class="w-60 h-32 bg-blue-700 shadow-lg rounded-lg p-4">
+      <p class="text-gray-700">Ini contoh shadow-lg</p>
+    </div>
+    <h1>Contoh Hover Shadow</h1>
+    <button class="bg-blue-500 text-blubg-blue-700 px-4 py-2 rounded shadow-md hover:shadow-xl transition-shadow duration-300">Hover saya</button>
+    <h1>Shadow + Warna (dengan shadow-* + shadow-*color*)</h1>
+    <h2>dengan arbitrary</h2>
+    <div class="w-40 h-40 bg-blue-700 rounded shadow-[0_4px_20px_rgba(255,0,0,0.4)]"></div>
+    <div class="w-40 h-40 bg-blue-700 rounded shadow-red-700"></div>
+    <div class="shadow-md dark:shadow-lg dark:bg-gray-800"></div>
+    <h1>Custom Shadow</h1>
+    <div class="shadow-[5px_5px_20px_rgba(0,0,0,0.3)]"></div>
+
+    <!-- Opacity -->
+    <!-- backdrop-opacity-<number>
+backdrop-filter: opacity(<number>%);
+backdrop-opacity-(<custom-property>)
+backdrop-filter: opacity(var(<custom-property>));
+backdrop-opacity-[<value>]
+backdrop-filter: opacity(<value>); -->
+
+    <div style="background-image: url('OIP.jpg')">
+      <div class="bg-white/30 backdrop-invert backdrop-opacity-10 ..."></div>
+    </div>
+    <div style="background-image: url('OIP.jpg')">
+      <div class="bg-white/30 backdrop-invert backdrop-opacity-60 ..."></div>
+    </div>
+    <div style="background-image: url('OIP.jpg')">
+      <div class="bg-white/30 backdrop-invert backdrop-opacity-95 ..."></div>
+    </div>
+  </body>
+</html>

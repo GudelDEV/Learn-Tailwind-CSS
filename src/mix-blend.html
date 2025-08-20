@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      href="./output.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- mix-blend mode
+    | Class Tailwind          | CSS yang dihasilkan            |
+| ----------------------- | ------------------------------ |
+| `mix-blend-normal`      | `mix-blend-mode: normal;`      |
+| `mix-blend-multiply`    | `mix-blend-mode: multiply;`    |
+| `mix-blend-screen`      | `mix-blend-mode: screen;`      |
+| `mix-blend-overlay`     | `mix-blend-mode: overlay;`     |
+| `mix-blend-darken`      | `mix-blend-mode: darken;`      |
+| `mix-blend-lighten`     | `mix-blend-mode: lighten;`     |
+| `mix-blend-color-dodge` | `mix-blend-mode: color-dodge;` |
+| `mix-blend-color-burn`  | `mix-blend-mode: color-burn;`  |
+| `mix-blend-hard-light`  | `mix-blend-mode: hard-light;`  |
+| `mix-blend-soft-light`  | `mix-blend-mode: soft-light;`  |
+| `mix-blend-difference`  | `mix-blend-mode: difference;`  |
+| `mix-blend-exclusion`   | `mix-blend-mode: exclusion;`   |
+| `mix-blend-hue`         | `mix-blend-mode: hue;`         |
+| `mix-blend-saturation`  | `mix-blend-mode: saturation;`  |
+| `mix-blend-color`       | `mix-blend-mode: color;`       |
+| `mix-blend-luminosity`  | `mix-blend-mode: luminosity;`  |
+ 
+    -->
+
+    <h1>Mix-blend-overlay</h1>
+    <section
+      class="relative bg-cover bg-center w-[500px] h-[500px]"
+      style="background-image: url('gunung.jpg')"
+    >
+      <h1 class="absolute inset-0 flex items-center justify-center text-6xl font-bold text-white mix-blend-overlay">Tailwind Blend</h1>
+    </section>
+    <h1>mix-blend-multiply</h1>
+    <div class="relative bg-gradient-to-r from-pink-500 to-blue-500 w-[500px] h-[500px]">
+      <img
+        src="gunung.jpg"
+        class="absolute inset-0 w-[500px] h-[500px] object-cover mix-blend-multiply opacity-80"
+      />
+      <h1 class="relative z-10 text-white text-6xl font-bold p-10">Blend Multiply</h1>
+    </div>
+    <h1>mix-blend-screen</h1>
+    <section class="flex items-center justify-center h-[500px] bg-gray-900">
+      <!-- Background Kotak -->
+      <div class="absolute w-[500px] h-[500pxd] bg-blue-500"></div>
+
+      <!-- Kotak dengan Blend -->
+      <div class="absolute w-[500px] h-[500px] bg-red-500 mix-blend-screen"></div>
+
+      <h1 class="relative text-white text-4xl font-bold">Hello Blend</h1>
+    </section>
+    <h1>background-blend-mode</h1>
+    <div class="grid grid-cols-3 gap-4 p-4">
+      <div class="h-40 bg-[url('https://picsum.photos/400/300')] bg-cover bg-center bg-purple-500 bg-blend-normal">Normal</div>
+      <div class="h-40 bg-[url('https://picsum.photos/400/300')] bg-cover bg-center bg-purple-500 bg-blend-multiply">Multiply</div>
+      <div class="h-40 bg-[url('https://picsum.photos/400/300')] bg-cover bg-center bg-purple-500 bg-blend-screen">Screen</div>
+      <div class="h-40 bg-[url('https://picsum.photos/400/300')] bg-cover bg-center bg-purple-500 bg-blend-overlay">Overlay</div>
+      <div class="h-40 bg-[url('https://picsum.photos/400/300')] bg-cover bg-center bg-purple-500 bg-blend-darken">Darken</div>
+      <div class="h-40 bg-[url('https://picsum.photos/400/300')] bg-cover bg-center bg-purple-500 bg-blend-lighten">Lighten</div>
+      <div class="h-40 bg-[url('https://picsum.photos/400/300')] bg-cover bg-center bg-purple-500 bg-blend-color-dodge">Color Dodge</div>
+      <div class="h-40 bg-[url('https://picsum.photos/400/300')] bg-cover bg-center bg-purple-500 bg-blend-color-burn">Color Burn</div>
+      <div class="h-40 bg-[url('https://picsum.photos/400/300')] bg-cover bg-center bg-purple-500 bg-blend-hard-light">Hard Light</div>
+      <div class="h-40 bg-[url('https://picsum.photos/400/300')] bg-cover bg-center bg-purple-500 bg-blend-soft-light">Soft Light</div>
+      <div class="h-40 bg-[url('https://picsum.photos/400/300')] bg-cover bg-center bg-purple-500 bg-blend-difference">Difference</div>
+      <div class="h-40 bg-[url('https://picsum.photos/400/300')] bg-cover bg-center bg-purple-500 bg-blend-exclusion">Exclusion</div>
+    </div>
+  </body>
+</html>

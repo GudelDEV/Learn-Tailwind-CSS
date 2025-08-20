@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      href="./output.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- backgrounf-color -->
+
+    <section class="w-full h-[80px] bg-amber-100"></section>
+    <section class="w-full h-[80px] bg-amber-100"></section>
+    <section class="w-full h-[80px] bg-[black]"></section>
+    <!-- background linear gradienr -->
+    <!-- Arah Gradien (bg-gradient-to-*) -->
+    <!-- 
+    | Arah                  | Tailwind Class      |
+| --------------------- | ------------------- |
+| Kanan                 | `bg-gradient-to-r`  |
+| Kiri                  | `bg-gradient-to-l`  |
+| Atas                  | `bg-gradient-to-t`  |
+| Bawah                 | `bg-gradient-to-b`  |
+| Diagonal (kanan atas) | `bg-gradient-to-tr` |
+| Diagonal (kiri bawah) | `bg-gradient-to-bl` |
+
+    
+    -->
+    <!-- Gunakan from-*, via-* (opsional), dan to-* -->
+    <div class="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white p-8 rounded-xl">Gradient ke kanan bawah</div>
+    <section class="w-full bg-gradient-to-r from-purple-800 to-yellow-500 text-white p-8">Hello</section>
+    <!-- jika ingin menambahkan warna ditengah nya -->
+    <section class="w-full bg-gradient-to-r from-purple-800 via-pink-500 to-yellow-500 text-white p-8">Hello with middle color!</section>
+  </body>
+</html>

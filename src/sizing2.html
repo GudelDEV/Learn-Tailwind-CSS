@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      href="./output.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="text-center">Cara Penggunaan Sizing expert Min-Heigt , Max Heith , min widht , maxk widh</h1>
+    <section class="boder">
+      <h3>1. min-width</h3>
+      <p>🔹 Definisi: Menentukan lebar minimum elemen. Elemen tidak akan bisa lebih kecil dari nilai ini.</p>
+      <div class="w-[10%] min-w-[200px] bg-yellow-300 p-4">min-width: 200px — walaupun 10% kecil, tidak akan kurang dari 200px</div>
+    </section>
+    <hr />
+    <section class="boder">
+      <h3>2. max-width</h3>
+      <p>Menentukan lebar maksimum elemen. Elemen tidak akan bisa lebih lebar dari nilai ini.</p>
+      <div class="w-full max-w-[400px] bg-blue-300 p-4">max-width: 400px — meskipun 100% lebar, dibatasi maksimal 400px</div>
+    </section>
+    <hr />
+    <section class="boder">
+      <h3>3. min-height</h3>
+      <p>Menentukan tinggi minimum elemen. Elemen tidak akan lebih pendek dari nilai ini.</p>
+      <div class="h-[50px] min-h-[150px] bg-green-300 p-4">min-height: 150px — meski kamu set tinggi 50px, akan dipaksa minimal 150px</div>
+    </section>
+    <hr />
+    <section class="boder">
+      <h3>4. max-height</h3>
+      <p>Menentukan tinggi maksimum elemen. Elemen tidak akan lebih tinggi dari nilai ini.</p>
+      <div class="h-[400px] max-h-[200px] bg-red-300 p-4 overflow-auto">
+        max-height: 200px — meskipun kamu atur 400px, dibatasi maksimal 200px
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Tambahan konten agar bisa di-scroll...</p>
+      </div>
+    </section>
+
+    <h1 class="text-2xl font-bold mb-4">Perbandingan max-width Tailwind</h1>
+
+    <!-- max-w-[300px] -->
+    <div class="bg-blue-100 p-4 max-w-[300px] border border-blue-400">
+      <strong>max-w-[300px]</strong><br />
+      Konten ini dibatasi maksimal 300px.
+    </div>
+
+    <!-- max-w-full -->
+    <div class="bg-green-100 p-4 max-w-full border border-green-400">
+      <strong>max-w-full</strong><br />
+      Mengisi lebar penuh parent-nya.
+    </div>
+
+    <!-- max-w-md -->
+    <div class="bg-yellow-100 p-4 max-w-md border border-yellow-400">
+      <strong>max-w-md</strong><br />
+      Ukuran default Tailwind (28rem / 448px).
+    </div>
+
+    <!-- max-w-1/2 -->
+    <div class="bg-red-100 p-4 max-w-1/2 border border-red-400">
+      <strong>max-w-1/2</strong><br />
+      Maksimal 50% dari parent.
+    </div>
+
+    <!-- max-w-fit -->
+    <div class="bg-purple-100 p-4 max-w-fit border border-purple-400">
+      <strong>max-w-fit</strong><br />
+      Ukurannya pas dengan isi konten saja.
+    </div>
+
+    <!-- max-w-none -->
+    <div class="bg-pink-100 p-4 max-w-none border border-pink-400">
+      <strong>max-w-none</strong><br />
+      Tidak dibatasi sama sekali.
+    </div>
+
+    <!-- max-w-screen -->
+    <div class="bg-orange-100 p-4 max-w-screen border border-orange-400">
+      <strong>max-w-screen</strong><br />
+      Sama dengan lebar layar (viewport).
+    </div>
+
+    <!-- Custom property -->
+    <div
+      style="--custom-max: 500px"
+      class="bg-teal-100 p-4 max-w-[var(--custom-max)] border border-teal-400"
+    >
+      <strong>max-w-[var(--custom-max)]</strong><br />
+      Gunakan nilai CSS variabel: 500px
+    </div>
+
+    <h1 class="text-2xl font-bold mb-6">Contoh Lengkap max-w-* Tailwind CSS</h1>
+    <section class="max-w-xs bg-black text-white">max-w-xs</section>
+    <section class="max-w-sm bg-black text-white">max-w-sm</section>
+    <section class="max-w-md bg-black text-white">max-w-md</section>
+    <section class="max-w-lg bg-black text-white">max-w-lg</section>
+    <section class="max-w-xl bg-black text-white">max-w-xl</section>
+
+    <section class="min-h-screen bg-amber-700">min-h-screen</section>
+
+    <section class="min-h-screen min-w-xs bg-amber-800">max-h-screen & min-w-xs</section>
+
+    <!-- Skala Rem (Container Width) -->
+    <div class="max-w-3xs bg-blue-100 p-3">max-w-3xs (256px)</div>
+    <div class="max-w-2xs bg-blue-200 p-3">max-w-2xs (288px)</div>
+    <div class="max-w-xs bg-blue-300 p-3">max-w-xs (320px)</div>
+    <div class="max-w-sm bg-blue-400 p-3">max-w-sm (384px)</div>
+    <div class="max-w-md bg-blue-500 p-3 text-white">max-w-md (448px)</div>
+    <div class="max-w-lg bg-blue-600 p-3 text-white">max-w-lg (512px)</div>
+    <div class="max-w-xl bg-blue-700 p-3 text-white">max-w-xl (576px)</div>
+    <div class="max-w-2xl bg-blue-800 p-3 text-white">max-w-2xl (672px)</div>
+    <div class="max-w-3xl bg-indigo-500 p-3 text-white">max-w-3xl (768px)</div>
+    <div class="max-w-4xl bg-indigo-600 p-3 text-white">max-w-4xl (896px)</div>
+    <div class="max-w-5xl bg-indigo-700 p-3 text-white">max-w-5xl (1024px)</div>
+    <div class="max-w-6xl bg-indigo-800 p-3 text-white">max-w-6xl (1152px)</div>
+    <div class="max-w-7xl bg-indigo-900 p-3 text-white">max-w-7xl (1280px)</div>
+
+    <!-- Preset Utility -->
+    <div class="max-w-none bg-red-100 p-3">max-w-none (tanpa batasan)</div>
+    <div class="max-w-px bg-red-200 p-3">max-w-px (1px — hampir tidak terlihat)</div>
+    <div class="max-w-full bg-red-300 p-3">max-w-full (100% dari parent)</div>
+    <div class="max-w-screen bg-red-400 p-3">max-w-screen (100vw)</div>
+    <div class="max-w-fit bg-red-500 p-3 text-white">max-w-fit (seukuran isi)</div>
+    <div class="max-w-min bg-red-600 p-3 text-white">max-w-min (min-content)</div>
+    <div class="max-w-max bg-red-700 p-3 text-white">max-w-max (max-content)</div>
+
+    <!-- Viewport Units -->
+    <div class="max-w-dvw bg-green-100 p-3">max-w-dvw (100dvw)</div>
+    <div class="max-w-dvh bg-green-200 p-3">max-w-dvh (100dvh)</div>
+    <div class="max-w-lvw bg-green-300 p-3">max-w-lvw (100lvw)</div>
+    <div class="max-w-lvh bg-green-400 p-3">max-w-lvh (100lvh)</div>
+    <div class="max-w-svw bg-green-500 p-3 text-white">max-w-svw (100svw)</div>
+    <div class="max-w-svh bg-green-600 p-3 text-white">max-w-svh (100svh)</div>
+
+    <!-- Fraksi -->
+    <div class="max-w-1/2 bg-yellow-100 p-3">max-w-1/2 (50% dari parent)</div>
+    <div class="max-w-3/4 bg-yellow-200 p-3">max-w-3/4 (75% dari parent)</div>
+    <div class="max-w-1/3 bg-yellow-300 p-3">max-w-1/3 (33.33% dari parent)</div>
+
+    <!-- Custom -->
+    <div class="max-w-[320px] bg-purple-100 p-3">max-w-[320px] (custom pixel)</div>
+    <div class="max-w-[80%] bg-purple-200 p-3">max-w-[80%] (custom persentase)</div>
+    <div
+      style="--my-size: 600px"
+      class="max-w-[var(--my-size)] bg-purple-300 p-3"
+    >
+      max-w-[var(--my-size)] (CSS variable)
+    </div>
+
+    <!-- Container Example -->
+    <div class="container bg-orange-200 p-3 mx-auto">
+      <strong>container</strong><br />
+      Responsive max-width berdasarkan breakpoint.
+    </div>
+  </body>
+</html>

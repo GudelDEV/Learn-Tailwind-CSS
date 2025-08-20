@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      href="./output.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Backgground Attachment -->
+    <!-- | Tailwind Class        | Efek yang Dihasilkan                              |
+| --------------------- | ------------------------------------------------- |
+| `bg-fixed`            | Background **diam (tetap)** saat konten di-scroll |
+| `bg-local`            | Background **scroll bareng isi kontainer**        |
+| `bg-scroll` (default) | Background **scroll bareng halaman**              |
+ -->
+    <!-- bg-fixed -->
+    <section class="bg-[url('OIP.jpg')] bg-center bg-cover bg-fixed h-screen flex items-center justify-center">
+      <h1 class="text-white text-4xl font-bold bg-black/50 px-6 py-4 rounded-lg">Ini `bg-fixed`</h1>
+    </section>
+
+    <section class="bg-white py-32 text-center">
+      <p class="text-gray-800 text-lg">Scroll untuk melihat efeknya</p>
+    </section>
+    <!-- bg-scroll -->
+    <section class="bg-[url('OIP.jpg')] bg-center bg-cover bg-scroll h-screen flex items-center justify-center">
+      <h1 class="text-white text-4xl font-bold bg-black/50 px-6 py-4 rounded-lg">Ini `bg-scroll`</h1>
+    </section>
+    <!-- Contoh 3: bg-local (Jarang dipakai) -->
+    <div class="h-96 w-full overflow-auto border border-gray-400 p-4 bg-[url('OIP.jpg')] bg-local bg-cover">
+      <p class="text-white text-xl">Scroll area ini untuk melihat background ikut scroll hanya dalam kontainer ini.</p>
+      <div class="h-[600px]"></div>
+    </div>
+
+    <!-- background size
+    bg-auto
+    bg-cover
+    bg-contain 
+    -->
+    <section class="w-[500px] h-[400px] bg-[url('OIP.jpg')] bg-auto bg-no-repeat"></section>
+    <section class="w-[500px] h-[400px] bg-[url('OIP.jpg')] bg-contain bg-no-repeat"></section>
+    <section class="w-[500px] h-[400px] bg-[url('OIP.jpg')] bg-cover bg-no-repeat"></section>
+
+    <!-- background Posisition 
+    | Kelas Tailwind    | Posisi Background |
+| ----------------- | ----------------- |
+| `bg-left-top`     | Kiri Atas         |
+| `bg-left`         | Kiri Tengah       |
+| `bg-left-bottom`  | Kiri Bawah        |
+| `bg-center`       | Tengah            |
+| `bg-right-top`    | Kanan Atas        |
+| `bg-right`        | Kanan Tengah      |
+| `bg-right-bottom` | Kanan Bawah       |
+| `bg-top`          | Tengah Atas       |
+| `bg-bottom`       | Tengah Bawah      |
+ 
+    -->
+    <section class="w-full h-[300px] bg-[url('OIP.jpg')] bg-no-repeat bg-center bg-cover">
+      <h1 class="text-white text-2xl font-bold p-4">Contoh bg-center</h1>
+    </section>
+  </body>
+</html>
