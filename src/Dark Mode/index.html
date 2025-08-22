@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Atau 'media' untuk deteksi otomatis
+        content: ['./src/**/*.{html,js,ts,jsx,tsx}'],
+        theme: {
+          extend: {},
+        },
+        plugins: [],
+      };
+    </script>
+  </head>
+  <body>
+    <!-- Dark Mode
+    | Keterangan                               | Contoh                    |
+| -------------- | ---------------------------------------- | ------------------------- |
+| `dark:`        | Menambahkan kelas dark untuk mode gelap | `dark:bg-gray-800`       |
+| `dark:bg-`    | Ganti background di mode gelap          | `dark:bg-gray-800`       |
+| `dark:text-`  | Ganti teks di mode gelap                | `dark:text-gray-200`       |
+| `dark:border-` | Ganti border di mode gelap              | `dark:border-gray-700`   |
+| `dark:hover:`  | Ganti efek hover di mode gelap          | `dark:hover:bg-gray-700` |
+| `dark:focus:`  | Ganti efek fokus di mode gelap          | `
+dark:focus:ring-gray-600` |
+| `dark:active:` | Ganti efek aktif di mode gelap          | `dark:active:bg-gray-600` |
+| `dark:checked:` | Ganti efek centang di mode gelap       | `
+dark:checked:bg-green-600` |
+| `dark:peer-checked:` | Ganti efek peer checked di mode gelap |
+`dark:peer-checked:bg-blue-600` |
+| `dark:placeholder:` | Ganti placeholder di mode gelap       | `dark:
+placeholder:text-gray-500` |
+| `dark:selection:` | Ganti teks yang dipilih di mode gelap | `dark:selection:bg-blue-500` |
+| `dark:backdrop:` | Ganti backdrop di mode gelap           | `dark:backdrop:bg-gray-800` |
+| `dark:file:` | Ganti input file di mode gelap | `dark:file:bg-gray-200` |
+| `dark:marker:` | Ganti marker list di mode gelap | `dark:marker:text-red-500` |
+| `dark:cue:` | Ganti teks subtitle/video di mode gelap | `dark:cue:text-blue-500` |
+    -->
+    <h1 class="text-2xl font-bold mb-4 text-black dark:text-blue-800">Dark Mode</h1>
+    <button onclick="document.documentElement.classList.toggle('dark')">Toggle Dark Mode</button>
+  </body>
+</html>
