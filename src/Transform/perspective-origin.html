@@ -66,12 +66,20 @@ Atau dengan persentase:
 
     <h1>perspective-origin</h1>
     <div class="w-64 h-40 relative [perspective:1000px] perspective-origin-bottom">
-      <div class="w-full h-full transition-transform duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]">
+      <div
+        class="w-full h-full transition-transform duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]"
+      >
         <!-- Depan -->
-        <div class="absolute w-full h-full flex items-center justify-center bg-blue-500 text-white backface-hidden">Depan</div>
+        <div class="absolute w-full h-full flex items-center justify-center bg-blue-500 text-white backface-hidden">
+          Depan
+        </div>
 
         <!-- Belakang -->
-        <div class="absolute w-full h-full flex items-center justify-center bg-red-500 text-white backface-hidden [transform:rotateY(180deg)]">Belakang</div>
+        <div
+          class="absolute w-full h-full flex items-center justify-center bg-red-500 text-white backface-hidden [transform:rotateY(180deg)]"
+        >
+          Belakang
+        </div>
       </div>
     </div>
   </body>

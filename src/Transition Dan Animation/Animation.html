@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Document</title>
-    <link rel="stylesheet" href="../output.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
     <!-- Apa itu animation
     animation adalah shorthand CSS yang mengatur animasi keyframes:
 
@@ -42,21 +48,21 @@ animate-[<value>]    animation: <value>;
 
     <h1>Contoh Penggunaan Animation</h1>
     <div class="flex gap-6 p-10">
-  <!-- Spin -->
-  <div class="w-12 h-12 bg-blue-500 rounded-full animate-spin"></div>
+      <!-- Spin -->
+      <div class="w-12 h-12 bg-blue-500 rounded-full animate-spin"></div>
 
-  <!-- Ping -->
-  <div class="w-12 h-12 bg-green-500 rounded-full animate-ping"></div>
+      <!-- Ping -->
+      <div class="w-12 h-12 bg-green-500 rounded-full animate-ping"></div>
 
-  <!-- Pulse -->
-  <div class="w-12 h-12 bg-purple-500 rounded-full animate-pulse"></div>
+      <!-- Pulse -->
+      <div class="w-12 h-12 bg-purple-500 rounded-full animate-pulse"></div>
 
-  <!-- Bounce -->
-  <div class="w-12 h-12 bg-red-500 rounded-full animate-bounce"></div>
-</div>
+      <!-- Bounce -->
+      <div class="w-12 h-12 bg-red-500 rounded-full animate-bounce"></div>
+    </div>
 
-<!-- Cara Custom Animation 
-1. Buat keyframes di file CSS (misal di output.css) / ditempat yang menjadi css tailwind biasanya jika menggunakan react atau framework lain. itu indes.css di jadikan tempat cssnya untuk output.css/ tailwind.css nya
+    <!-- Cara Custom Animation 
+1. Buat keyframes di file CSS (misal di output.css / input.css) / ditempat yang menjadi css tailwind biasanya jika menggunakan react atau framework lain. itu index.css di jadikan tempat cssnya untuk output.css/ tailwind.css nya ataupun sebaikanya di input.css  buat file itu dan customisasai inputan css kamu jangan di outpute css seperti contoh yang saya lakukan lihat di input.css jadi di bedakan
 2. Gunakan di HTML dengan class animate-[nama-keyframes]
 Contoh:
 @keyframes slideIn {
@@ -74,7 +80,6 @@ Contoh:
 } 
 
 -->
-<div class="w-32 h-32 bg-yellow-500 animate-"></div>
-
-</body>
+    <div class="w-32 h-32 bg-yellow-500 animate-wiggle rounded-full">Hello</div>
+  </body>
 </html>
