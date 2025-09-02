@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+        📑 Apa itu break-after?
+
+Utility ini dipakai untuk mengontrol pemutusan kolom, halaman, atau region setelah suatu elemen.
+Di CSS aslinya → properti break-after.
+Biasanya dipakai saat bikin multi-column layout (columns) atau print layout (page-break).
+
+| **Class Tailwind**       | **CSS Output**             | **Keterangan**                                      |
+| ------------------------ | -------------------------- | --------------------------------------------------- |
+| `break-after-auto`       | `break-after: auto;`       | Default, biarkan browser tentukan                   |
+| `break-after-avoid`      | `break-after: avoid;`      | Hindari pemutusan setelah elemen                    |
+| `break-after-all`        | `break-after: all;`        | Paksa break di semua konteks (kolom/halaman/region) |
+| `break-after-avoid-page` | `break-after: avoid-page;` | Hindari break halaman setelah elemen                |
+| `break-after-page`       | `break-after: page;`       | Paksa break halaman setelah elemen                  |
+| `break-after-left`       | `break-after: left;`       | Paksa halaman berikutnya di sisi kiri (print/ebook) |
+| `break-after-right`      | `break-after: right;`      | Paksa halaman berikutnya di sisi kanan              |
+| `break-after-column`     | `break-after: column;`     | Paksa pindah ke kolom berikutnya                    |
+
+    -->
+
+    <h1>Contoh Penggunaan</h1>
+    <div class="columns-2 gap-4">
+      <p class="bg-blue-200">Lorem ipsum dolor sit amet.</p>
+      <p class="bg-green-200 break-after-column">Consectetur adipiscing elit.</p>
+      <p class="bg-red-200">Sed do eiusmod tempor.</p>
+      <p class="bg-yellow-200">Ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <div class="break-after-page">
+      <h1>Bab 1</h1>
+      <p>Isi bab pertama...</p>
+    </div>
+    <div>
+      <h1>Bab 2</h1>
+      <p>Isi bab kedua...</p>
+    </div>
+  </body>
+</html>

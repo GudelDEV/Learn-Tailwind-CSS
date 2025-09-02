@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- Apa Itu Aspec Ratio ? 
+    Aspect Ratio = Adalah sebuah utylitas di tailwind yang mengatur lebar dan tinggi untuk sebuah elemen 
+    Dengan Tailwind, kamu bisa mengunci elemen supaya tetap proporsional, meskipun ukuran layarnya berubah-ubah.
+
+    | **Class Tailwind**           | **CSS Property**                                              | **Keterangan**                                                          |
+| ---------------------------- | ------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `aspect-<ratio>`             | `aspect-ratio: <ratio>;`                                      | Atur rasio sesuai nilai                                                 |
+| `aspect-square`              | `aspect-ratio: 1 / 1;`                                        | Membuat elemen selalu kotak                                             |
+| `aspect-video`               | `aspect-ratio: var(--aspect-ratio-video);` → default `16 / 9` | Rasio standar untuk video                                               |
+| `aspect-auto`                | `aspect-ratio: auto;`                                         | Tidak mengunci rasio                                                    |
+| `aspect-(<custom-property>)` | `aspect-ratio: var(<custom-property>);`                       | Gunakan custom property CSS                                             |
+| `aspect-[<value>]`           | `aspect-ratio: <value>;`                                      | Nilai custom langsung, misalnya `aspect-[4/3]` → `aspect-ratio: 4 / 3;` |
+
+    
+    -->
+
+    <h1>Contoh</h1>
+    <img
+      src="../gunung.jpg"
+      alt="gunung"
+      class="aspect-3/2 object-cover grayscale-100 w-40"
+    />
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/sDh1zx5XX_U?si=WKftjqOBkfbiDq_0"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+
+    <div class="w-40 aspect-square bg-blue-400"></div>
+    <!-- kotak -->
+    <div class="w-60 aspect-video bg-green-400"></div>
+    <!-- 16:9 -->
+    <div class="w-40 aspect-[4/3] bg-red-400"></div>
+    <!-- custom 4:3 -->
+  </body>
+</html>

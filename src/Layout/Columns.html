@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- Apa itu Columns
+    columns di tailwind digunakan untuk membut sebuah multi-column layout (Mirip Koran Atau Majalah) 
+
+    | **Class Tailwind**  | **CSS Output**      | **Keterangan**                        |
+| ------------------- | ------------------- | ------------------------------------- |
+| `columns-1`         | `columns: 1;`       | 1 kolom                               |
+| `columns-2`         | `columns: 2;`       | 2 kolom                               |
+| `columns-3`         | `columns: 3;`       | 3 kolom                               |
+| `columns-4`         | `columns: 4;`       | 4 kolom                               |
+| `columns-5`         | `columns: 5;`       | 5 kolom                               |
+| `columns-6`         | `columns: 6;`       | 6 kolom                               |
+| `columns-auto`      | `columns: auto;`    | Default, otomatis                     |
+| `columns-xs`        | `columns: 20rem;`   | Lebar minimal tiap kolom kecil        |
+| `columns-sm`        | `columns: 24rem;`   | Lebar minimal tiap kolom kecil-sedang |
+| `columns-md`        | `columns: 28rem;`   | Lebar minimal tiap kolom sedang       |
+| `columns-lg`        | `columns: 32rem;`   | Lebar minimal tiap kolom agak besar   |
+| `columns-xl`        | `columns: 36rem;`   | Lebar minimal tiap kolom besar        |
+| `columns-2xl`       | `columns: 42rem;`   | Lebar minimal tiap kolom sangat besar |
+| `columns-[<value>]` | `columns: <value>;` | Custom, misal `columns-[250px]`       |
+
+    
+    -->
+
+    <h1>Contoh Penggunaan</h1>
+    <div class="columns-3 gap-4 p-4">
+      <p class="bg-blue-200">Lorem ipsum dolor sit amet.</p>
+      <p class="bg-green-200">Consectetur adipiscing elit.</p>
+      <p class="bg-red-200">Sed do eiusmod tempor.</p>
+      <p class="bg-yellow-200">Ut labore et dolore magna aliqua.</p>
+      <p class="bg-purple-200">Enim ad minim veniam.</p>
+    </div>
+    <section class="columns-2 gap-3">
+      <img
+        src="../gunung.jpg"
+        alt=""
+      />
+      <img
+        src="../gunung.jpg"
+        alt=""
+      />
+      <img
+        src="../gunung.jpg"
+        alt=""
+      />
+    </section>
+    <hr />
+    <h1>Columns 3</h1>
+    <section class="columns-3 gap-3">
+      <img
+        src="../gunung.jpg"
+        alt=""
+      />
+      <img
+        src="../gunung.jpg"
+        alt=""
+      />
+      <img
+        src="../gunung.jpg"
+        alt=""
+      />
+    </section>
+  </body>
+</html>
