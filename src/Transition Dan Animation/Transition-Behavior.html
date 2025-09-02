@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../output.css">
+</head>
+<body>
+    <!-- Apa itu Transition Behavior 
+    Transition Behavior adalah properti CSS yang mengatur bagaimana sebuah elemen berperilaku selama proses transisi. Dengan kata lain, ini menentukan bagaimana elemen merespons perubahan gaya atau state-nya, seperti saat hover, fokus, atau perubahan kelas.
+    | Class               | CSS Property                                                                                   |
+| ------------------- | ---------------------------------------------------------------------------------------------- |
+    transition-normal   transition-behavior: normal;
+    transition-discrete     transition-behavior: allow-discrete;
+
+
+    -->
+    <h1>Contoh Penggunaan Transition Behavior</h1>
+    <p>Gunakan transition-discreteutilitas untuk memulai transisi saat mengubah properti dengan serangkaian nilai diskret, seperti elemen yang berubah dari hiddenke block:</p>
+    <label class="peer ...">
+  <input type="checkbox" checked />
+</label>
+<button class="hidden transition-all not-peer-has-checked:opacity-0 peer-has-checked:block ...">
+  I hide
+</button>
+<label class="peer ...">
+  <input type="checkbox" checked />
+</label>
+<button class="hidden transition-all transition-discrete not-peer-has-checked:opacity-0 peer-has-checked:block ...">
+  I fade out
+</button>
+<p>Perhatikan bahwa tombol pertama menghilang secara instan, sedangkan tombol kedua memudar keluar.</p>
+<p>Gunakan transition-normalutilitas untuk memulai transisi saat mengubah properti dengan nilai kontinu, seperti elemen yang berubah dari 0ke 100px:</p>
+<div class="h-0 overflow-hidden transition-all transition-normal peer-checked:h-24 ...">
+  I expand  
+</div>
+<p>Perhatikan bahwa elemen memperluas secara bertahap, bukan melompat ke ukuran akhirnya.</p>
+<p>Secara default, Tailwind CSS menerapkan transition-normalke semua utilitas transisi. Ini karena sebagian besar properti transisi memiliki nilai kontinu, sehingga transisi normal biasanya memberikan hasil yang diinginkan. Namun, Anda dapat menyesuaikan perilaku transisi sesuai kebutuhan dengan menggunakan utilitas transition-behavior.</p>
+<p>Catatan: Transition Behavior tidak didukung di Internet Explorer 11.</p>
+
+</body>
+</html>

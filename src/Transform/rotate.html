@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../output.css">
+</head>
+<body>
+    <!-- 
+    🟢 Pengertian rotate
+
+rotate adalah bagian dari CSS transform yang digunakan untuk memutar elemen berdasarkan sudut tertentu.
+
+Bisa diputar di sumbu 2D (X-Y plane → seperti memutar kertas di meja).
+
+Bisa juga di sumbu 3D (X, Y, Z → seperti memutar pintu atau koin).
+    -->
+    <h1>Rotate</h1>
+    <p>rotate-(<custom-property>)</p>
+    <p>rotate-[<value>]</p>
+    <p>rotate-0</p>
+    <p>rotate-45</p>
+    <p>rotate-90</p>
+    <p>rotate-180</p>
+    <p>rotate-270</p>
+    <p>rotate-360</p>
+    <p>rotate-(<custom-property>)</p>
+    <p>rotate-[<value>]</p>
+
+    <h1>Contoh</h1>
+    <section class="box w-[200px] h-[200px] bg-blue-400 mx-auto transform rotate-45">
+        <p class="text-white">Ini adalah contoh rotasi 45 derajat</p>
+    </section>
+    <hr>
+    <h1>Digabung dengan hover</h1>
+    <section class="box w-[200px] h-[200px] bg-green-400 mx-auto transform hover:rotate-90 transition-transform duration-500">
+        <p class="text-white">Hover untuk rotasi 90 derajat</p>
+    </section>
+</body>
+</html>

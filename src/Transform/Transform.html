@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+
+    <style>
+        :root {
+          --custom-rotate: 30deg;
+          --custom-scale: 0.5;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Ap itu Transform
+    Transform adalah sebuah fitur css dan juga tailwind yang fi gunakan untuk mengubah style dari sebuah elemen HTML.
+    Transform ini bisa digunakan untuk mengubah posisi, ukuran, rotasi, dan efek lainnya pada elemen HTML.
+    -->
+
+    <!-- 
+    Utiltyies yang tersedia di Tailwind CSS untuk transformasi elemen HTML:
+    | Keterangan            | Contoh                     |
+    | --------------------- | -------------------------- |
+    | `transform`           | Mengaktifkan transformasi  | `transform`              |
+    | `translate-x-`        | Pindahkan elemen secara horizontal | `translate-x-4` |
+    | `translate-y-`        | Pindahkan elemen secara vertikal | `translate-y-4` |
+    | `scale-`              | Ubah ukuran elemen         | `scale-110`            |
+    | `rotate-`             | Putar elemen               | `rotate-45`  
+    | `skew-x-`             | Miringkan elemen secara horizontal | `skew-x-12` |
+    | `skew-y-`             | Miringkan elemen secara vertikal | `skew-y-12` |
+    | `transform-origin-`   | Atur titik asal transformasi | `transform-origin-top` |
+    | `transform-gpu`       | Gunakan GPU untuk transformasi | `transform-gpu` |
+    | `transform-none`      | Nonaktifkan transformasi   | `transform-none`
+    | `transition-transform`| Transisi transformasi      | `transition-transform`  |
+    | `hover:transform`     | Transformasi saat hover    | `hover:scale-110` |
+    | `focus:transform`     | Transformasi saat fokus    | `focus:rotate-45` |
+    | `active:transform`    | Transformasi saat aktif    | `active:translate-x-2` |
+    | `group-hover:transform` | Transformasi saat hover pada grup | `group-hover:scale-110` |
+    | `peer-hover:transform` | Transformasi saat hover pada peer | `peer-hover:rotate-45` |
+    | `dark:transform`      | Transformasi di mode gelap | `dark:transform` |
+    | `dark:hover:transform`| Transformasi di mode gelap saat hover | `dark:hover:scale-110` |
+    -->
+
+    <!-- Kita akan bahasa satu persatu  -->
+    <h1>Transform</h1>
+    <h2>Utylitiy class transform pada tailwind css</h2>
+    <p>transform-(<custom-property>)</p>
+    <p>transform-[<value>]</p>
+    <p>transform-none</p>
+    <p>transform-gpu</p>
+    <p>transform-cpu</p>
+    <hr>
+    <h1>Transform (property-[value])</h1>
+    <section class="box w-[200px] h-[200px] bg-amber-400 mx-auto transform rotate-[150deg]"></section>
+    <hr>
+    <h1>Transform-[custom-propertyvalue]</h1>
+    <p>ini di gunakankan ketika kita memiliki variable sendiri contoh kita akan buat di css</p>
+    <section class="box w-[200px] h-[200px] bg-blue-400 mx-auto transform rotate-[var(--custom-rotate)] scale-[var(--custom-scale)]">
+        <p class="text-white">Ini adalah contoh transformasi dengan custom property</p>
+    </section>
+    <hr>
+    <h1>Transform-[value]</h1>
+    <p>👉 Digunakan untuk arbitrary value (nilai bebas yang langsung ditulis).</p>
+    contoh 
+    <div class="transform-[rotate(33deg)_scale(0.2)] bg-blue-400 text-white p-4 w-200 h-200 mx-auto">
+      <p>Ini adalah contoh transformasi dengan nilai bebas</p>
+  Custom Transform Langsung
+    </div>
+    <hr>
+    <h1>Transform-none</h1>
+    <p>👉 Digunakan untuk menghapus semua transformasi yang diterapkan pada elemen.</p>
+    <div class="transform-none w-[100px] h-[100px] bg-red-400 text-white p-4 mx-auto">
+  Tidak ada transform
+</div>
+<hr>
+    <h1>Transform-gpu</h1>
+    <p>👉 Tailwind menyediakan ini untuk memaksa transform dijalankan lewat GPU (translateZ(0)), supaya animasi jadi lebih halus di beberapa browser.</p>
+    <div class="transform-gpu hover:scale-110 transition w-[100px] h-[100px] bg-green-400 text-white p-4 mx-auto">
+  Animasi pakai GPU
+</div>
+    <hr>
+    <h1>Transform-cpu</h1>
+    <p>Lawannya transform-gpu.
+Memaksa transform dijalankan lewat CPU, bukan GPU.
+Biasanya default adalah CPU.</p>
+    <div class="transform-cpu hover:scale-110 transition w-[100px] h-[100px] bg-purple-400 text-white p-4 mx-auto">
+  Animasi pakai CPU
+    </div>
+    
+  </body>
+</html>

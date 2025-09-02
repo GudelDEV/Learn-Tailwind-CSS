@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- scale adalah utility untuk transformasi yang digunakan untuk memperbesar atau memperkecil ukuran elemen secara proporsional.
+
+    | Class                         | CSS Property                                                         |
+| ----------------------------- | -------------------------------------------------------------------- |
+| `scale-none`                  | `scale: none;`                                                       |
+| `scale-<number>`              | `scale: <number>% <number>%;`                                        |
+| `-scale-<number>`             | `scale: calc(<number>% * -1) calc(<number>% * -1);`                  |
+| `scale-(<custom-property>)`   | `scale: var(<custom-property>) var(<custom-property>);`              |
+| `scale-[<value>]`             | `scale: <value>;`                                                    |
+| `scale-x-<number>`            | `scale: <number>% var(--tw-scale-y);`                                |
+| `-scale-x-<number>`           | `scale: calc(<number>% * -1) var(--tw-scale-y);`                     |
+| `scale-x-(<custom-property>)` | `scale: var(<custom-property>) var(--tw-scale-y);`                   |
+| `scale-x-[<value>]`           | `scale: <value> var(--tw-scale-y);`                                  |
+| `scale-y-<number>`            | `scale: var(--tw-scale-x) <number>%;`                                |
+| `-scale-y-<number>`           | `scale: var(--tw-scale-x) calc(<number>% * -1);`                     |
+| `scale-y-(<custom-property>)` | `scale: var(--tw-scale-x) var(<custom-property>);`                   |
+| `scale-y-[<value>]`           | `scale: var(--tw-scale-x) <value>;`                                  |
+| `scale-z-<number>`            | `scale: var(--tw-scale-x) var(--tw-scale-y) <number>%;`              |
+| `-scale-z-<number>`           | `scale: var(--tw-scale-x) var(--tw-scale-y) calc(<number>% * -1);`   |
+| `scale-z-(<custom-property>)` | `scale: var(--tw-scale-x) var(--tw-scale-y) var(<custom-property>);` |
+| `scale-z-[<value>]`           | `scale: var(--tw-scale-x) var(--tw-scale-y) <value>;`                |
+| `scale-3d`                    | `scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);`      |
+
+ -->
+<!-- penting 
+ 
+X = horizontal (kiri ↔ kanan)
+
+Y = vertikal (atas ↕ bawah)
+
+Z = kedalaman (dekat ↔ jauh dari layar)
+-->
+
+<!-- 📌 Analogi
+
+Bayangkan kamu melihat sebuah kubus 3D:
+
+scale-x → kubus melebar ke samping
+
+scale-y → kubus makin tinggi atau pendek
+
+scale-z → kubus makin tebal atau tipis (arah masuk/keluar layar)
+ -->
+
+
+<h1>Contoh Penggunnaan Scale</h1>
+<h2>Scale-[value]</h2>
+<div class="w-32 h-32 bg-blue-500 mx-auto scale-[1.5]">Scale 1.5</div>
+<div class="w-32 h-32 bg-red-500 mx-auto scale-[0.5]">Scale 0.5</div>
+<div class="w-32 h-32 bg-amber-500 hover:scale-75 ">Scale hover</div>
+<h2>Scale-x-[value]</h2>
+<div class="w-32 h-32 bg-blue-500 mx-auto scale-x-[1.5]">Scale X 1.5</div>
+<div class="w-32 h-32 bg-red-500 mx-auto scale-x-[0 0.5]">Scale X 0.5</div>
+<h2>Scale-y-[value]</h2>
+<div class="w-32 h-32 bg-blue-500 mx-auto scale-y-[1.5]">Scale Y 1.5</div>
+<div class="w-32 h-32 bg-red-500 mx-auto scale-y-[0 0.5]">Scale Y 0.5</div>
+<h2>Scale-z-[value]</h2>
+<div class="w-32 h-32 bg-blue-500 mx-auto scale-z-[1.5]">Scale Z 1.5</div>
+<div class="w-32 h-32 bg-red-500 mx-auto scale-z-[0 0.5]">Scale Z 0.5</div>
+
+ <!-- Container dengan perspektif 3D -->
+  <div class="w-64 h-64" style="perspective: 800px;">
+    <!-- Kotak dengan transform 3D -->
+    <div class="w-32 h-32 bg-blue-500 text-white flex items-center justify-center mx-auto transform transition duration-700"
+         style="transform-style: preserve-3d; transform: scaleZ(2) rotateY(30deg);">
+      Scale Z
+    </div>
+  </div>
+
+
+  </body>
+</html>

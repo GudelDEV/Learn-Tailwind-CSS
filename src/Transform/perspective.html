@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- perspective
+    perspective adalah properti CSS yang mengatur seberapa jauh jarak mata (viewer) terhadap elemen 3D.
+
+    📌 Dengan kata lain: semakin kecil nilai perspective, efek 3D akan terlihat lebih dramatis (lebih “dalam”).
+    Sebaliknya, semakin besar nilainya, efek 3D jadi lebih datar. 
+    -->
+
+    <!-- Utily class 
+     
+    | **Class**                         | **CSS Style**                                           |
+| --------------------------------- | ------------------------------------------------------- |
+| `perspective-dramatic`            | `perspective: var(--perspective-dramatic); /* 100px */` |
+| `perspective-near`                | `perspective: var(--perspective-near); /* 300px */`     |
+| `perspective-normal`              | `perspective: var(--perspective-normal); /* 500px */`   |
+| `perspective-midrange`            | `perspective: var(--perspective-midrange); /* 800px */` |
+| `perspective-distant`             | `perspective: var(--perspective-distant); /* 1200px */` |
+| `perspective-none`                | `perspective: none;`                                    |
+| `perspective-(<custom-property>)` | `perspective: var(<custom-property>);`                  |
+| `perspective-[<value>]`           | `perspective: <value>;`                                 |
+
+    
+    
+    
+    -->
+    <h1>perspective</h1>
+    <p>👉 Digunakan untuk mengatur jarak pandang terhadap elemen 3D.</p>
+    <p>Contoh penggunaan:</p>
+    <div class="w-[200px] h-[200px] bg-blue-400 mx-auto [perspective:1000px]">
+      <div class="w-full h-full bg-red-400 transform rotate-y-45">Ini adalah elemen 3D</div>
+    </div>
+
+    <h1>Contoh lain</h1>
+    <section class="w-64 h-40 relative [persepective:1000]">
+      <section class="w-full h-full transition-transform duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]">
+        <!-- Depan -->
+        <div class="absolute w-full h-full flex items-center justify-center bg-blue-500 text-white backface-hidden">Depan</div>
+
+        <!-- Belakang -->
+        <div class="absolute w-full h-full flex items-center justify-center bg-red-500 text-white backface-hidden [transform:rotateY(180deg)]">Belakang</div>
+      </section>
+    </section>
+  </body>
+</html>

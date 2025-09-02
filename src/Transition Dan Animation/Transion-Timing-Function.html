@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../output.css">
+</head>
+<body>
+    <!-- Apa itu transition Timing Function? 
+    Transition Timing Function adalah properti CSS yang mengatur kecepatan perubahan (transition) dari satu state ke state lainnya. Dengan kata lain, ini menentukan bagaimana transisi akan berlangsung dari awal hingga akhir.
+    
+    | Class            | CSS Property                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------- |
+| `ease-linear`    | `transition-timing-function: linear;`                                                 |
+| `ease-in`        | `transition-timing-function: cubic-bezier(0.4, 0, 1, 1);`                             |
+| `ease-out`       | `transition-timing-function: cubic-bezier(0, 0, 0.2, 1);`                             |
+| `ease-in-out`    | `transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);`                           |
+| `ease-[<value>]` | `transition-timing-function: <value>;` *(arbitrary value, misal cubic-bezier custom)* |
+📌 Penjelasan Singkat
+
+linear → kecepatan konstan (lurus dari awal sampai akhir).
+
+ease-in → mulai pelan, akhir cepat (seperti akselerasi mobil).
+
+ease-out → mulai cepat, akhir pelan (seperti mobil ngerem).
+
+ease-in-out → mulai pelan, tengah cepat, akhir pelan lagi (halus).
+    
+    -->
+
+    <h1>Contoh Penggunaan Transition Timing Function</h1>
+    <p>Contoh dengan ease-in</p>
+    <div class="w-32 h-32 bg-blue-500 hover:bg-blue-700 transition-colors duration-500 ease-in"></div>
+    <hr />
+    <p>Contoh dengan ease-out</p>
+    <div class="w-32 h-32 bg-green-500 hover:bg-green-700 transition-colors duration-500 ease-out"></div>
+    <hr />
+    <p>Contoh dengan ease-in-out</p> 
+    <div class="w-32 h-32 bg-red-500 hover:bg-red-700 transition-colors duration-500 ease-in-out"></div>
+    <hr />
+    <p>Contoh dengan linear</p>
+    <div class="w-32 h-32 bg-purple-500 hover:bg-purple-700 transition-colors duration-500 ease-linear"></div>
+    <hr />
+    <p>Contoh dengan cubic-bezier custom</p>
+    <div class="w-32 h-32 bg-yellow-500 hover:bg-yellow-700 transition-colors duration-500 ease-[cubic-bezier(0.68, -0.55, 0.27, 1.55)]"></div>
+</body>
+</html>

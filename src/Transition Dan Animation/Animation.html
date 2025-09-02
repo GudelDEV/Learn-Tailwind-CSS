@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../output.css">
+</head>
+<body>
+    <!-- Apa itu animation
+    animation adalah shorthand CSS yang mengatur animasi keyframes:
+
+Nama keyframes
+
+Durasi animasi
+
+Timing function (curve animasi)
+
+Delay
+
+Iteration count (berapa kali jalan)
+
+Direction (arah animasi)
+
+Fill mode (efek setelah selesai animasi)
+
+Play state (jalan/stop)
+
+| Class            | CSS Output                                                   | Efek                                |
+| ---------------- | ------------------------------------------------------------ | ----------------------------------- |
+| `animate-none`   | `animation: none;`                                           | Tidak ada animasi                   |
+| `animate-spin`   | `animation: spin 1s linear infinite;`                        | Berputar terus-menerus              |
+| `animate-ping`   | `animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;`    | Gelombang besar & hilang            |
+| `animate-pulse`  | `animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;` | Berkedip halus (opacity naik-turun) |
+| `animate-bounce` | `animation: bounce 1s infinite;`                             | Memantul ke atas & bawah            |
+| `animate-[<custom-name>]` | `animation: <custom-name> 1s ease-in-out infinite;`         | Animasi dengan nama kustom          |
+| `animate-[none]`| `animation: none;`                                           | Tidak ada animasi                   |
+| `animate-[<custom-name>_<duration>_<timing-function>_<iteration-count>]` | `animation: <custom-name> <duration> <timing-function> <iteration-count>;` | Animasi dengan pengaturan kustom   |  
+animate-(<custom-property>)    animation: var(<custom-property>);
+animate-[<value>]    animation: <value>;
+    -->
+
+    <h1>Contoh Penggunaan Animation</h1>
+    <div class="flex gap-6 p-10">
+  <!-- Spin -->
+  <div class="w-12 h-12 bg-blue-500 rounded-full animate-spin"></div>
+
+  <!-- Ping -->
+  <div class="w-12 h-12 bg-green-500 rounded-full animate-ping"></div>
+
+  <!-- Pulse -->
+  <div class="w-12 h-12 bg-purple-500 rounded-full animate-pulse"></div>
+
+  <!-- Bounce -->
+  <div class="w-12 h-12 bg-red-500 rounded-full animate-bounce"></div>
+</div>
+
+<!-- Cara Custom Animation 
+1. Buat keyframes di file CSS (misal di output.css) / ditempat yang menjadi css tailwind biasanya jika menggunakan react atau framework lain. itu indes.css di jadikan tempat cssnya untuk output.css/ tailwind.css nya
+2. Gunakan di HTML dengan class animate-[nama-keyframes]
+Contoh:
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.animate-slideIn {
+  animation: slideIn 1s ease-out forwards;
+} 
+
+-->
+<div class="w-32 h-32 bg-yellow-500 animate-"></div>
+
+</body>
+</html>

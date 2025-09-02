@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body ">
+    <h1>backface-visibility adalah properti CSS yang mengatur apakah sisi belakang dari elemen 3D yang diputar akan terlihat atau tidak. Biasanya dipakai saat bikin efek flip card (misalnya kartu terbalik ke belakang).</h1>
+    <p>backface-hidden</p>
+    <p>👉 Sisi belakang elemen tidak akan terlihat saat elemen tersebut diputar.</p>
+    <div class="w-[200px] h-[200px] bg-blue-400 mx-auto transform rotate-y-180 backface-hidden">
+      <p class="text-black">Ini sisi depan</p>
+      <div class="backface-visible">
+        <p class="text-black">Ini sisi belakang</p>
+      </div>
+    </div>
+    <hr />
+    <p>backface-visible</p>
+    <p>👉 Sisi belakang elemen akan terlihat saat elemen tersebut diputar.</p>
+    <div class="w-[200px] h-[200px] bg-green-400 mx-auto transform rotate-y-180 backface-visible">
+      <p class="text-black">Ini sisi depan</p>
+      <div class="backface-visible">
+        <p class="text-black">Ini sisi belakang</p>
+      </div>
+    </div>
+    <hr />
+
+    <h1>Contoh penggunaan backface-visibility</h1>
+    <p>Contoh penggunaan untuk flip card</p>
+    <div class="w-64 h-40 relative [perspective:1000px]">
+      <!-- Card -->
+      <div class="w-full h-full transition-transform duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]">
+        <!-- Front -->
+        <div class="absolute w-full h-full bg-blue-500 text-white flex items-center justify-center backface-hidden">Depan</div>
+
+        <!-- Back -->
+        <div class="absolute w-full h-full bg-red-500 text-white flex items-center justify-center backface-hidden [transform:rotateY(180deg)]">Belakang</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+    🟢 Pengertian perspective-origin
+
+perspective-origin adalah properti CSS yang menentukan titik asal (vanishing point) dari efek perspektif 3D.
+
+📌 Bayangkan kamu melihat sebuah objek 3D → perspective-origin menentukan dari arah mana kamu melihatnya (tengah, atas, kiri, kanan, dsb).
+    
+    -->
+
+    <!-- Utylity class 
+     | **Class**                                | **CSS Style**                                 |
+| ---------------------------------------- | --------------------------------------------- |
+| `perspective-origin-center`              | `perspective-origin: center;`                 |
+| `perspective-origin-top`                 | `perspective-origin: top;`                    |
+| `perspective-origin-top-right`           | `perspective-origin: top right;`              |
+| `perspective-origin-right`               | `perspective-origin: right;`                  |
+| `perspective-origin-bottom-right`        | `perspective-origin: bottom right;`           |
+| `perspective-origin-bottom`              | `perspective-origin: bottom;`                 |
+| `perspective-origin-bottom-left`         | `perspective-origin: bottom left;`            |
+| `perspective-origin-left`                | `perspective-origin: left;`                   |
+| `perspective-origin-top-left`            | `perspective-origin: top left;`               |
+| `perspective-origin-(<custom-property>)` | `perspective-origin: var(<custom-property>);` |
+| `perspective-origin-[<value>]`           | `perspective-origin: <value>;`                |
+
+     -->
+
+    <!-- 
+     🟢 Nilai yang Bisa Dipakai
+
+Keyword: top, bottom, left, right, center
+
+Panjang (%) / px: misalnya 25% 75%, 100px 50px
+
+🟢 Tailwind & Arbitrary Values
+
+Tailwind belum punya class default untuk perspective-origin,
+tapi kita bisa pakai arbitrary values:
+
+<div class="[perspective:1000px] [perspective-origin:left_top]">
+  Elemen 3D
+</div>
+
+Atau dengan persentase:
+
+<div class="[perspective:1000px] [perspective-origin:25%_75%]">
+  Custom Perspective Origin
+</div>
+
+     
+     -->
+
+    <h1>perspective-origin</h1>
+    <div class="w-64 h-40 relative [perspective:1000px] perspective-origin-bottom">
+      <div class="w-full h-full transition-transform duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]">
+        <!-- Depan -->
+        <div class="absolute w-full h-full flex items-center justify-center bg-blue-500 text-white backface-hidden">Depan</div>
+
+        <!-- Belakang -->
+        <div class="absolute w-full h-full flex items-center justify-center bg-red-500 text-white backface-hidden [transform:rotateY(180deg)]">Belakang</div>
+      </div>
+    </div>
+  </body>
+</html>
