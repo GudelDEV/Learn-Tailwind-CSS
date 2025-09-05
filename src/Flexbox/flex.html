@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- Apa itu Flex? 
+     flex ini di gunakan untuk mengontorol bagaiamana flex items both grow dan flex-shring  tumbuh dan menyusut 
+
+     | Class               | CSS yang dihasilkan              | Penjelasan                                                                     |
+| ------------------- | -------------------------------- | ------------------------------------------------------------------------------ |
+| `flex-1`            | `flex: 1 1 0%;`                  | Item akan tumbuh & menyusut agar mengisi ruang tersisa                         |
+| `flex-auto`         | `flex: 1 1 auto;`                | Tumbuh & menyusut, ukuran awal sesuai konten                                   |
+| `flex-initial`      | `flex: 0 1 auto;`                | Default, ukuran awal sesuai konten, bisa menyusut                              |
+| `flex-none`         | `flex: none;` → `0 0 auto`       | Item **tidak tumbuh atau menyusut**, ukurannya tetap                           |
+| `flex-[<value>]`    | `flex: <value>;`                 | Custom value bebas (misalnya `flex-[2_2_100px]`)                               |
+| `flex-(<fraction>)` | `flex: calc(<fraction> * 100%);` | Untuk membagi space dengan proporsi tertentu (misalnya `flex-1/2`, `flex-1/3`) |
+
+      
+    -->
+
+    <h1>📌 3. Contoh Penggunaan</h1>
+    <section class="mb-20">
+      <h2>Flex-1</h2>
+      <div class="flex gap-2 bg-amber-400">
+        <div class="flex-1 bg-blue-200 p-4">Item 1</div>
+        <div class="flex-1 bg-blue-200 p-4">Item 2</div>
+        <div class="flex-1 bg-blue-200 p-4">Item 3</div>
+      </div>
+      <p>➡️ Ketiga item akan punya lebar sama.</p>
+    </section>
+    <section class="mb-20">
+      <h2>flex-auto</h2>
+      <p>Ukuran mengikuti konten, tapi bisa melebar atau mengecil.</p>
+      <div class="flex gap-2 bg-blue">
+        <div class="flex-auto bg-green-200 p-4">Short</div>
+        <div class="flex-auto bg-green-200 p-4">Much longer content</div>
+      </div>
+      <p>➡️ Item pertama kecil, item kedua lebih lebar, tapi keduanya masih bisa fleksibel.</p>
+    </section>
+    <section class="mb-20">
+      <h2>flex-[<value>]</h2>
+      <p>Customisasi manual, misalnya:</p>
+      <div class="flex gap-2">
+        <div class="flex-[2] bg-pink-200 p-4">2x</div>
+        <div class="flex-[1] bg-pink-200 p-4">1x</div>
+     </div>
+      <p>➡️ Item pertama akan punya lebar dua kali lebih besar dari item kedua.</p>
+    </section>
+    <section class="mb-20">
+      <h2>flex-1/2, flex-1/3</h2>
+      <p>Tailwind juga menyediakan fraction untuk pembagian:</p>
+      <div class="flex gap-2">
+        <div class="flex-1/2 bg-purple-200 p-4">50%</div>
+        <div class="flex-1/2 bg-purple-200 p-4">50%</div>
+     </div>
+      <p>➡️ Masing-masing item akan mengambil 50% lebar container.</p>
+    </section>
+  </body>
+</html>

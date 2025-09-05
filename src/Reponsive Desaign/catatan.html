@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- Apa itu Responsive Desaign
+     Responsive Desaign yaitu dimana : tampilan Website Kita menyesuaikan tampilan seperti (HP, TABLET , LAPTOP , DESKTOP/MONITOR BESAR)
+
+     Pertama, pastikan Anda telah menambahkan tag meta viewport ke <head>dokumen Anda:
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    Lalu, untuk menambahkan utilitas tetapi hanya membuatnya berlaku pada titik henti tertentu, yang perlu Anda lakukan hanyalah memberi awalan nama titik henti pada utilitas, diikuti oleh :karakter:
+
+    <img class="w-16 md:w-32 lg:w-48" src="..." />
+
+    Ada lima titik henti secara default, yang terinspirasi oleh resolusi perangkat umum:
+
+| Awalan titik henti | Lebar minimum  | CSS Media Query                   |
+| ------------------ | -------------- | --------------------------------- |
+| `sm`               | 40rem (640px)  | `@media (width >= 40rem) { ... }` |
+| `md`               | 48rem (768px)  | `@media (width >= 48rem) { ... }` |
+| `lg`               | 64rem (1024px) | `@media (width >= 64rem) { ... }` |
+| `xl`               | 80rem (1280px) | `@media (width >= 80rem) { ... }` |
+| `2xl`              | 96rem (1536px) | `@media (width >= 96rem) { ... }` |
+
+atau 
+
+| Prefix | Min-width | Contoh device           |
+| ------ | --------- | ----------------------- |
+| `sm:`  | 640px     | HP besar / tablet kecil |
+| `md:`  | 768px     | Tablet                  |
+| `lg:`  | 1024px    | Laptop                  |
+| `xl:`  | 1280px    | Desktop                 |
+| `2xl:` | 1536px    | Monitor besar           |
+
+Note Penting Tentang Responive dengan tailwind yaitu : 
+1. Working Mobile First : Tailwinf Mengugunakan mobile-first breakpoint sistem yang dimana mengutamakan breakpoint untuk perangkat mobile dulu 
+
+Jadi ketika kita ingin responsive kita di wajibkan untuk membuat tampilan untuk layar smartPhone dulu dimana jika tampilan di layar Smart Phone sudah bagus tampilannya 
+Maka baru lanjut ke layar besar 
+
+yang dimana breakpoint sm, md , lg , xl , 2xl itu menggunakan property css nya mind-with 
+yang dimana contoh sm : 640px 
+berarti jika ukuran layat lebih besar dari 640px maka gunakan style itu 
+
+
+2. Dont use sm for targeting mobile screen : Artinya jangan gunakan utylitas class sm untuk desaign tampilan mobile seperti yang sudah di jelaskan pada point pertama yaitu sm , md , lg , xl , 2xl itu menggunakan min-width yang artinya jik ukuran layar lebih besar dari ukuran itu maka gunakan desaign itu 
+
+Contoh yang salah untuk targeting Mobile menggunakan sm 
+This will only center text on screens 640px and wider, not on small screens 
+
+<div class="sm:text-center"></div>
+
+Contoh yang benar 
+Gunakan utilitas tanpa awalan untuk menargetkan seluler, dan menggantinya pada titik henti yang lebih besar: 
+This will center text on mobile, and left align it on screens 640px and wider
+
+<div class="text-center sm:text-left"></div>   
+
+Bagian 2 
+Menargetkan rentang titik henti
+
+Secara default, gaya yang diterapkan oleh aturan seperti md:flexakan diterapkan pada titik henti tersebut dan tetap diterapkan pada titik henti yang lebih besar.
+
+Jika Anda ingin menerapkan utilitas hanya saat rentang titik henti tertentu aktif, susun varian responsif seperti mddengan max-*varian untuk membatasi gaya tersebut ke rentang tertentu:
+
+<div class="md:max-xl:flex">
+  
+</div>
+Tailwind menghasilkan max-*varian yang sesuai untuk setiap titik henti, sehingga varian berikut tersedia secara otomatis: 
+
+| Variasi   | Media Query                      |
+| --------- | -------------------------------- |
+| `max-sm`  | `@media (width < 40rem) { ... }` |
+| `max-md`  | `@media (width < 48rem) { ... }` |
+| `max-lg`  | `@media (width < 64rem) { ... }` |
+| `max-xl`  | `@media (width < 80rem) { ... }` |
+| `max-2xl` | `@media (width < 96rem) { ... }` |
+
+nah jadi ini kebalikan nya jika tadi jika lebih besar ini jika lebih kecil yang dimana max-sm berarti jika ukuran layar lebih kecil dari 640/40rem maka gunakan desaign ini
+     
+    -->
+    <!-- Contoh Salah -->
+    <section class="container border-1">
+      <h1>Jangan Gunakan utylitas class sm untuk menargetkan rampilan layar untuk Mobile</h1>
+      <h2>Contoh Yang Salah</h2>
+      <div class="sm:text-center bg-red-500">hello world</div>
+      <p>
+        Text akan di tengah ketika ukuran layar lebih besar dari 640px sedangkan untuk ukuran mobile itu text nya akan
+        default
+      </p>
+    </section>
+
+    <!-- Contoh Yang benar -->
+    <section class="container border-1">
+      <h1>Tapi gunakan utylitas tanpa awalan untuk menargetkan mobile</h1>
+      <h2>Contoh Yang Benar</h2>
+      <div class="sm:text-left bg-green-500 text-center">hello world</div>
+      <p>
+        text akan di pinggir ketika ukuran layar lebih besar dari 640px sedangkan jika untuk ukuran mobile text nya akan
+        di tengah
+      </p>
+    </section>
+
+    <!-- Contoh lain menggunakan max-sm -->
+    <section class="container border-1">
+      <h1>Max-sm</h1>
+      <h2>Contoh Yang Benar</h2>
+      <div class="max-sm:text-center bg-blue-500">hello world</div>
+      <p>
+        text akan di pinggir ketika ukuran layar lebih besar dari 640px sedangkan jika ukuran layar lebih kecil dari
+        640px maka text akan di tengah
+      </p>
+    </section>
+    <hr class="mb-60" />
+    <h1>Contoh Lain</h1>
+    <hr />
+    <h1 class="font-black">Layout Grid Responsif</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="bg-blue-300 p-4">Box 1</div>
+      <div class="bg-blue-300 p-4">Box 2</div>
+      <div class="bg-blue-300 p-4">Box 3</div>
+      <div class="bg-blue-300 p-4">Box 4</div>
+    </div>
+    <ul>
+      <li>HP → 1 kolom</li>
+      <li>Tablet → 2 kolom</li>
+      <li>Tablet besar → 3 kolom</li>
+      <li>Laptop/desktop → 4 kolom</li>
+    </ul>
+    <hr />
+    <h1 class="font-black">Sembunyikan / Tampilkan Elemen</h1>
+    <p class="block md:hidden">Hanya tampil di HP</p>
+    <p class="hidden md:block">Hanya tampil di Tablet ke atas</p>
+    <hr />
+    <h1 class="font-black">Responsive di Tailwind v4.1 (Baru)</h1>
+    <p>Tailwind v4 juga mendukung container queries (@container) → lebih fleksibel dari viewport.</p>
+    <div class="@container p-4 bg-gray-100">
+      <p class="text-base @sm:text-lg @md:text-xl">Teks ini menyesuaikan ukuran container, bukan layar penuh.</p>
+    </div>
+  </body>
+</html>

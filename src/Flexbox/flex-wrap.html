@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- Apa  itu flex-wrap 
+    flex-wrap menentukan apakah item dibungkus ke baris baru atau tidak saat ruang tidak cukup.
+    | Class                   | CSS                        | Penjelasan                                                                    |
+| ----------------------- | -------------------------- | ----------------------------------------------------------------------------- |
+| `flex-nowrap` (default) | `flex-wrap: nowrap;`       | Semua item tetap di satu baris                                                |
+| `flex-wrap`             | `flex-wrap: wrap;`         | Item boleh pindah ke baris baru                                               |
+| `flex-wrap-reverse`     | `flex-wrap: wrap-reverse;` | Sama seperti `wrap`, tapi baris baru ditumpuk **dari atas ke bawah terbalik** |
+ 
+    -->
+
+    <h1>Contoh Pratis</h1>
+    <section class="mb-20">
+      <h1>flex-nowrap</h1>
+      <div class="flex flex-nowrap gap-2 bg-blue-200 p-2">
+        <div class="w-40 h-20 bg-white">1</div>
+        <div class="w-40 h-20 bg-white">2</div>
+        <div class="w-40 h-20 bg-white">3</div>
+        <div class="w-40 h-20 bg-white">4</div>
+        <p>➡️ Semua kotak dipaksa dalam satu baris, bisa overflow ke kanan.</p>
+      </div>
+    </section>
+    <section class="mb-20">
+      <h1>flex-wrap</h1>
+      <div class="flex flex-wrap gap-2 bg-green-200 p-2">
+        <div class="w-40 h-20 bg-white">1</div>
+        <div class="w-40 h-20 bg-white">2</div>
+        <div class="w-40 h-20 bg-white">3</div>
+        <div class="w-40 h-20 bg-white">4</div>
+      </div>
+      <p>Kalau container tidak cukup lebar, item otomatis turun ke baris berikutnya.</p>
+    </section>
+    <section class="mb-20">
+      <h1>flex-wrap-reverse</h1>
+      <div class="flex flex-wrap-reverse gap-2 bg-yellow-200 p-2 h-40">
+        <div class="w-40 h-20 bg-white">1</div>
+        <div class="w-40 h-20 bg-white">2</div>
+        <div class="w-40 h-20 bg-white">3</div>
+        <div class="w-40 h-20 bg-white">4</div>
+      </div>
+
+      <p>➡️ Item yang turun ke baris baru akan ditumpuk dari bawah ke atas (kebalikannya flex-wrap biasa).</p>
+    </section>
+  </body>
+</html>

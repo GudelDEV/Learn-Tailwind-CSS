@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- Contents 
+    Ini agak jarang dipakai, jadi banyak orang belum paham manfaatnya. Aku jelaskan step by step biar jelas.
+    📌 1. Apa itu contents?
+
+    contents di Tailwind adalah utility untuk: 
+    display: contents;
+    Seolah-olah elemen tersebut “menghilang dari layout”, tapi anak-anaknya tetap ada.
+
+    📌 2. Contoh Kasus
+    Misalnya kamu punya wrapper <div> hanya untuk styling:
+        <div class="bg-red-200 p-4">
+            <p>Halo</p>
+            <p>Dunia</p>
+        </div>
+    Wrapper div ini menambah background & padding di sekeliling <p>.
+
+    Kalau kita ganti jadi contents:
+        <div class="contents bg-red-200 p-4">
+            <p>Halo</p>
+            <p>Dunia</p>
+        </div>
+    ➡️ Hasil: <div> tidak ikut layout. Jadi bg-red-200 dan p-4 tidak berlaku.
+Yang tampil cuma <p> seakan-akan wrapper itu tidak ada.
+
+    📌 3. Kapan Dipakai?
+        Grid & Flex Layouts
+        Kalau kamu mau anak-anak elemen langsung jadi grid/flex items, tanpa kotak tambahan.
+        Misalnya:
+            <div class="grid grid-cols-2 gap-2">
+                <div class="contents">
+                    <p class="bg-blue-200">Item A</p>
+                    <p class="bg-blue-200">Item B</p>
+                </div>
+                <p class="bg-green-200">Item C</p>
+            </div>
+        ➡️ Dengan contents, Item A dan Item B langsung dianggap grid children sejajar dengan Item C.
+Kalau tanpa contents, grid menganggap ada 2 item saja (div.contents dan Item C).
+        
+     ~Menghapus wrapper visual
+Cocok dipakai kalau wrapper hanya untuk logika/struktur (misalnya grouping pakai v-for di Vue, atau .map() di React).
+
+📌 5. Analogi Sederhana
+
+Bayangkan kamu punya tas transparan:
+
+Kalau tas biasa (misalnya div.block) → yang kelihatan di luar tas adalah tasnya dulu, baru isinya.
+
+Kalau tas contents → tasnya tembus pandang, jadi yang kelihatan langsung isinya, seakan tasnya tidak ada.
+
+
+
+    -->
+
+    <h1>Contoh penggunaan Contents</h1>
+    <div class="contents bg-red-200 p-4">
+      <p>Halo</p>
+      <p>Dunia</p>
+    </div>
+    <p>➡️ Hasil: <div> tidak ikut layout. Jadi bg-red-200 dan p-4 tidak berlaku.
+Yang tampil cuma <p> seakan-akan wrapper itu tidak ada.</p>
+
+    <hr class="mt-50">
+
+    <h1>Kapan Di pakai ? </h1>
+    <div class="grid grid-cols-2 gap-2">
+  <div class="contents">
+    <p class="bg-blue-200">Item A</p>
+    <p class="bg-blue-200">Item B</p>
+  </div>
+  <p class="bg-green-200">Item C</p>
+</div>
+
+    <h1>Menghapus wrapper visual
+Cocok dipakai kalau wrapper hanya untuk logika/struktur (misalnya grouping pakai v-for di Vue, atau .map() di React).</h1>
+  </body>
+</html>

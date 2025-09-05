@@ -1,0 +1,72 @@
+Updatean Tailwind v41
+Apa Itu Tailwind CSS v4.1?
+
+Dirilis pada 3 April 2025, versi 4.1 memperkenalkan banyak peningkatan seperti utilitas text-shadow, mask-*, enhanced browser compatibility, dukungan overflow-wrap, shadow berwarna, dan utilitas baru seperti pointer-*, items-baseline-last, dan banyak lagi 
+Tailwind CSS
+.
+
+Selain itu, fitur Tailwind Plus kini mendukung komponen HTML standar yang interaktif tanpa perlu JavaScript tambahan 
+Tailwind CSS
+.
+
+Versi 4.1 melanjutkan revolusi dari v4.0 yang memperkenalkan engine Oxide berbasis Rust, konfigurasi CSS-first, otomatisasi import, performant build, hingga fitur modern seperti container queries, theme variables, dan dynamic utilities 
+DEV Community
+Tailwind CSS
+eagerworks.com
+.
+
+Gambaran Fitur Utama v4.1
+
+| Fitur                | Penjelasan                                                                                                                                 |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `@theme` block       | Gantikan `tailwind.config.js` dengan CSS: kamu bisa atur warna, spasi, breakpoints, dsb langsung di CSS([Medium][1], [eagerworks.com][2]). |
+| Text Shadows, Masks  | Buat efek shadow dan masking langsung dengan utilitas `text-shadow-*` dan `mask-*`([Tailwind CSS][3]).                                     |
+| Dynamic Utilities    | Gunakan kelas seperti `w-29`, `mt-17`, `grid-cols-15` tanpa harus definisi manual ([eagerworks.com][2]).                                   |
+| Container Queries    | Style komponen berdasarkan ukuran kontainernya, bukan viewport ([eagerworks.com][2]).                                                      |
+| Tools Build & Compat | Engine baru (Oxide) cepat & efisien; impor otomatis, modern CSS syntax, dan optimasi purging ([DEV Community][4], [Tailwind CSS][5]).      |
+
+[1]: https://medium.com/%40kidaneberihuntse/tailwind-css-v4-1-has-no-tailwind-config-js-heres-how-to-customize-everything-with-theme-11a19b108963?utm_source=chatgpt.com "Tailwind CSS v4.1 Has No tailwind.config.js"
+[2]: https://eagerworks.com/blog/tailwind-css-v4?utm_source=chatgpt.com "Tailwind CSS v4: what developers need to know"
+[3]: https://tailwindcss.com/blog/tailwindcss-v4-1?utm_source=chatgpt.com "Tailwind CSS v4.1: Text shadows, masks, and tons more"
+[4]: https://dev.to/qa3emnik/tailwind-css-v4-whats-new-and-why-its-a-game-changer-29d?utm_source=chatgpt.com "Tailwind CSS v4: What's New and Why It's a Game-Changer"
+[5]: https://tailwindcss.com/blog/tailwindcss-v4?utm_source=chatgpt.com "Tailwind CSS v4.0"
+
+
+2. Atur Tema dengan @theme
+
+Misalnya:
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 30rem;
+  --breakpoint-sm: 40rem;
+  --color-primary: #1D4ED8;
+  --spacing: 0.25rem;
+  /* dan lainnya */
+}
+
+Ini menggantikan tailwind.config.js dan membuat konfigurasi lebih intuitif dan ditempatkan di satu file CSS 
+Medium
+eagerworks.com
+.
+
+3. Gunakan Kelas Dinamis
+Contoh:
+<div class="mt-17 w-29 text-shadow-lg mask-gradient">
+  Halo Tailwind!
+</div>
+Tanpa harus mendefinisikan semuanya manu— Tailwind otomatis menghasilkannya 
+Tailwind CSS
+eagerworks.com
+.
+
+4. Container Queries
+Contoh penggunaan:
+<div class="@container">
+  <div class="@sm:text-lg @md:text-xl">
+    Responsif berdasarkan konteks
+  </div>
+</div>
+Membuat UI yang benar-benar modular dan adaptif 
+eagerworks.com
+.

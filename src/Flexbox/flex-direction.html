@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+        Secara default, Flexbox menata item secara horizontal (row).
+        Dengan flex-direction, kita bisa mengubah arah sumbu utama:
+
+        1. Horizontal (row) → kiri ke kanan atau kanan ke kiri
+
+        2. Vertikal (column) → atas ke bawah atau bawah ke atas
+
+        | Class                | CSS                               | Penjelasan        |
+| -------------------- | --------------------------------- | ----------------- |
+| `flex-row` (default) | `flex-direction: row;`            | Dari kiri → kanan |
+| `flex-row-reverse`   | `flex-direction: row-reverse;`    | Dari kanan → kiri |
+| `flex-col`           | `flex-direction: column;`         | Dari atas → bawah |
+| `flex-col-reverse`   | `flex-direction: column-reverse;` | Dari bawah → atas |
+
+    -->
+    <h1>Contoh Penggunaan</h1>
+    <section class="mt-20">
+      <h2>flex-row (default)</h2>
+      <div class="flex flex-row gap-2 bg-blue-200 p-2">
+        <div class="bg-white p-4">1</div>
+        <div class="bg-white p-4">2</div>
+        <div class="bg-white p-4">3</div>
+      </div>
+      <p>➡️ Item tersusun kiri ke kanan.</p>
+    </section>
+    <section class="mt-20">
+      <h2>flex-row-reverse</h2>
+      <div class="flex flex-row-reverse gap-2 bg-green-200 p-2">
+        <div class="bg-white p-4">1</div>
+        <div class="bg-white p-4">2</div>
+        <div class="bg-white p-4">3</div>
+      </div>
+
+      <p>Item tersusun kanan ke kiri.</p>
+    </section>
+    <section class="mt-20">
+      <h2>flex-col</h2>
+      <div class="flex flex-col gap-2 bg-yellow-200 p-2">
+        <div class="bg-white p-4">1</div>
+        <div class="bg-white p-4">2</div>
+        <div class="bg-white p-4">3</div>
+      </div>
+
+      <p>Item tersusun atas ke bawah..</p>
+    </section>
+    <section class="mt-20">
+      <h2>flex-col-reverse</h2>
+      <div class="flex flex-col-reverse gap-2 bg-pink-200 p-2">
+        <div class="bg-white p-4">1</div>
+        <div class="bg-white p-4">2</div>
+        <div class="bg-white p-4">3</div>
+      </div>
+      <p>➡️ Item tersusun bawah ke atas.</p>
+    </section>
+  </body>
+</html>

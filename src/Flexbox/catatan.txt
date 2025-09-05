@@ -1,0 +1,4 @@
+apa itu flexbox? 
+flexbox biasanya digunakan untuk layouting sebuah elemen 
+
+nah disini kita akan bahas tentang utylitas class satu persatatu tentang flexbox

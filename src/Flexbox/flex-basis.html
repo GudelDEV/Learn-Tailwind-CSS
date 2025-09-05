@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!--  
+    📌 1. Konsep Dasar
+
+        Dalam Flexbox:
+
+        flex-basis = ukuran awal (default size) sebuah item di main axis.
+
+        Kalau flex-basis diset, dia akan diprioritaskan daripada width/height (tergantung flex-direction).
+
+        Default-nya = auto.
+
+    utylity class flex-basis 
+    | Class                       | CSS yang dihasilkan                            | Keterangan                                                                                        |
+| --------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `basis-<number>`            | `flex-basis: calc(var(--spacing) * <number>);` | Menentukan ukuran awal berdasarkan skala spacing Tailwind (`1` = `0.25rem`, `2` = `0.5rem`, dst). |
+| `basis-<fraction>`          | `flex-basis: calc(<fraction> * 100%);`         | Menentukan ukuran dalam bentuk pecahan dari lebar container (`1/2`, `1/3`, `1/4`, dst).           |
+| `basis-full`                | `flex-basis: 100%;`                            | Item mengambil **100% lebar** container.                                                          |
+| `basis-auto`                | `flex-basis: auto;`                            | Ukuran mengikuti **konten** atau `width`/`height` default.                                        |
+| `basis-3xs`                 | `flex-basis: 16rem;` (256px)                   | Ukuran awal tetap `16rem`.                                                                        |
+| `basis-2xs`                 | `flex-basis: 18rem;` (288px)                   | Ukuran awal tetap `18rem`.                                                                        |
+| `basis-xs`                  | `flex-basis: 20rem;` (320px)                   | Ukuran awal tetap `20rem`.                                                                        |
+| `basis-sm`                  | `flex-basis: 24rem;` (384px)                   | Ukuran awal tetap `24rem`.                                                                        |
+| `basis-md`                  | `flex-basis: 28rem;` (448px)                   | Ukuran awal tetap `28rem`.                                                                        |
+| `basis-lg`                  | `flex-basis: 32rem;` (512px)                   | Ukuran awal tetap `32rem`.                                                                        |
+| `basis-xl`                  | `flex-basis: 36rem;` (576px)                   | Ukuran awal tetap `36rem`.                                                                        |
+| `basis-2xl`                 | `flex-basis: 42rem;` (672px)                   | Ukuran awal tetap `42rem`.                                                                        |
+| `basis-3xl`                 | `flex-basis: 48rem;` (768px)                   | Ukuran awal tetap `48rem`.                                                                        |
+| `basis-4xl`                 | `flex-basis: 56rem;` (896px)                   | Ukuran awal tetap `56rem`.                                                                        |
+| `basis-5xl`                 | `flex-basis: 64rem;` (1024px)                  | Ukuran awal tetap `64rem`.                                                                        |
+| `basis-6xl`                 | `flex-basis: 72rem;` (1152px)                  | Ukuran awal tetap `72rem`.                                                                        |
+| `basis-7xl`                 | `flex-basis: 80rem;` (1280px)                  | Ukuran awal tetap `80rem`.                                                                        |
+| `basis-(<custom-property>)` | `flex-basis: var(<custom-property>);`          | Gunakan variabel CSS custom.                                                                      |
+| `basis-[<value>]`           | `flex-basis: <value>;`                         | Bisa isi nilai manual (`200px`, `50%`, `10rem`, dll).                                             |
+
+    
+ -->
+
+    <h1>Contoh Penggunaan</h1>
+    <section class="mt-20">
+      <h2>basis-1/3</h2>
+      <div class="flex gap-2 bg-blue-200 p-2">
+        <div class="basis-1/3 bg-white p-4">1/3</div>
+        <div class="basis-1/3 bg-white p-4">1/3</div>
+        <div class="basis-1/3 bg-white p-4">1/3</div>
+      </div>
+      <p>➡️ Masing-masing box punya lebar 1/3 dari container.</p>
+    </section>
+    <section class="mt-20">
+      <h2>basis-1/2</h2>
+      <div class="flex gap-2 bg-green-200 p-2">
+        <div class="basis-1/2 bg-white p-4">1/2</div>
+        <div class="basis-1/2 bg-white p-4">1/2</div>
+      </div>
+
+      <p>➡️ Dua item membagi container masing-masing 50%.</p>
+    </section>
+    <section class="mt-20">
+      <h2>basis-0 + flex-grow</h2>
+      <div class="flex gap-2 bg-yellow-200 p-2">
+        <div class="basis-0 flex-grow bg-white p-4">Grow</div>
+        <div class="basis-0 flex-grow bg-white p-4">Grow</div>
+        <div class="basis-0 flex-grow bg-white p-4">Grow</div>
+      </div>
+
+      <p>➡️ Semua item mulai dari 0 ukuran, lalu berkembang sama rata karena flex-grow.</p>
+    </section>
+    <section class="mt-20">
+      <h2>basis-[200px] (custom value)</h2>
+      <div class="flex gap-2 bg-pink-200 p-2">
+        <div class="basis-[200px] bg-white p-4">200px</div>
+        <div class="basis-[100px] bg-white p-4">100px</div>
+        <div class="flex-1 bg-white p-4">Sisa ruang</div>
+      </div>
+      <p>➡️ Item pertama 200px, item kedua 100px, item ketiga ambil sisa ruang.</p>
+    </section>
+    <section class="mt-20">
+      <h2>basis-[200px] (custom value)</h2>
+      <div class="flex gap-2 bg-pink-200 p-2">
+        <div class="basis-64 bg-white p-4">basis-64</div>
+        <div class="basis-64 bg-white p-4">basis-64</div>
+        <div class="basis-80 bg-white p-4">basis-80</div>
+      </div>
+      <p>➡️ Item pertama 64, item kedua 64, item ketiga 80</p>
+    </section>
+  </body>
+</html>

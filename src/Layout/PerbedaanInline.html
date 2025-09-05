@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+        Perbedaa Inline dan inline-block
+        📌 1. Inline (inline)
+        ~ Perilaku: Elemen tampil sejajar dengan elemen lain (tidak memulai baris baru)
+        ~ Batasan: 
+            -Tidak bisa atur width atau height.
+            -Ukurannya mengikuti isi konten.
+            -Padding kiri/kanan masih berfungsi, tapi padding atas/bawah tidak selalu terlihat jelas.
+
+        📌 2. Inline-block (inline-block)
+        ~ Perilaku: Mirip inline (bisa sejajar dengan elemen lain).
+        ~ Kelebihan: 
+            -Bisa atur width dan height.
+            -Padding atas/bawah berfungsi penuh.
+            -Tetap rapi dalam barisan. 
+    
+    -->
+
+    <h1>Perbedaa Inline dan inline-block</h1>
+    <h1>Inline</h1>
+    <section class="bg-green-500">
+      <span class="inline bg-green-300 p-4">Inline 1</span>
+      <span class="inline bg-green-300 p-4">Inline 2</span>
+      <p>➡️ Hasil: Kedua kotak tetap sebaris, tapi tinggi kotaknya nggak mengikuti p-4 sepenuhnya.</p>
+    </section>
+    <hr />
+    <h1>inline-block</h1>
+    <section class="bg-blue-500">
+      <span class="inline-block bg-yellow-300 p-4 w-24 h-16"> Inline-block </span>
+      <span class="inline-block bg-yellow-300 p-4 w-24 h-16"> Inline-block 2 </span>
+      <p>➡️ Hasil: Kedua kotak sejajar tapi ukurannya bisa diatur.</p>
+    </section>
+  </body>
+</html>

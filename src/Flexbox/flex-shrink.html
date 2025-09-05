@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+    flex-shrink mengatur apakah item boleh mengecil saat ruang terlalu sempit di dalam flex container.
+    📌 1. Konsep Dasar
+
+    flex-shrink menentukan proporsi item untuk menyusut kalau container lebih kecil dari total ukuran item.
+
+    Default = 1 → item boleh menyusut.
+
+    Kalau 0 → item tidak mengecil (tetap dengan ukuran awal basis/width).
+
+    Kalau lebih dari 1 → item akan mengecil lebih banyak dibanding item lain.
+
+    📌 2. Utility Class di Tailwind
+    | Class                        | CSS yang dihasilkan                    | Keterangan                                                                              |
+| ---------------------------- | -------------------------------------- | --------------------------------------------------------------------------------------- |
+| `shrink`                     | `flex-shrink: 1;`                      | (Default) Item boleh menyusut untuk menyesuaikan ruang.                                 |
+| `shrink-0`                   | `flex-shrink: 0;`                      | Item tidak akan menyusut, ukurannya tetap.                                              |
+| `shrink-[<value>]`           | `flex-shrink: <value>;`                | Custom nilai shrink, misalnya `shrink-[2]` → mengecil 2x lebih banyak dari `shrink: 1`. |
+| `shrink-(<custom-property>)` | `flex-shrink: var(<custom-property>);` | Menggunakan variabel CSS custom untuk shrink.                                           |
+
+    📌 3. Analogi Sederhana
+
+Bayangkan flex container = lemari pakaian 👕
+
+flex-basis = ukuran default baju.
+
+flex-grow = baju bisa melebar kalau lemari kosong.
+
+flex-shrink = baju bisa menyusut kalau lemari penuh.
+    
+    -->
+    <h1>Contoh Penggunaan</h1>
+    <section class="mt-20">
+      <h2>a Default shrink (semua item boleh mengecil)</h2>
+      <div class="flex gap-2 bg-blue-200 p-2 w-64">
+        <div class="shrink bg-white p-4 w-40">Box 1</div>
+        <div class="shrink bg-white p-4 w-40">Box 2</div>
+        <div class="shrink bg-white p-4 w-40">Box 3</div>
+      </div>
+
+      <p>➡️ Semua box akan mengecil supaya muat dalam lebar w-64.</p>
+    </section>
+    <section class="mt-20">
+      <h2>shrink-0 (tidak mengecil)</h2>
+      <div class="flex gap-2 bg-green-200 p-2 w-64">
+        <div class="shrink-0 bg-white p-4 w-40">Fixed</div>
+        <div class="shrink bg-white p-4 w-40">Shrink</div>
+      </div>
+      <p>➡️ Box pertama tetap 160px, box kedua yang harus mengecil agar muat.</p>
+    </section>
+    <section class="mt-20">
+      <h2>Custom shrink-[2]</h2>
+      <div class="flex gap-2 bg-pink-200 p-2 w-64">
+        <div class="shrink-[2] bg-white p-4 w-40">Shrink 2x</div>
+        <div class="shrink bg-white p-4 w-40">Shrink 1x</div>
+      </div>
+      <p>➡️ Box pertama akan mengecil dua kali lipat lebih cepat daripada box kedua..</p>
+    </section>
+  </body>
+</html>

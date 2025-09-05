@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- Apa itu displya 
+    display adalah sebuah property css yang menentukan bagaimana sebuah element di tampilkan  
+
+    utylity class yang ada di tailwind 
+    | Class          | CSS yang dihasilkan      | Keterangan                                       |
+| -------------- | ------------------------ | ------------------------------------------------ |
+| `block`        | `display: block;`        | Elemen tampil blok penuh (default untuk `<div>`) |
+| `inline`       | `display: inline;`       | Elemen tampil sejajar tanpa baris baru           |
+| `inline-block` | `display: inline-block;` | Inline, tapi bisa atur width/height              |
+| `flex`         | `display: flex;`         | Aktifkan flexbox (dipakai untuk layout)          |
+| `inline-flex`  | `display: inline-flex;`  | Flex tapi inline                                 |
+| `grid`         | `display: grid;`         | Aktifkan grid layout                             |
+| `inline-grid`  | `display: inline-grid;`  | Grid tapi inline                                 |
+| `table`        | `display: table;`        | Mirip tabel HTML                                 |
+| `inline-table` | `display: inline-table;` | Tabel tapi inline                                |
+| `table-row`    | `display: table-row;`    | Mirip `<tr>`                                     |
+| `table-cell`   | `display: table-cell;`   | Mirip `<td>`                                     |
+| `hidden`       | `display: none;`         | Hilangkan elemen dari tampilan                   |
+
+    -->
+
+    <h1>Contoh penggunaan</h1>
+    <div class="space-y-4">
+      <!-- block -->
+      <div class="block bg-blue-300 p-2">Block Element</div>
+
+      <!-- inline -->
+      <span class="inline bg-green-300 p-2">Inline 1</span>
+      <span class="inline bg-green-300 p-2">Inline 2</span>
+
+      <!-- inline-block -->
+      <span class="inline-block bg-yellow-300 p-2 w-24">Inline-block</span>
+
+      <!-- flex -->
+      <div class="flex gap-2 bg-pink-300 p-2">
+        <div class="bg-white p-2">Flex 1</div>
+        <div class="bg-white p-2">Flex 2</div>
+      </div>
+
+      <!-- grid -->
+      <div class="grid grid-cols-2 gap-2 bg-purple-300 p-2">
+        <div class="bg-white p-2">Grid 1</div>
+        <div class="bg-white p-2">Grid 2</div>
+      </div>
+
+      <!-- hidden -->
+      <div class="hidden bg-red-300 p-2">Ini tidak terlihat</div>
+    </div>
+  </body>
+</html>

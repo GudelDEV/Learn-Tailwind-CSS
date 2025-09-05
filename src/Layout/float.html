@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+    Apa itu float?
+    float adalah utility class di Tailwind untuk mengatur posisi elemen agar “mengapung” ke kiri atau kanan, biasanya dipakai untuk:
+    1.Membuat teks melingkari gambar
+    2.Menyusun layout sederhana (walau sekarang jarang dipakai, karena flex/grid lebih powerful).
+
+    Class float di Tailwind
+
+    | Class         | Efek CSS               |
+| ------------- | ---------------------- |
+| `float-start` | `float: inline-start;` |
+| `float-end`   | `float: inline-end;`   |
+| `float-left`  | `float: left;`         |
+| `float-right` | `float: right;`        |
+| `float-none`  | `float: none;`         |
+
+    -->
+    <h1>Float Gmbr kekiri</h1>
+    <div class="p-4 border">
+      <img
+        src="../gunung.jpg"
+        width="300px"
+        class="float-left mr-4 rounded"
+      />
+      <p>
+        Ini adalah contoh teks yang akan mengalir di samping gambar. Dengan `float-left`, gambar akan berada di kiri,
+        teks mengelilingi.
+      </p>
+    </div>
+    <hr />
+    <h1>Float Kanan</h1>
+    <div class="p-4 border">
+      <img
+        src="https://via.placeholder.com/100"
+        class="float-right ml-4 rounded"
+      />
+      <p>Gambar ada di kanan, teks otomatis menyesuaikan ke kiri.</p>
+    </div>
+    <h1 class="font-bold">Note : Jika ingin menggunakan float kita wajib menggunakan clear agar tidak colapse</h1>
+
+    <!-- Clear Float (biar rapi)
+
+Kadang float bikin elemen berikutnya “ketarik”.
+Tailwind punya clear-* untuk mengatasinya:
+| Class         | Efek CSS        |
+| ------------- | --------------- |
+| `clear-left`  | `clear: left;`  |
+| `clear-right` | `clear: right;` |
+| `clear-both`  | `clear: both;`  |
+| `clear-none`  | `clear: none;`  |
+
+
+-->
+    <h1>Contoh Clear Float</h1>
+    <div class="p-4 border mt-50 overflow-hidden">
+      <img
+        src="../gunung.jpg"
+        width="300px"
+        class="float-left mr-4 rounded clear-both"
+      />
+      <p>
+        Ini adalah contoh teks yang akan mengalir di samping gambar. Dengan `float-left`, gambar akan berada di kiri,
+        teks mengelilingi.
+      </p>
+    </div>
+    <h1>Contoh Lain</h1>
+    <div class="float-left w-32 h-32 bg-blue-300">Box kiri</div>
+    <div class="clear-both bg-gray-200 p-2">Box ini turun ke bawah, tidak ketarik float</div>
+    <p>Tulisan Otomatis Kebawah Tidak Kesamping</p>
+  </body>
+</html>

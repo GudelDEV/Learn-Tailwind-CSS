@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+    📌 1. Konsep Dasar
+
+Flexbox punya default order = 0.
+
+Semakin kecil nilainya → item tampil lebih awal.
+
+Semakin besar nilainya → item tampil lebih akhir.
+
+Bisa pakai order-first / order-last untuk shortcut.
+
+📌 2. Utility Class di Tailwind
+| Class                       | CSS yang dihasilkan              | Keterangan                                                     |
+| --------------------------- | -------------------------------- | -------------------------------------------------------------- |
+| `order-<number>`            | `order: <number>;`               | Atur urutan item berdasarkan angka (positif).                  |
+| `-order-<number>`           | `order: calc(<number> * -1);`    | Atur urutan dengan angka negatif. Item muncul lebih awal.      |
+| `order-first`               | `order: -9999;`                  | Paksa item tampil **paling awal**.                             |
+| `order-last`                | `order: 9999;`                   | Paksa item tampil **paling akhir**.                            |
+| `order-none`                | `order: 0;`                      | Default order (tidak ada perubahan).                           |
+| `order-(<custom-property>)` | `order: var(<custom-property>);` | Gunakan variabel CSS custom.                                   |
+| `order-[<value>]`           | `order: <value>;`                | Gunakan nilai custom (misalnya `order-[5]` atau `order-[-2]`). |
+
+    -->
+  </body>
+  <h1>Contoh Penggunaan</h1>
+  <section class="mt-20">
+    <h2>a Default (order: 0)</h2>
+    <div class="flex gap-2 bg-blue-200 p-2">
+      <div class="bg-white p-4">Box 1</div>
+      <div class="bg-white p-4">Box 2</div>
+      <div class="bg-white p-4">Box 3</div>
+    </div>
+    <p>➡️ Urutan sesuai HTML (1 → 2 → 3).</p>
+  </section>
+  <section class="mt-20">
+    <h2>b Mengubah urutan dengan order</h2>
+    <div class="flex gap-2 bg-green-200 p-2">
+      <div class="order-2 bg-white p-4">Box 1 (order 2)</div>
+      <div class="order-1 bg-white p-4">Box 2 (order 1)</div>
+      <div class="order-3 bg-white p-4">Box 3 (order 3)</div>
+    </div>
+
+    <p>➡️ Urutan tampilan jadi: Box 2 → Box 1 → Box 3.</p>
+  </section>
+  <section class="mt-20">
+    <h2>c Pakai order-first & order-last</h2>
+    <div class="flex gap-2 bg-yellow-200 p-2">
+      <div class="order-last bg-white p-4">Box 1 (Last)</div>
+      <div class="bg-white p-4">Box 2</div>
+      <div class="order-first bg-white p-4">Box 3 (First)</div>
+    </div>
+    <p>➡️ Urutan tampilan jadi: Box 3 → Box 2 → Box 1.</p>
+  </section>
+</html>

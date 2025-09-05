@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- Apa Itu Container
+     Container di Tailwind CSS adalah sebuah utility class (container) yang fungsinya untuk:
+
+    1.Membungkus konten utama → supaya berada di tengah halaman.
+
+    2.Mengatur lebar maksimal otomatis → mengikuti breakpoints (sm, md, lg, xl, 2xl).
+
+    3.Membuat layout lebih rapi tanpa perlu bikin CSS manual.
+
+    Ukuran Default container
+    | Breakpoint     | Max-width |
+| -------------- | --------- |
+| `sm` (640px)   | `640px`   |
+| `md` (768px)   | `768px`   |
+| `lg` (1024px)  | `1024px`  |
+| `xl` (1280px)  | `1280px`  |
+| `2xl` (1536px) | `1536px`  |
+Artinya, kalau layar lebih kecil dari 640px, kontainer akan full width. Tapi kalau lebih besar, dia akan stop di ukuran max-nya.
+    -->
+    <h1>Contoh Penggunaan Container</h1>
+    <div class="container mx-auto">
+      <h1 class="text-2xl font-bold">Halo Dunia</h1>
+      <p>Ini ada di dalam container</p>
+    </div>
+    <p>container → otomatis kasih lebar maksimal berdasarkan ukuran layar.</p>
+    <p>mx-auto → kasih margin horizontal auto (biar konten di tengah).</p>
+    <hr />
+    <h1>Perbandingan</h1>
+    <h1>Tanpa Container</h1>
+    <div class="bg-gray-200 p-4">
+      <p>Ini melebar full ke kiri-kanan</p>
+    </div>
+    <h1>Dengan Container</h1>
+    <div class="container mx-auto bg-green-600 -200 p-4">
+      <p>Ini otomatis ada batas kanan-kiri sesuai ukuran layar</p>
+    </div>
+    <hr />
+    <h1>Contoh Peenggunaan Container Query</h1>
+    <div class="@container bg-blue-700">
+      <div class="@sm:text-lg @md:text-xl">Responsif berdasarkan konteks</div>
+    </div>
+
+    <!-- Berati untuk next Create Project cukup gunakan container dan mx-auto jangan hitung atau menyamaikan ukuran container lagi misalnya project indotelemmed yang dimana itu containernya harus di inget ukuran nya yaitu max-w-7xl -->
+  </body>
+</html>

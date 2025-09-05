@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+     Flex grow
+     dmana ini adalah property css untuk mengontrol items dalam flexbox
+     flex-grow dipakai untuk mengatur bagaimana item berbagi ruang kosong di dalam flex container.
+
+
+     | Class                      | CSS yang dihasilkan                  | Keterangan                                                                                                            |
+| -------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| `grow`                     | `flex-grow: 1;`                      | Item **membesar** untuk mengisi ruang kosong, berbagi rata dengan item lain yang juga pakai `grow`.                   |
+| `grow-<number>`            | `flex-grow: <number>;`               | Item membesar sesuai nilai yang ditentukan. Semakin besar angkanya, semakin banyak ruang yang diambil (proporsional). |
+| `grow-[<value>]`           | `flex-grow: <value>;`                | Bisa pakai nilai custom (misalnya `grow-[2.5]` → `flex-grow: 2.5`).                                                   |
+| `grow-(<custom-property>)` | `flex-grow: var(<custom-property>);` | Gunakan variabel CSS custom sebagai nilai grow. Cocok untuk skala dinamis.                                            |
+
+    
+    -->
+    <h1>Contoh Penggunaan</h1>
+    <section class="mt-20">
+      <h2>aTanpa grow (default grow-0)</h2>
+      <div class="flex gap-2 bg-blue-200 p-2">
+        <div class="basis-1/3 bg-white p-4">Box 1</div>
+        <div class="basis-1/3 bg-white p-4">Box 2</div>
+        <div class="basis-1/3 bg-white p-4">Box 3</div>
+      </div>
+      <p>➡️ Semua box tetap sesuai basis masing-masing..</p>
+    </section>
+    <section class="mt-20">
+      <h2>grow</h2>
+      <div class="flex gap-2 bg-green-200 p-2">
+        <div class="grow bg-white p-4">Grow 1</div>
+        <div class="grow bg-white p-4">Grow 2</div>
+        <div class="grow bg-white p-4">Grow 3</div>
+      </div>
+      <p>➡️ Semua box membesar sama rata dan mengisi seluruh ruang kosong.</p>
+    </section>
+    <section class="mt-20">
+      <h2>grow dan grow-0 digabung</h2>
+      <div class="flex gap-2 bg-yellow-200 p-2">
+        <div class="grow bg-white p-4">Grow</div>
+        <div class="grow-0 bg-white p-4 w-32">Fixed</div>
+        <div class="grow bg-white p-4">Grow</div>
+      </div>
+      <p>➡️ Box ke-2 tetap tetap 8rem (32), sedangkan Box 1 & 3 membesar dan berbagi sisa ruang.</p>
+    </section>
+    <section class="mt-20">
+      <h2>Custom grow-[2]</h2>
+      <div class="flex gap-2 bg-pink-200 p-2">
+        <div class="grow bg-white p-4">Grow 1</div>
+        <div class="grow-[2] bg-white p-4">Grow 2</div>
+      </div>
+      <p>➡️ Box 2 akan 2x lebih lebar dibanding Box 1.</p>
+    </section>
+    <section class="mt-20">
+      <h2>Contoh lain</h2>
+      <div class="flex">
+        <div class="size-14 flex-none bg-blue-700">01</div>
+        <div class="size-14 grow bg-amber-400">02</div>
+        <div class="size-14 flex-none bg-green-500">03</div>
+      </div>
+      <p>➡️ Box 2 akan 2x lebih lebar dibanding Box 1 dan box 3.</p>
+    </section>
+  </body>
+</html>
