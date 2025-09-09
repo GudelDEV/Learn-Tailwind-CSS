@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+        Apa itu Place Contens
+        Kalau sebelumnya ada justify-content (horizontal) dan align-content (vertical), maka place-content adalah shorthand untuk mengatur keduanya sekaligus.
+Singkatnya:
+
+    place-content: <align-content> <justify-content>;
+
+    📌 Tabel Utility place-content
+    | Class                       | CSS yang dihasilkan             | Keterangan                                                               |
+| --------------------------- | ------------------------------- | ------------------------------------------------------------------------ |
+| `place-content-center`      | `place-content: center;`        | Baris & kolom diratakan **tengah**.                                      |
+| `place-content-center-safe` | `place-content: safe center;`   | Sama seperti `center` tapi dengan **safe alignment** (hindari overflow). |
+| `place-content-start`       | `place-content: start;`         | Semua konten ditempatkan di **awal (atas-kiri)**.                        |
+| `place-content-end`         | `place-content: end;`           | Semua konten ditempatkan di **akhir (bawah-kanan)**.                     |
+| `place-content-end-safe`    | `place-content: safe end;`      | Sama seperti `end` tapi dengan safe alignment.                           |
+| `place-content-between`     | `place-content: space-between;` | Konten tersebar → item pertama di awal, terakhir di akhir.               |
+| `place-content-around`      | `place-content: space-around;`  | Konten tersebar dengan **ruang seimbang** di sekitar.                    |
+| `place-content-evenly`      | `place-content: space-evenly;`  | Konten tersebar **sama rata** termasuk tepi container.                   |
+| `place-content-baseline`    | `place-content: baseline;`      | Konten disejajarkan ke baseline teks.                                    |
+| `place-content-stretch`     | `place-content: stretch;`       | Default → konten **meregang** isi container.                             |
+
+    -->
+    <h1>Contoh Penggunan</h1>
+    <section class="mt-20">
+      <h2>1. place-content-center</h2>
+      <div class="grid h-64 place-content-center gap-2 bg-zinc-800">
+        <div class="bg-blue-400 p-4">1</div>
+        <div class="bg-blue-500 p-4">2</div>
+        <div class="bg-blue-600 p-4">3</div>
+      </div>
+      <p>➡️ Semua item berada di tengah container.</p>
+    </section>
+    <section class="mt-20 bg-green-700">
+      <h2>2. place-content-end</h2>
+      <div class="grid h-64 place-content-end gap-2">
+        <div class="bg-green-400 p-4">A</div>
+        <div class="bg-green-500 p-4">B</div>
+      </div>
+      <p>➡️ Item terdorong ke pojok kanan bawah.</p>
+    </section>
+    <section class="mt-20">
+      <h2>3. place-content-evenly</h2>
+      <div class="grid h-64 place-content-evenly gap-2 bg-red-600">
+        <div class="bg-purple-400 p-4">X</div>
+        <div class="bg-purple-500 p-4">Y</div>
+        <div class="bg-purple-600 p-4">Z</div>
+      </div>
+      <p>➡️ Jarak antar item dan jarak tepi container sama rata.</p>
+    </section>
+    <section class="mt-20">
+      <h2>4. place-content-streach</h2>
+      <div class="grid h-64 place-content-stretch gap-2">
+        <div class="bg-orange-400 p-4">One</div>
+        <div class="bg-orange-500 p-4">Two</div>
+        <div class="bg-orange-600 p-4">Three</div>
+      </div>
+      <p>➡️ Item otomatis meregang memenuhi container..</p>
+    </section>
+    <section>
+      <h1>📌 Catatan Penting:</h1>
+      <ul>
+        <li>place-content adalah gabungan align-content + justify-content.</li>
+        <li>Kalau hanya butuh kontrol 1 arah → gunakan align-content atau justify-content saja.</li>
+        <li>Berguna kalau mau cepat set alignment di kedua arah sekaligus.</li>
+      </ul>
+    </section>
+  </body>
+</html>

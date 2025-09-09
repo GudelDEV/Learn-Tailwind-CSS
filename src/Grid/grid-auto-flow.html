@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+    grid-auto-flow
+    Utility ini digunakan untuk mengontrol bagaimana item grid ditempatkan secara otomatis oleh browser jika kita tidak menentukan posisi manual dengan grid-row atau grid-column.
+    .
+
+📌 Tabel Utility grid-auto-flow
+
+| Class                 | CSS yang dihasilkan             | Keterangan                                                                        |
+| --------------------- | ------------------------------- | --------------------------------------------------------------------------------- |
+| `grid-flow-row`       | `grid-auto-flow: row;`          | Default → item ditempatkan baris demi baris (dari kiri ke kanan, lalu turun).     |
+| `grid-flow-col`       | `grid-auto-flow: column;`       | Item ditempatkan kolom demi kolom (dari atas ke bawah, lalu geser kanan).         |
+| `grid-flow-dense`     | `grid-auto-flow: dense;`        | Browser akan **mengisi celah kosong** dengan item yang muat (mirip auto-packing). |
+| `grid-flow-row-dense` | `grid-auto-flow: row dense;`    | Kombinasi row + dense → aliran baris tapi isi celah jika ada.                     |
+| `grid-flow-col-dense` | `grid-auto-flow: column dense;` | Kombinasi column + dense → aliran kolom tapi isi celah jika ada.                  |
+
+.
+
+📌 Kesimpulan:
+
+    Gunakan grid-flow-row kalau mau layout standar (baris ke baris).
+
+    Gunakan grid-flow-col kalau mau isi grid kolom dulu.
+
+    Tambahkan dense kalau ingin browser mengoptimalkan penggunaan ruang dengan mengisi celah kosong.
+
+    -->
+    <h1>Contoh Penggunaan</h1>
+    <section class="mt-20">
+      <h2>1. Default (grid-flow-row)</h2>
+      <div class="grid grid-cols-3 grid-flow-row gap-2">
+        <div class="bg-blue-400">1</div>
+        <div class="bg-blue-500">2</div>
+        <div class="bg-blue-600">3</div>
+        <div class="bg-blue-700">4</div>
+      </div>
+      <p>➡️ Item ditaruh dari kiri ke kanan, baris ke baris.</p>
+    </section>
+    <section class="mt-20">
+      <h2>2. Kolom (grid-flow-col)</h2>
+      <div class="grid grid-rows-3 grid-flow-col gap-2 h-40">
+        <div class="bg-green-400">1</div>
+        <div class="bg-green-500">2</div>
+        <div class="bg-green-600">3</div>
+        <div class="bg-green-700">4</div>
+      </div>
+      <p>➡️ Item ditaruh dari atas ke bawah, lalu geser kanan.</p>
+    </section>
+    <section class="mt-20">
+      <h2>3. Dense (grid-flow-row-dense)</h2>
+      <div class="grid grid-cols-3 grid-flow-row-dense gap-2">
+        <div class="bg-purple-400 col-span-2">1 (Lebar)</div>
+        <div class="bg-purple-500">2</div>
+        <div class="bg-purple-600">3</div>
+        <div class="bg-purple-700">4</div>
+      </div>
+      <p>➡️ dense membuat browser mengisi celah kosong dengan item berikutnya.</p>
+    </section>
+  </body>
+</html>

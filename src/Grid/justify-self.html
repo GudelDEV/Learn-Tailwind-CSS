@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+    justify-self
+    Utility ini dipakai untuk mengatur posisi horizontal (inline axis) dari satu item grid tertentu, bukan semua item (beda dengan justify-items).
+Artinya, kamu bisa override alignment item tunggal di dalam grid.
+
+📌 Tabel Utility justify-self
+| Class                      | CSS yang dihasilkan          | Keterangan                                                                     |
+| -------------------------- | ---------------------------- | ------------------------------------------------------------------------------ |
+| `justify-self-auto`        | `justify-self: auto;`        | Default → ikut aturan dari `justify-items` container grid.                     |
+| `justify-self-start`       | `justify-self: start;`       | Item grid ini rata kiri.                                                       |
+| `justify-self-center`      | `justify-self: center;`      | Item grid ini rata tengah horizontal.                                          |
+| `justify-self-center-safe` | `justify-self: safe center;` | Sama seperti `center`, tapi dengan **safe alignment** untuk mencegah overflow. |
+| `justify-self-end`         | `justify-self: end;`         | Item grid ini rata kanan.                                                      |
+| `justify-self-end-safe`    | `justify-self: safe end;`    | Sama seperti `end`, tapi lebih aman untuk mencegah overlap/overflow.           |
+| `justify-self-stretch`     | `justify-self: stretch;`     | Item grid ini melebar penuh mengikuti kolomnya.                                |
+
+📌 Kesimpulan:
+
+~ justify-items = semua item dalam grid.
+
+~ justify-self = 1 item tertentu (override).
+    -->
+    <h1>Contoh Penggunan</h1>
+    <section class="mt-20">
+      <h2>1. Default (auto)</h2>
+      <div class="grid grid-cols-3 gap-2 justify-items-center bg-green-700">
+        <div class="bg-blue-400 p-10 w-40">A</div>
+        <div class="bg-blue-500 p-10 w-40 justify-self-auto">B</div>
+        <div class="bg-blue-600 p-10 w-40">C</div>
+      </div>
+      <p>➡️ Item B mengikuti aturan container (justify-items-center).</p>
+    </section>
+    <section class="mt-20">
+      <h2>2. Override menjadi rata kiri</h2>
+      <div class="grid grid-cols-3 gap-2 justify-items-center">
+        <div class="bg-green-400 p-2">A</div>
+        <div class="bg-green-500 p-2 justify-self-start">B</div>
+        <div class="bg-green-600 p-2">C</div>
+      </div>
+      <p>➡️ Semua item default rata tengah, tapi B override jadi rata kiri.</p>
+    </section>
+    <section class="mt-20">
+      <h2>3. Item rata kanan</h2>
+      <div class="grid grid-cols-3 gap-2 justify-items-start">
+        <div class="bg-purple-400 p-2">A</div>
+        <div class="bg-purple-500 p-2 justify-self-end">B</div>
+        <div class="bg-purple-600 p-2">C</div>
+      </div>
+      <p>➡️ Container default justify-items-start (rata kiri), tapi B dipaksa ke kanan.</p>
+    </section>
+    <section class="mt-20">
+      <h2>4. Stretch penuh</h2>
+      <div class="grid grid-cols-3 gap-2 justify-items-start">
+        <div class="bg-orange-400 p-2">A</div>
+        <div class="bg-orange-500 p-2 justify-self-stretch">B</div>
+        <div class="bg-orange-600 p-2">C</div>
+      </div>
+      <p>➡️ Item B melebar penuh mengisi kolom.</p>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- Apa itu Place Items
+    Utility ini mirip dengan place-content, tapi fokusnya untuk setiap item dalam grid, bukan baris secara keseluruhan.
+Singkatnya: gabungan align-items + justify-items → mengatur posisi vertikal & horizontal setiap item.
+
+📌 Tabel Utility place-items
+
+| Class                     | CSS yang dihasilkan         | Keterangan                                                  |
+| ------------------------- | --------------------------- | ----------------------------------------------------------- |
+| `place-items-start`       | `place-items: start;`       | Semua item grid rata **atas-kiri**.                         |
+| `place-items-end`         | `place-items: end;`         | Semua item grid rata **bawah-kanan**.                       |
+| `place-items-end-safe`    | `place-items: safe end;`    | Sama seperti end, tapi lebih aman dari overflow.            |
+| `place-items-center`      | `place-items: center;`      | Semua item grid berada di **tengah horizontal & vertikal**. |
+| `place-items-center-safe` | `place-items: safe center;` | Sama seperti center tapi lebih aman terhadap overflow.      |
+| `place-items-baseline`    | `place-items: baseline;`    | Item disejajarkan mengikuti **baseline teks**.              |
+| `place-items-stretch`     | `place-items: stretch;`     | Default → item **meregang penuh** sesuai area grid.         |
+
+📌 Perbedaan Penting:
+
+place-items → mengatur item individual (default untuk semua item).
+
+place-content → mengatur seluruh baris & kolom dalam grid.
+
+align-items / justify-items → mengatur arah satu sumbu saja.
+
+    -->
+
+    <h1>Contoh Penggunaan</h1>
+    <section class="mt-20">
+      <h2>1. place-items-center</h2>
+      <div class="grid grid-cols-3 h-64 place-items-center gap-2 bg-blue-900">
+        <div class="bg-blue-400 p-4">1</div>
+        <div class="bg-blue-500 p-4">2</div>
+        <div class="bg-blue-600 p-4">3</div>
+      </div>
+      <p>➡️ Semua item berada di tengah sel grid (vertikal & horizontal).</p>
+    </section>
+
+    <section class="mt-20">
+      <h2>2. place-items-start</h2>
+      <div class="grid grid-cols-3 h-64 place-items-start gap-2 bg-green-900">
+        <div class="bg-green-400 p-4">1</div>
+        <div class="bg-green-500 p-4">2</div>
+        <div class="bg-green-600 p-4">3</div>
+      </div>
+      <p>➡️ Semua item menempel ke atas-kiri sel grid.</p>
+    </section>
+
+    <section class="mt-20">
+      <h2>3. place-items-end</h2>
+      <div class="grid grid-cols-3 h-64 place-items-end gap-2 bg-purple-900">
+        <div class="bg-purple-400 p-4">1</div>
+        <div class="bg-purple-500 p-4">2</div>
+        <div class="bg-purple-600 p-4">3</div>
+      </div>
+      <p>➡️ Semua item menempel ke bawah-kanan sel grid.</p>
+    </section>
+
+    <section class="mt-20">
+      <h2>4. place-items-stretch</h2>
+      <div class="grid grid-cols-3 h-64 place-items-stretch gap-2 bg-orange-900">
+        <div class="bg-orange-400 p-4">1</div>
+        <div class="bg-orange-500 p-4">2</div>
+        <div class="bg-orange-600 p-4">3</div>
+      </div>
+      <p>➡️ Semua item melebar penuh sesuai ukuran sel grid.</p>
+    </section>
+
+    <section class="mt-20">
+      <h2>5. place-items-baseline</h2>
+      <div class="grid grid-cols-3 h-64 place-items-baseline gap-2 bg-pink-900">
+        <div class="bg-pink-400 p-4">1</div>
+        <div class="bg-pink-500 p-8">2 panjang</div>
+        <div class="bg-pink-600 p-4">3</div>
+      </div>
+      <p>➡️ Semua item disejajarkan mengikuti baseline teks.</p>
+    </section>
+
+    <h1>📌 Perbedaan Penting:</h1>
+    <ul>
+      <li>place-items → mengatur item individual (default untuk semua item).</li>
+      <li>place-content → mengatur seluruh baris & kolom dalam grid.</li>
+      <li>align-items / justify-items → mengatur arah satu sumbu saja.</li>
+    </ul>
+  </body>
+</html>

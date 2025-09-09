@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@theme {
+/* @import 'tailwindcss'; */
+/* @theme {
   --animate-wiggle: wiggle 1s ease-in-out infinite;
   @keyframes wiggle {
     0%,
@@ -10,4 +10,244 @@
       transform: rotate(3deg);
     }
   }
+} */
+
+/* Belajar Function & Directivies di dlam tailwind Css */
+/* 1. @tailwind */
+/* Digunakan untuk menyisipkan gaya dasar, komponen, dan utilitas dari Tailwind ke dalam file CSS Anda. */
+/* Menyisipkan gaya dasar Tailwind */
+/* @tailwind base; */
+
+/* Menyisipkan gaya komponen */
+/* @tailwind components; */
+
+/* Menyisipkan gaya utilitas */
+/* @tailwind utilities; */
+
+/* 2. @aplly */
+/* Jika tanpa aply kita harus menulis property css secara manual contoh */
+
+@import 'tailwindcss';
+
+// Conth tanpa @aply 
+/* @layer components {
+  card-item → langsung tulis CSS bukan utility 
+
+  .card-item {
+    overflow: hidden;
+    border-radius: 0.5rem; 
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+                0 2px 4px -2px rgb(0 0 0 / 0.1); 
+  }
+
+   card-itemsama-beberapa-berbeda 
+  .card-itemsama-beberapa-berbeda {
+    padding: 1rem; 
+    color: white; 
+    border-radius: 0.5rem; 
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+                0 2px 4px -2px rgb(0 0 0 / 0.1); 
+  }
+
+   btn → manual tulis properti CSS 
+  .btn {
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+} */
+
+// Contoh dengan Apply 
+/* @layer components {
+  .card-item {
+    @apply overflow-hidden rounded-lg shadow-md;
+  }
+
+  .card-itemsama-beberapa-berbeda {
+    @apply p-4 text-white rounded-lg shadow-md;
+  }
+
+  .btn {
+    @apply px-1 py-0.5; // Lebih Simpel
+  }
 }
+ */
+
+@layer components {
+  .card-item {
+    @apply overflow-hidden rounded-lg shadow-md;
+  }
+  .card-itemsama-beberapa-berbeda {
+    @apply p-4 text-white rounded-lg shadow-md;
+  }
+  .btn {
+    padding-left : 4px padding-right : 4px , padding-top : 2px , padding-bottom : 2px; 
+  }
+}
+
+/* 3. cusom-Variants 
+📌 Apa itu custom-Variants?
+
+Variants di Tailwind adalah modifiers yang kita tambahkan sebelum utility class untuk mengubah gaya pada kondisi tertentu.
+Contoh paling umum:
+
+hover: → gaya muncul saat elemen di-hover.
+
+focus: → gaya muncul saat elemen focus (misalnya input).
+
+sm:, md: → responsive breakpoint.
+
+dark: → mode gelap.
+
+Contoh sederhana  tanpa variants kita menulis langsung di html 
+<button class="px-4 py-2 bg-blue-500 text-white rounded 
+               hover:bg-blue-700 focus:ring-2 focus:ring-blue-300">
+  Klik Saya
+</button>
+ormal → bg-blue-500
+
+Saat hover → bg-blue-700
+
+Saat focus → ada ring biru
+
+ini membuat code kita menjadi lebih berantakan 
+
+dengan variants
+
+
+
+
+*/
+
+/* @custom-variant hocus (&:hover, &:focus);
+Jadi hocus: = hover atau focus. 
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 bg-blue-500 text-white rounded hocus:bg-blue-700 hocus:ring-2 hocus:ring-blue-300;
+  }
+} */
+
+/* 4. function theme bukan layer @theme 
+⚡ Fungsi theme() dipakai untuk mengakses value dari konfigurasi Tailwind (tailwind.config.js) langsung di dalam file CSS.
+Contoh dasar:
+@layer components {
+  .card {
+    padding: theme("spacing.4");       
+    border-radius: theme("borderRadius.lg"); 
+    background-color: theme("colors.blue.500");
+    color: theme("colors.white");
+  }
+}
+
+Contoh dengan notasi titik
+
+Kalau ada value seperti 2.5 (spacing 0.625rem), pakai notasi titik:
+.custom-margin {
+  margin-top: theme("spacing.2.5");
+}
+
+Contoh dengan kurung siku
+.title {
+  font-size: theme("fontSize[2xl]");
+}
+
+Bonus: Bisa dipakai di animasi
+@layer utilities {
+  .spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+Kalau mau akses durasi dari config:
+.spin-slow {
+  animation: spin theme("animation.spin");
+}
+
+
+*/
+
+/* Contoh penggunaan funtion themen untuk animasi */
+@layer utilities {
+    .spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
+    @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+}
+
+/* Contoh kita akan mengambil nilai dari layer laain menggunakan theme  */
+@theme {
+  --color-brand: #1E90FF; /* Dodger Blue */
+}
+@layer components {
+  .btn-brand {
+    @apply px-4 py-2 rounded text-white;
+    background-color: theme(--color-brand);
+  }
+
+  .btn-brand:hover {
+    background-color: color-mix(in srgb, theme(--color-brand) 80%, black);
+  }
+}
+
+
+
+
+/* Contoh Penggunaan Dalam Proyek 
+
+
+@theme {
+  --color-primary: #3490dc;
+  --font-body: 'Inter', sans-serif;
+}
+
+
+@layer base {
+  h1 {
+    @apply text-3xl font-bold;
+  }
+}
+
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded;
+    background-color: var(--color-primary);
+    font-family: var(--font-body);
+  }
+
+  .btn:hover {
+    @apply bg-blue-700;
+  }
+}
+
+
+@layer utilities {
+  .spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+utylities di gunakan biasanya untuk animasi tambahan
+
+
+*/

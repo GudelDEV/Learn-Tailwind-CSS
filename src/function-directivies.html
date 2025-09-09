@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Functionn & Directivies di Tailwind CSS</title>
+    <link
+      rel="stylesheet"
+      href="output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+    Apa itu function & Directivies di tailwind Css
+    Directivies : adalah sebuah aturan khusus yang adala dalam tailwind yang digunakan untuk menambahkan fungsionalitas tertentu kedalam Proyek tailwind Kalian
+    Function : Fungsi Khusus yang memungkinkan anda Mengakses Nilai Nilai dari Konfigurasi Tailwind Dalam Css Kalian 
+
+    Diretivies di dalam Tailwind 
+    1. @tailwind
+    Digunakan untuk menyisipkan gaya dasar, komponen, dan utilitas dari Tailwind ke dalam file CSS Anda.
+    /* Menyisipkan gaya dasar Tailwind */
+    @tailwind base;
+
+    /* Menyisipkan gaya komponen */
+    @tailwind components;
+
+    /* Menyisipkan gaya utilitas */
+    @tailwind utilities;
+
+    2. @layer
+    dimana ini digunakan untuk menentukan lapisan layer mana yang akan anda konfigurasai atau custom sendiri style nya seperti base, components dan juga utilities
+    contoh 
+    @layer components {
+    .btn {
+        @apply px-4 py-2 bg-blue-500 text-white rounded;
+       }
+    }
+
+    3. @aply
+    Digunakan untuk menereapkan utylitas tailwind kedalam layer atau custmoisasi sty kamu 
+    contoh ketika tidak menggunakan aplu 
+    .btn {
+      padding-left : 4px padding-right : 4px , padding-top : 2px , padding-bottom : 2px ....
+    }
+    contoh jika menggunakan directivies @aply
+    .btn {
+      @aply px-4 py-2
+    }
+    nah jadi aply itu digunakan agar kita dapat menggunakan utylitas class tailwind dalam mengkonfigurasi style custom kita sendiri
+    kecuali untuk utylytas class yaitu grup itu kita tidak dapat menulisnya secara langsung jadi itu harus di tulis langsung di dalam element html nya
+    nanti kita akan coba contoh penggunaan nya
+
+    4.@theme
+    digunakan untuk mendefinisikan variable tema kustom seperti warna-font, dan breakpoint
+    jadi variabel yang kita buat di dalam @theme itu akan otomatis masuk kedalam utylitas class di tailwind dan ada jika kita tekan ctrl+spasi
+    contoh penggunaan : 
+    @theme {
+  --color-primary: #3490dc;
+  --font-body: 'Inter', sans-serif;
+    }
+
+    5.@variant
+    Digunakan untuk menambahkan variants kustom kedalam proyek kamu 
+    contoh 
+    
+    @variant hover-focus {
+    .btn {
+         @apply bg-blue-500 text-white;
+        }
+    }
+
+    6. @custom-variants
+    Memungkinkan anda untuk menambahkan variants dengan aturan css spesipik
+    contoh : 
+    @custom-variant theme-dark {
+  .btn {
+    @apply bg-gray-800 text-white;
+  }
+}
+  7. @source
+  Digunakan untuk menentukan file sumber yang tidak terdeteksi secara otomatis oleh Tailwind
+  @source "../node_modules/@my-company/ui-lib";
+
+
+  Function di tailwind
+  Tailwind menyediakan beberapa fungsi kustom yang dapat Anda gunakan dalam CSS Anda:
+  1. theme()
+
+   Digunakan untuk mengakses nilai dari konfigurasi Tailwind Anda.
+    /* Mengakses nilai dari konfigurasi */
+    .element {
+    padding: theme('spacing.4');
+    }
+  2. theme() dengan Notasi Titik
+  Jika Anda perlu mengakses nilai yang mengandung titik (seperti 2.5), gunakan notasi titik.
+  /* Mengakses nilai dengan notasi titik */
+    .element {
+    margin-top: theme('spacing.2.5');
+    }
+
+    3. theme() dengan Notasi Kurung Siku
+    Untuk nilai yang lebih kompleks atau dinamis, gunakan notasi kurung siku.
+    /* Mengakses nilai dengan notasi kurung siku */
+.element {
+  font-size: theme('fontSize[2xl]');
+}
+  Contoh Penggunaan dalam Proyek
+
+  /* Mendefinisikan variabel tema */
+@theme {
+  --color-primary: #3490dc;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Menyusun gaya dasar */
+@layer base {
+  h1 {
+    @apply text-3xl font-bold;
+  }
+}
+
+/* Membuat komponen tombol */
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded;
+    background-color: var(--color-primary);
+    font-family: var(--font-body);
+  }
+
+  .btn:hover {
+    @apply bg-blue-700;
+  }
+}
+
+
+    #KITA AKAN LANJUT  DI FILE INPUT.CSS UNTUK MENCOBA SEMUANYA
+
+
+    
+    -->
+    <h1>Contoh Penggunaan @plya</h1>
+    <p>Lihat kode ini tanpa @aply</p>
+    <section class="container mx-auto px-4 py-10">
+      <h2 class="text-2xl font-bold text-center mb-8">📸 My Gallery</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Item 1 -->
+        <div class="group overflow-hidden rounded-lg shadow-md">
+          <img
+            src="https://via.placeholder.com/400x300"
+            alt="Gallery 1"
+            class="w-full h-60 object-cover transform transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
+
+        <!-- Item 2 -->
+        <div class="group overflow-hidden rounded-lg shadow-md">
+          <img
+            src="../gunung.jpg"
+            alt="Gallery 2"
+            class="w-full h-60 object-cover transform transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
+
+        <!-- Item 3 -->
+        <div class="group overflow-hidden rounded-lg shadow-md">
+          <img
+            src="../gunung.jpg"
+            alt="Gallery 3"
+            class="w-full h-60 object-cover transform transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
+
+        <!-- Item 4 -->
+        <div class="group overflow-hidden rounded-lg shadow-md">
+          <img
+            src="../gunung.jpg"
+            alt="Gallery 4"
+            class="w-full h-60 object-cover transform transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
+      </div>
+    </section>
+    <p>Liihat Kita mengulangi utlyty class yang sama dan membuat kode kita menjadi berantakan</p>
+    <p>Nah sekarang Saat nya kita akan menggunakan Aply agar kodenya tidak menjadi banyak</p>
+    <h1>Contoh Menggunakan @aply</h1>
+    <section class="container mx-auto px-4 py-10">
+      <h2 class="text-2xl font-bold text-center mb-8">📸 My Gallery</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Item 1 -->
+        <div class="card-item group">
+          <img
+            src="https://via.placeholder.com/400x300"
+            alt="Gallery 1"
+            class="w-full h-60 object-cover transform transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
+
+        <!-- Item 2 -->
+        <div class="card-item group">
+          <img
+            src="../gunung.jpg"
+            alt="Gallery 2"
+            class="w-full h-60 object-cover transform transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
+
+        <!-- Item 3 -->
+        <div class="card-item group">
+          <img
+            src="../gunung.jpg"
+            alt="Gallery 3"
+            class="w-full h-60 object-cover transform transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
+
+        <!-- Item 4 -->
+        <div class="card-item group">
+          <img
+            src="../gunung.jpg"
+            alt="Gallery 4"
+            class="w-full h-60 object-cover transform transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
+      </div>
+
+      <p>Lihat Jadi Lebih simpel jadi kita pisahkan dan gak berantakan juga</p>
+      <p>
+        oh iya untuk utylyty class grup itu tidak bisa di gunakan di dalam @aply akan membuat eror dan kita setiap kali
+        eror harus ketik pnpm run dev lagi jika menggunakan CLI agar kode pembaruan kita jalan
+      </p>
+
+      <h1>Contoh Lain misalnya kita menggunakan utylity class yang sama namun ada bedanya 1 atau 2</h1>
+      <h2>Contoh Tanpa @aply</h2>
+      <div class="p-4 bg-blue-500 text-white rounded-lg shadow-md">Card Biru</div>
+      <div class="p-4 bg-red-500 text-white rounded-lg shadow-md">Card Merah</div>
+      <h2>Contoh Mengunakan @aply</h2>
+      <div class="card-itemsama-beberapa-berbeda bg-blue-500">Card Biru</div>
+      <div class="card-itemsama-beberapa-berbeda bg-red-500">Card Merah</div>
+      <p>
+        Nah jadi kita jangan masukin utylytty class yang berbeda itu kedalam @aply melainkan menaruh nya di bagian depan
+        atau belakang
+      </p>
+
+      <hr />
+      <section class="mt-50"></section>
+      <h1>Contoh Menggunakan custom-Variants</h1>
+      <h1>Tanpa variants</h1>
+      <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:ring-2 focus:ring-blue-300">
+        Klik Saya
+      </button>
+      <p>Berantakan dan jika kita harus mengcopy jika di dlam proyek besar ini membutuhkan waktu yang lama</p>
+      <h1>Contoh Menggunakan Variants</h1>
+      <button class="btn">Klik Saya</button>
+
+      <section class="mt-50"></section>
+      =
+      <h1>Contoh penggunaan Function theme bulan @theme</h1>
+      <p>
+        Fungsi theme() dipakai untuk mengakses value dari konfigurasi Tailwind (tailwind.config.js) langsung di dalam
+        file CSS.
+      </p>
+      <h1>Contoh penggunaan animasi</h1>
+      <section class="w-20 h-20 bg-amber-400 spin-slow">hellor</section>
+      <p>itu jika kita akses langsung animasi nya pada layer utylities</p>
+      <section class="w-20 h-20 bg-blue-500 spin">hello</section>
+
+      <button class="btn-brand">Klik Saya</button>
+    </section>
+  </body>
+</html>

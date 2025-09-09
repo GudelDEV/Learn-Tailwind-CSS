@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+    📌 Catatan Dasar tentang Grid
+    1. Apa itu Grid?
+
+    ~ CSS Grid adalah sistem layout berbasis baris dan kolom.
+
+    ~ Berbeda dengan Flexbox yang lebih cocok untuk satu dimensi (horizontal atau vertikal),
+    Grid lebih cocok untuk dua dimensi (horizontal dan vertikal sekaligus).
+
+    2. Konsep Utama Grid 
+    Grid Container → elemen induk yang menggunakan display: grid.
+
+    ~ Grid Items → elemen anak di dalam grid.
+
+    ~ Tracks → baris (rows) dan kolom (columns).
+
+    ~ Gap → jarak antar baris/kolom.
+
+    ~ Span → item bisa melebar ke beberapa kolom/baris.
+
+    3. Alur Sederhana Membuat Grid
+    Jadikan container sebagai grid → grid.
+
+    ~ Tentukan jumlah kolom → grid-cols-*.
+
+    ~ Atur jumlah baris (opsional) → grid-rows-*.
+
+    ~ Atur jarak antar item → gap-*.
+
+    ~ Atur posisi/perataan → justify-items, align-items, dsb.
+
+    4. Analogi 🔑
+    Bayangkan tabel:
+
+    ~ grid-cols-3 = bikin tabel dengan 3 kolom.
+
+    ~ grid-rows-2 = bikin tabel dengan 2 baris.
+
+    ~ col-span-2 = gabung 2 kolom (mirip colspan di tabel HTML).
+
+    ~ row-span-2 = gabung 2 baris.
+
+    5. Kapan Pakai Grid vs Flexbox?
+   ~ Flexbox → lebih cocok untuk konten baris tunggal atau ketika susunan item bergantung pada ukuran konten.
+
+   ~ Grid → lebih cocok untuk layout kompleks yang butuh baris dan kolom terkontrol.
+
+
+    -->
+    <h1>Contoh Penggunaan</h1>
+    <div class="grid grid-cols-3 gap-4">
+      <div class="bg-blue-300 p-4">1</div>
+      <div class="bg-blue-300 p-4">2</div>
+      <div class="bg-blue-300 p-4">3</div>
+      <div class="bg-blue-300 p-4">4</div>
+      <div class="bg-blue-300 p-4">5</div>
+      <div class="bg-blue-300 p-4">6</div>
+    </div>
+    <p>➡️ Hasilnya grid 3 kolom × 2 baris dengan jarak gap-4.</p>
+  </body>
+</html>

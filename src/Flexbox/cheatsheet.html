@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+    Cheeat Sheet Flexbox
+    | No | Utility             | Class Contoh        | CSS                               | Fungsi / Keterangan                                     |
+| -- | ------------------- | ------------------- | --------------------------------- | ------------------------------------------------------- |
+| 1  | **display**         | `flex`              | `display: flex;`                  | Membuat container menjadi flex container.               |
+| 2  |                     | `inline-flex`       | `display: inline-flex;`           | Flex container inline.                                  |
+| 3  | **flex-direction**  | `flex-row`          | `flex-direction: row;`            | Item sejajar horizontal.                                |
+| 4  |                     | `flex-row-reverse`  | `flex-direction: row-reverse;`    | Item sejajar horizontal terbalik.                       |
+| 5  |                     | `flex-col`          | `flex-direction: column;`         | Item sejajar vertikal.                                  |
+| 6  |                     | `flex-col-reverse`  | `flex-direction: column-reverse;` | Item vertikal terbalik.                                 |
+| 7  | **flex-wrap**       | `flex-wrap`         | `flex-wrap: wrap;`                | Item bisa membungkus ke baris berikutnya.               |
+| 8  |                     | `flex-wrap-reverse` | `flex-wrap: wrap-reverse;`        | Item membungkus terbalik.                               |
+| 9  |                     | `flex-nowrap`       | `flex-wrap: nowrap;`              | Tidak membungkus.                                       |
+| 10 | **flex**            | `flex-1`            | `flex: 1 1 0%;`                   | Item tumbuh sama rata.                                  |
+| 11 |                     | `flex-auto`         | `flex: 1 1 auto;`                 | Item tumbuh & menyusut sesuai konten.                   |
+| 12 |                     | `flex-initial`      | `flex: 0 1 auto;`                 | Item tidak tumbuh, tapi bisa menyusut.                  |
+| 13 |                     | `flex-none`         | `flex: 0 0 auto;`                 | Item tidak tumbuh atau menyusut.                        |
+| 14 | **flex-grow**       | `grow`              | `flex-grow: 1;`                   | Item bisa tumbuh untuk mengisi container.               |
+| 15 |                     | `grow-0`            | `flex-grow: 0;`                   | Item tidak tumbuh.                                      |
+| 16 | **flex-shrink**     | `shrink`            | `flex-shrink: 1;`                 | Item bisa menyusut untuk menyesuaikan container.        |
+| 17 |                     | `shrink-0`          | `flex-shrink: 0;`                 | Item tidak menyusut.                                    |
+| 18 | **order**           | `order-1`           | `order: 1;`                       | Mengatur urutan item dalam flex container.              |
+| 19 |                     | `order-0`           | `order: 0;`                       | Default urutan.                                         |
+| 20 |                     | `order-first`       | `order: -9999;`                   | Item muncul pertama.                                    |
+| 21 |                     | `order-last`        | `order: 9999;`                    | Item muncul terakhir.                                   |
+| 22 | **justify-content** | `justify-start`     | `justify-content: flex-start;`    | Item rata kiri / awal sumbu utama.                      |
+| 23 |                     | `justify-end`       | `justify-content: flex-end;`      | Item rata kanan / akhir sumbu utama.                    |
+| 24 |                     | `justify-center`    | `justify-content: center;`        | Item rata tengah horizontal.                            |
+| 25 |                     | `justify-between`   | `justify-content: space-between;` | Item tersebar merata, pertama & terakhir menempel tepi. |
+| 26 |                     | `justify-around`    | `justify-content: space-around;`  | Item tersebar dengan jarak seimbang.                    |
+| 27 |                     | `justify-evenly`    | `justify-content: space-evenly;`  | Item tersebar sama rata.                                |
+| 28 | **align-items**     | `items-start`       | `align-items: flex-start;`        | Item rata atas (sumbu silang).                          |
+| 29 |                     | `items-end`         | `align-items: flex-end;`          | Item rata bawah.                                        |
+| 30 |                     | `items-center`      | `align-items: center;`            | Item rata tengah vertikal.                              |
+| 31 |                     | `items-baseline`    | `align-items: baseline;`          | Item rata berdasarkan garis dasar teks.                 |
+| 32 |                     | `items-stretch`     | `align-items: stretch;`           | Item melebar memenuhi tinggi container.                 |
+| 33 | **align-self**      | `self-auto`         | `align-self: auto;`               | Item mengikuti aturan container.                        |
+| 34 |                     | `self-start`        | `align-self: flex-start;`         | Item rata atas.                                         |
+| 35 |                     | `self-end`          | `align-self: flex-end;`           | Item rata bawah.                                        |
+| 36 |                     | `self-center`       | `align-self: center;`             | Item rata tengah vertikal.                              |
+| 37 |                     | `self-stretch`      | `align-self: stretch;`            | Item melebar sesuai tinggi container.                   |
+| 38 | **align-content**   | `content-start`     | `align-content: flex-start;`      | Semua baris ditempatkan di atas container.              |
+| 39 |                     | `content-end`       | `align-content: flex-end;`        | Semua baris di bawah container.                         |
+| 40 |                     | `content-center`    | `align-content: center;`          | Semua baris di tengah container.                        |
+| 41 |                     | `content-between`   | `align-content: space-between;`   | Baris tersebar merata.                                  |
+| 42 |                     | `content-around`    | `align-content: space-around;`    | Baris tersebar seimbang.                                |
+| 43 |                     | `content-evenly`    | `align-content: space-evenly;`    | Baris tersebar sama rata.                               |
+| 44 |                     | `content-stretch`   | `align-content: stretch;`         | Baris melebar memenuhi container.                       |
+💡 Tips Membaca Cheat Sheet Flexbox:
+
+flex / inline-flex → aktifkan flex container.
+
+flex-direction → atur arah item.
+
+flex-wrap → atur apakah item membungkus ke baris baru.
+
+flex-grow / flex-shrink → atur ukuran item saat container berubah.
+
+justify-* → sumbu utama (horizontal default).
+
+items-* → sumbu silang (vertikal default).
+
+self-* → override alignment untuk item tertentu.
+
+order-* → atur urutan item.
+    
+    -->
+  </body>
+</html>

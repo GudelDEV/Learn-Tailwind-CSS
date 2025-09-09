@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+    justify-items
+    Utility ini digunakan untuk mengatur bagaimana grid items disejajarkan sepanjang inline axis (horizontal dalam kebanyakan bahasa LTR seperti Inggris & Indonesia).
+Beda dengan justify-content (untuk mengatur seluruh grid container), justify-items berlaku pada setiap item dalam grid.
+
+📌 Tabel Utility justify-items
+| Class                       | CSS yang dihasilkan           | Keterangan                                                                                 |
+| --------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------ |
+| `justify-items-start`       | `justify-items: start;`       | Semua item grid rata kiri.                                                                 |
+| `justify-items-end`         | `justify-items: end;`         | Semua item grid rata kanan.                                                                |
+| `justify-items-end-safe`    | `justify-items: safe end;`    | Item rata kanan, tapi dengan opsi **safe** agar tidak menyebabkan overflow yang berbahaya. |
+| `justify-items-center`      | `justify-items: center;`      | Semua item grid berada di tengah horizontal.                                               |
+| `justify-items-center-safe` | `justify-items: safe center;` | Sama seperti center, tapi lebih aman terhadap overflow.                                    |
+| `justify-items-stretch`     | `justify-items: stretch;`     | Default → item grid akan meluas untuk mengisi seluruh kolom.                               |
+| `justify-items-normal`      | `justify-items: normal;`      | Gunakan perilaku default browser.                                                          |
+
+📌 Catatan penting:
+
+justify-items = berlaku ke semua item dalam grid.
+
+Kalau mau atur item tertentu saja → gunakan justify-self.
+
+Kalau mau atur seluruh grid container → gunakan justify-content.
+    -->
+    <h1>Contoh Penggunaan</h1>
+    <section class="mt-20">
+      <h2>1. Rata kiri (justify-items-start)</h2>
+      <div class="grid grid-cols-3 justify-items-start gap-2">
+        <div class="bg-blue-400 p-2">A</div>
+        <div class="bg-blue-500 p-2">B</div>
+        <div class="bg-blue-600 p-2">C</div>
+      </div>
+      <p>➡️ Semua item grid rata kiri dalam kolomnya.</p>
+    </section>
+    <section class="mt-20">
+      <h2>2. Rata tengah (justify-items-center)</h2>
+      <div class="grid grid-cols-3 justify-items-center gap-2">
+        <div class="bg-green-400 p-2">A</div>
+        <div class="bg-green-500 p-2">B</div>
+        <div class="bg-green-600 p-2">C</div>
+      </div>
+      <p>➡️ Semua item grid berada di tengah horizontal.</p>
+    </section>
+    <section class="mt-20">
+      <h2>3. Rata kanan (justify-items-end)</h2>
+      <div class="grid grid-cols-3 justify-items-end gap-2">
+        <div class="bg-purple-400 p-2">A</div>
+        <div class="bg-purple-500 p-2">B</div>
+        <div class="bg-purple-600 p-2">C</div>
+      </div>
+      <p>➡️ Semua item grid rata kanan dalam kolomnya.</p>
+    </section>
+    <section class="mt-20">
+      <h2>4. Stretch (justify-items-stretch)</h2>
+      <div class="grid grid-cols-3 justify-items-stretch gap-2">
+        <div class="bg-orange-400 p-2">A</div>
+        <div class="bg-orange-500 p-2">B</div>
+        <div class="bg-orange-600 p-2">C</div>
+      </div>
+      <p>➡️ Semua item grid melebar penuh sesuai kolomnya.</p>
+    </section>
+  </body>
+</html>

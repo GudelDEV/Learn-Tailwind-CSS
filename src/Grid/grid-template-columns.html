@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- Grid-Template-Columns 
+    Ini adalah utilitas untuk menentukan jumlah dan lebar kolom dalam Grid.
+    
+    📌 Tabel Utility grid-template-columns
+
+    | Class                           | CSS yang dihasilkan                                        | Keterangan                                                                                                         |
+| ------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `grid-cols-<number>`            | `grid-template-columns: repeat(<number>, minmax(0, 1fr));` | Membuat grid dengan `<number>` kolom yang **lebar sama rata**. Contoh: `grid-cols-3` → 3 kolom, masing-masing 1fr. |
+| `grid-cols-none`                | `grid-template-columns: none;`                             | Tidak ada definisi kolom, item akan menumpuk secara default.                                                       |
+| `grid-cols-subgrid`             | `grid-template-columns: subgrid;`                          | Menggunakan kolom dari **parent grid** (hanya di browser yang support).                                            |
+| `grid-cols-[<value>]`           | `grid-template-columns: <value>;`                          | Custom nilai manual. Contoh: `grid-cols-[200px_minmax(400px,_1fr)_100px]`.                                         |
+| `grid-cols-(<custom-property>)` | `grid-template-columns: var(<custom-property>);`           | Pakai custom property CSS (misal variabel global).                                                                 |
+
+    📌 Catatan penting:
+
+grid-cols-N sangat sering dipakai untuk layout standar.
+
+Kalau butuh ukuran spesifik → gunakan grid-cols-[...].
+
+subgrid belum didukung semua browser.
+    
+    -->
+
+    <h1>Contoh Penggunan</h1>
+    <section class="mt-20">
+      <h2>1. Grid 3 kolom sama rata</h2>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="bg-blue-300 p-4">1</div>
+        <div class="bg-blue-300 p-4">2</div>
+        <div class="bg-blue-300 p-4">3</div>
+      </div>
+      <p>➡️ Membuat 3 kolom dengan lebar sama.</p>
+    </section>
+    <section class="mt-20">
+      <h2>2. Grid dengan custom width</h2>
+      <div class="grid grid-cols-[100px_1fr_2fr] gap-4">
+        <div class="bg-green-300 p-4">Sidebar</div>
+        <div class="bg-green-300 p-4">Content</div>
+        <div class="bg-green-300 p-4">Extra</div>
+      </div>
+      <p>➡️ Hasil: kolom 1 = 100px, kolom 2 = fleksibel (1fr), kolom 3 = lebih besar (2fr).</p>
+    </section>
+    <section class="mt-20">
+      <h2>3. Grid dengan custom width</h2>
+      <div class="grid grid-cols-[100px_1fr_2fr_3fr] gap-4">
+        <div class="bg-green-300 p-4">Sidebar</div>
+        <div class="bg-green-300 p-4">Content</div>
+        <div class="bg-green-300 p-4">Extra</div>
+        <div class="bg-green-300 p-4">More extra</div>
+      </div>
+      <p>
+        ➡️ Hasil: kolom 1 = 100px, kolom 2 = fleksibel (1fr), kolom 3 = lebih besar (2fr) Kolom ke 4 = lebih besar dari
+        kolom ke 3 (3fr).
+      </p>
+    </section>
+    <section class="mt-20">
+      <h2>3. Grid dengan subgrid (experimental)</h2>
+      <div class="grid grid-cols-3">
+        <div class="grid grid-cols-subgrid col-span-3">
+          <div class="bg-purple-300 p-4">A</div>
+          <div class="bg-purple-300 p-4">B</div>
+          <div class="bg-purple-300 p-4">C</div>
+        </div>
+      </div>
+      <p>➡️ Kolom anak mengikuti definisi kolom dari grid parent.</p>
+    </section>
+
+    <!-- Grid-Cols-N ini untuk berapa colum yang akan berjejeer  -->
+    <!-- Contoh 2 colum -->
+    <section class="mt-20">
+      <h2>My defintion</h2>
+      <section class="grid grid-cols-2">
+        <section class="w-2xl h-15 aspect-[4/3] bg-blue-800"></section>
+        <section class="w-2xl h-15 aspect-[4/3] bg-yellow-800"></section>
+      </section>
+    </section>
+  </body>
+</html>

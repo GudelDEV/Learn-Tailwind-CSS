@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+    grid-column
+    Properti ini dipakai untuk mengatur bagaimana item ditempatkan dan membentang di kolom grid.
+    
+    📌 Tabel Utility Grid Column
+    | Class                           | CSS yang dihasilkan                                                       | Keterangan                                                        |
+| ------------------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `col-span-<number>`             | `grid-column: span <number> / span <number>;`                             | Membuat item membentang sepanjang `<number>` kolom.               |
+| `col-span-full`                 | `grid-column: 1 / -1;`                                                    | Membuat item membentang penuh dari kolom pertama hingga terakhir. |
+| `col-span-(<custom-property>)`  | `grid-column: span var(<custom-property>) / span var(<custom-property>);` | Membentang sesuai variabel CSS custom.                            |
+| `col-span-[<value>]`            | `grid-column: span <value> / span <value>;`                               | Membentang sesuai nilai custom.                                   |
+| `col-start-<number>`            | `grid-column-start: <number>;`                                            | Menentukan posisi awal kolom item.                                |
+| `-col-start-<number>`           | `grid-column-start: calc(<number> * -1);`                                 | Posisi awal kolom dengan nilai negatif (jarang dipakai).          |
+| `col-start-auto`                | `grid-column-start: auto;`                                                | Browser tentukan otomatis posisi awal.                            |
+| `col-start-(<custom-property>)` | `grid-column-start: var(<custom-property>);`                              | Posisi awal kolom dengan variabel custom.                         |
+| `col-start-[<value>]`           | `grid-column-start: <value>;`                                             | Posisi awal kolom dengan nilai custom.                            |
+| `col-end-<number>`              | `grid-column-end: <number>;`                                              | Menentukan posisi akhir kolom item.                               |
+| `-col-end-<number>`             | `grid-column-end: calc(<number> * -1);`                                   | Posisi akhir kolom dengan nilai negatif.                          |
+| `col-end-auto`                  | `grid-column-end: auto;`                                                  | Browser tentukan otomatis posisi akhir.                           |
+| `col-end-(<custom-property>)`   | `grid-column-end: var(<custom-property>);`                                | Posisi akhir dengan variabel custom.                              |
+| `col-end-[<value>]`             | `grid-column-end: <value>;`                                               | Posisi akhir dengan nilai custom.                                 |
+| `col-auto`                      | `grid-column: auto;`                                                      | Biarkan browser tentukan span & posisi otomatis.                  |
+| `col-<number>`                  | `grid-column: <number>;`                                                  | Menentukan kolom spesifik untuk item.                             |
+| `-col-<number>`                 | `grid-column: calc(<number> * -1);`                                       | Tentukan kolom spesifik dengan nilai negatif.                     |
+| `col-(<custom-property>)`       | `grid-column: var(<custom-property>);`                                    | Gunakan variabel custom.                                          |
+| `col-[<value>]`                 | `grid-column: <value>;`                                                   | Gunakan nilai custom.                                             |
+
+    📌 Tips penting:
+
+    ~ Gunakan col-span-* untuk span.
+
+    ~ Gunakan col-start-* dan col-end-* untuk kontrol lebih detail posisi.
+
+    ~ col-span-full berguna buat elemen seperti header/footer di layout grid.
+    
+    -->
+    <h1>. 📌 Contoh Penggunaan</h1>
+    <section class="mt-20">
+      <h2>1. Membuat item span 2 kolom</h2>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="col-span-2 bg-blue-300 p-4">Span 2 Kolom</div>
+        <div class="bg-blue-300 p-4">Normal</div>
+      </div>
+      <p>➡️ Item pertama membentang sepanjang 2 kolom.</p>
+    </section>
+    <section class="mt-20">
+      <h2>2. Membuat item full width (semua kolom)</h2>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="col-span-full bg-green-300 p-4">Full Width</div>
+      </div>
+      <p>➡️ Membentang dari kolom 1 sampai terakhir.</p>
+    </section>
+    <section class="mt-20">
+      <h2>3. Mengatur posisi start & end</h2>
+      <div class="grid grid-cols-4 gap-4">
+        <div class="col-start-2 col-end-4 bg-yellow-300 p-4">Start di kolom 2, End di kolom 4</div>
+      </div>
+      <p>➡️ Item dimulai dari kolom 2 dan berakhir sebelum kolom 4..</p>
+    </section>
+  </body>
+</html>

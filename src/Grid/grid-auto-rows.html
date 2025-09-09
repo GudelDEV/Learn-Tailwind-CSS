@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+    grid-auto-rows
+    Utility ini mirip dengan grid-auto-columns, tapi dipakai untuk mengontrol ukuran baris grid yang dibuat secara implisit (otomatis) ketika jumlah item melebihi baris yang sudah ditentukan dengan grid-template-rows.
+
+    📌 Tabel Utility grid-auto-rows
+    | Class                           | CSS yang dihasilkan                       | Keterangan                                               |
+| ------------------------------- | ----------------------------------------- | -------------------------------------------------------- |
+| `auto-rows-auto`                | `grid-auto-rows: auto;`                   | Default → tinggi baris menyesuaikan konten.              |
+| `auto-rows-min`                 | `grid-auto-rows: min-content;`            | Baris setinggi mungkin tapi tetap muat konten.           |
+| `auto-rows-max`                 | `grid-auto-rows: max-content;`            | Baris setinggi konten terbesarnya.                       |
+| `auto-rows-fr`                  | `grid-auto-rows: minmax(0, 1fr);`         | Semua baris otomatis punya tinggi sama rata (fleksibel). |
+| `auto-rows-(<custom-property>)` | `grid-auto-rows: var(<custom-property>);` | Menggunakan variabel CSS custom.                         |
+| `auto-rows-[<value>]`           | `grid-auto-rows: <value>;`                | Custom manual, misalnya `auto-rows-[150px]`.             |
+
+    -->
+    <h1>Contoh Penggunaan</h1>
+    <section class="mt-20">
+      <h2>1. Default (auto)</h2>
+      <div class="grid grid-cols-2 auto-rows-auto gap-2">
+        <div class="bg-blue-400 p-2">A</div>
+        <div class="bg-blue-500 p-8">B konten lebih tinggi</div>
+        <div class="bg-blue-600 p-2">C</div>
+      </div>
+      <p>➡️ Tinggi baris mengikuti konten masing-masing.</p>
+    </section>
+    <section class="mt-20">
+      <h2>2. Baris minimum (auto-rows-min)</h2>
+      <div class="grid grid-cols-2 auto-rows-min gap-2">
+        <div class="bg-green-400 p-2">A panjang konten</div>
+        <div class="bg-green-500 p-2">B</div>
+        <div class="bg-green-600 p-2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias optio doloremque soluta quae sapiente animi?
+          Reprehenderit sit perferendis, minus dolorum vitae unde magnam qui cumque aliquam. Molestias pariatur sapiente
+          nostrum earum odio velit quas assumenda vero veniam ipsa perspiciatis a magnam, nam laboriosam eaque vel
+          beatae qui esse ipsum modi, fuga voluptatum quisquam minima. Inventore quas laborum quod qui, ea nostrum neque
+          alias maiores ipsam corporis velit. Vitae ea est sint quaerat, fugit ipsam rem dolorum pariatur architecto hic
+          autem aut nostrum quasi molestias. Possimus dolor est dolore optio doloribus vel laudantium atque, eum
+          excepturi eius sapiente culpa ut placeat, ipsam obcaecati, totam nobis voluptate nam explicabo odio. Deserunt,
+          mollitia numquam? Quisquam error fugiat illum ipsa, quia aliquid eligendi obcaecati blanditiis pariatur omnis,
+          maxime ipsum magni? Consectetur eius corporis asperiores perferendis ipsam. Ducimus aperiam, suscipit eveniet
+          natus sapiente cumque reiciendis eius vero deleniti, nobis voluptates a quidem quas quibusdam optio
+          necessitatibus consequuntur totam. Ex ab dolor repellat beatae dolores quam molestiae nulla accusamus
+          corporis, tempora, ipsa alias. Facere mollitia quidem explicabo cupiditate, beatae natus non est voluptatem
+          ipsa sequi, rem consectetur quas iusto? Neque magnam id labore provident iure incidunt cumque, nihil natus quo
+          reiciendis adipisci! Corrupti eos commodi rerum vitae natus debitis quidem excepturi, quibusdam, quaerat enim
+          nemo ab at molestiae autem repellat aliquam pariatur deserunt, quis magnam officiis ipsam. Excepturi earum
+          iusto quasi consectetur at eaque vel quaerat consequuntur ipsam harum veritatis ad commodi ex cum hic enim
+          vero quas sunt, quis dolore, minus eligendi dolor voluptatem minima. Quidem itaque velit dignissimos sint
+          reprehenderit, laborum, illo veniam similique sunt nemo maiores cupiditate necessitatibus voluptates. Tempora
+          asperiores, amet ullam neque perferendis cumque optio dicta. Ea repellat quam corporis odio aliquid corrupti
+          perferendis repellendus reiciendis enim inventore, error, quae repudiandae quasi neque minus id deserunt unde
+          laudantium ratione amet. Corrupti!
+        </div>
+      </div>
+      <p>➡️ Baris setinggi mungkin tapi tetap muat teks.</p>
+    </section>
+    <section class="mt-20">
+      <h2>3. Baris fleksibel (auto-rows-fr)</h2>
+      <div class="grid grid-cols-2 auto-rows-fr gap-2 h-64">
+        <div class="bg-purple-400 p-2">A</div>
+        <div class="bg-purple-500 p-2">B</div>
+        <div class="bg-purple-600 p-2">C</div>
+        <div class="bg-purple-700 p-2">D</div>
+      </div>
+      <p>➡️ Semua baris tinggi sama rata (dibagi dari total tinggi container h-64).</p>
+    </section>
+    <section class="mt-20">
+      <h2>4. Custom nilai (auto-rows-[150px])</h2>
+      <div class="grid grid-cols-2 auto-rows-[150px] gap-2">
+        <div class="bg-orange-400 p-2">A</div>
+        <div class="bg-orange-500 p-2">B</div>
+        <div class="bg-orange-600 p-2">C</div>
+      </div>
+      <p>➡️ ➡️ Semua baris otomatis tinggi 150px..</p>
+    </section>
+  </body>
+</html>

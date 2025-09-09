@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+    grid-template-rows
+    Utility ini dipakai untuk menentukan jumlah dan ukuran baris dalam grid layout.
+
+    📌 Tabel Utility grid-template-rows
+    
+    | Class                           | CSS yang dihasilkan                                     | Keterangan                                                                                                                       |
+| ------------------------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `grid-rows-<number>`            | `grid-template-rows: repeat(<number>, minmax(0, 1fr));` | Membuat grid dengan `<number>` baris yang **tinggi sama rata**. Contoh: `grid-rows-3` → 3 baris dengan tinggi masing-masing 1fr. |
+| `grid-rows-none`                | `grid-template-rows: none;`                             | Tidak ada definisi baris, item ditempatkan otomatis oleh browser.                                                                |
+| `grid-rows-subgrid`             | `grid-template-rows: subgrid;`                          | Anak grid menggunakan baris dari **parent grid** (fitur experimental, belum semua browser support).                              |
+| `grid-rows-[<value>]`           | `grid-template-rows: <value>;`                          | Custom nilai manual. Contoh: `grid-rows-[100px_200px_auto]`.                                                                     |
+| `grid-rows-(<custom-property>)` | `grid-template-rows: var(<custom-property>);`           | Pakai variabel CSS custom untuk menentukan baris.                                                                                |
+
+    📌 Catatan
+
+grid-cols-* = atur kolom.
+
+grid-rows-* = atur baris.
+
+Keduanya bisa digabung untuk membuat layout kompleks dengan baris × kolom.
+    
+    -->
+
+    <h1>. 📌 Contoh Penggunaan</h1>
+    <section class="mt-20">
+      <h2>1. Membuat 3 baris dengan tinggi sama</h2>
+      <div class="grid grid-rows-3 gap-4 h-64">
+        <div class="bg-blue-300 p-4">Baris 1</div>
+        <div class="bg-blue-300 p-4">Baris 2</div>
+        <div class="bg-blue-300 p-4">Baris 3</div>
+      </div>
+      <p>➡️ Container tinggi h-64 dibagi menjadi 3 baris sama besar.</p>
+    </section>
+    <section class="mt-20">
+      <h2>2. Grid dengan tinggi custom</h2>
+      <div class="grid grid-rows-[100px_200px_auto] gap-4">
+        <div class="bg-green-300 p-4">100px</div>
+        <div class="bg-green-300 p-4">200px</div>
+        <div class="bg-green-300 p-4">Auto</div>
+      </div>
+      <p>➡️ Baris pertama = 100px, baris kedua = 200px, baris ketiga = auto (mengikuti konten).</p>
+    </section>
+    <section class="mt-20">
+      <h2>3. Grid dengan subgrid (experimental)</h2>
+      <div class="grid grid-rows-2 h-64">
+        <div class="grid grid-rows-subgrid row-span-2">
+          <div class="bg-purple-300 p-4">A</div>
+          <div class="bg-purple-300 p-4">B</div>
+        </div>
+      </div>
+      <p>➡️ Baris anak mengikuti baris dari parent grid.</p>
+    </section>
+  </body>
+</html>

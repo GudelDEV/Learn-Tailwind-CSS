@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- align items  
+    align-items mengatur perataan di cross axis (sumbu silang → defaultnya vertikal).
+    
+    📌 1. Utility Class items-*
+
+
+    | Class                       | CSS yang dihasilkan                    | Keterangan                                                                                     |
+| --------------------------- | -------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `items-start`               | `align-items: flex-start;`             | Semua item dirapatkan ke **atas** (awal cross axis).                                           |
+| `items-end`                 | `align-items: flex-end;`               | Semua item dirapatkan ke **bawah** (akhir cross axis).                                         |
+| `items-center`              | `align-items: center;`                 | Semua item diratakan ke **tengah cross axis**.                                                 |
+| `items-baseline`            | `align-items: baseline;`               | Semua item disejajarkan dengan **garis teks dasar** (baseline). Cocok buat teks.               |
+| `items-stretch`             | `align-items: stretch;`                | Default. Item akan **direntangkan** memenuhi tinggi cross axis (jika tidak ada tinggi khusus). |
+| `items-normal`              | `align-items: normal;`                 | Reset ke default CSS (tergantung browser).                                                     |
+| `items-(<custom-property>)` | `align-items: var(<custom-property>);` | Pakai custom property CSS.                                                                     |
+| `items-[<value>]`           | `align-items: <value>;`                | Pakai nilai custom (misalnya `items-[first-baseline]`).                                        |
+
+    -->
+
+    <h1>Contoh Penggunaan</h1>
+    <section class="mt-20">
+      <h2>items-start</h2>
+      <div class="flex items-start bg-blue-200 h-32">
+        <div class="bg-white p-4">Box 1</div>
+        <div class="bg-white p-8">Box 2</div>
+        <div class="bg-white p-12">Box 3</div>
+      </div>
+      <p>➡️ Semua box dirapatkan ke atas container.</p>
+    </section>
+    <section class="mt-20">
+      <h2>items-end</h2>
+      <div class="flex items-end bg-green-200 h-32">
+        <div class="bg-white p-4">Box 1</div>
+        <div class="bg-white p-8">Box 2</div>
+        <div class="bg-white p-12">Box 3</div>
+      </div>
+      <p>➡️ Semua box dirapatkan ke bawah container.</p>
+    </section>
+    <section class="mt-20">
+      <h2>items-center</h2>
+      <div class="flex items-center bg-yellow-200 h-32">
+        <div class="bg-white p-4">Box 1</div>
+        <div class="bg-white p-8">Box 2</div>
+        <div class="bg-white p-12">Box 3</div>
+      </div>
+      <p>➡️ Semua box rata tengah secara vertikal.</p>
+    </section>
+    <section class="mt-20">
+      <h2>items-baseline</h2>
+      <div class="flex items-baseline bg-pink-200 h-32">
+        <div class="bg-white p-4 text-sm">Box 1</div>
+        <div class="bg-white p-8 text-lg">Box 2</div>
+        <div class="bg-white p-12 text-3xl">Box 3</div>
+      </div>
+      <p>➡️ Semua teks sejajar di garis dasar tulisan.</p>
+    </section>
+    <section class="mt-20">
+      <h2>items-stretch</h2>
+      <div class="flex items-stretch bg-purple-200 h-32">
+        <div class="bg-white p-4">Box 1</div>
+        <div class="bg-white p-8">Box 2</div>
+        <div class="bg-white p-12">Box 3</div>
+      </div>
+      <p>➡️ Semua box otomatis memanjang setinggi container (default behavior).</p>
+    </section>
+  </body>
+</html>

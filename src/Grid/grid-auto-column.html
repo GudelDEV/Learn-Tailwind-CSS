@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+    grid-auto-columns
+    Utility ini dipakai untuk mengontrol ukuran kolom grid yang dibuat secara implisit (otomatis oleh browser) ketika jumlah item melebihi kolom yang sudah ditentukan dengan grid-template-columns.
+
+    📌 Tabel Utility grid-auto-columns
+    | Class                           | CSS yang dihasilkan                          | Keterangan                                                  |
+| ------------------------------- | -------------------------------------------- | ----------------------------------------------------------- |
+| `auto-cols-auto`                | `grid-auto-columns: auto;`                   | Default → ukuran kolom menyesuaikan konten.                 |
+| `auto-cols-min`                 | `grid-auto-columns: min-content;`            | Kolom sekecil mungkin tapi tetap muat kontennya.            |
+| `auto-cols-max`                 | `grid-auto-columns: max-content;`            | Kolom sebesar konten terbesarnya.                           |
+| `auto-cols-fr`                  | `grid-auto-columns: minmax(0, 1fr);`         | Kolom otomatis dengan lebar proporsional sama (fleksibel).  |
+| `auto-cols-(<custom-property>)` | `grid-auto-columns: var(<custom-property>);` | Menggunakan variabel CSS custom untuk lebar kolom otomatis. |
+| `auto-cols-[<value>]`           | `grid-auto-columns: <value>;`                | Custom manual, misalnya `auto-cols-[200px]`.                |
+
+    Kesimpulan:
+
+~ Gunakan auto-cols-fr untuk layout proporsional seragam.
+
+~ Gunakan auto-cols-min/max kalau ingin mengikuti konten.
+
+~ Gunakan auto-cols-[value] untuk kontrol manual.
+    -->
+    <h1>Contoh Penggunan</h1>
+    <section class="mt-20">
+      <h2>1. Default (auto)</h2>
+      <div class="grid grid-flow-col auto-cols-auto gap-2">
+        <div class="bg-blue-400 p-2">A</div>
+        <div class="bg-blue-500 p-2">B panjang kontennya</div>
+        <div class="bg-blue-600 p-2">C</div>
+      </div>
+      <p>➡️ Kolom menyesuaikan konten masing-masing.</p>
+    </section>
+    <section class="mt-20">
+      <h2>2. Kolom dengan ukuran minimum (auto-cols-min)</h2>
+      <div class="grid grid-flow-col auto-cols-min gap-2">
+        <div class="bg-green-400 p-2">A</div>
+        <div class="bg-green-500 p-2">B panjang kontennya</div>
+        <div class="bg-green-600 p-2">C</div>
+      </div>
+      <p>➡️ Kolom mengecil sebisa mungkin, tetap muat teks.</p>
+    </section>
+    <section class="mt-20">
+      <h2>4. Custom nilai (auto-cols-[200px])</h2>
+      <div class="grid grid-flow-col auto-cols-[200px] gap-2">
+        <div class="bg-orange-400 p-2">A</div>
+        <div class="bg-orange-500 p-2">B</div>
+        <div class="bg-orange-600 p-2">C</div>
+      </div>
+      <p>➡️ Semua kolom otomatis berukuran 200px.</p>
+    </section>
+  </body>
+</html>

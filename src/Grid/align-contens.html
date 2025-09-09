@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+        Apa itu align contens
+        utlytyi ini di gunakan untuk mengatut baris (Row) secara vertikal dalam multi row container (baik flex maupun grid)
+        Kalau cuma ada 1 baris → properti ini tidak berpengaruh (pakai align-items atau align-self kalau mau sejajarkan item).
+        
+        .
+
+      📌 Tabel Utility align-content
+      | Class              | CSS yang dihasilkan             | Keterangan                                                                           |
+| ------------------ | ------------------------------- | ------------------------------------------------------------------------------------ |
+| `content-normal`   | `align-content: normal;`        | Gunakan perilaku default browser.                                                    |
+| `content-center`   | `align-content: center;`        | Semua baris ditempatkan di **tengah vertikal** container.                            |
+| `content-start`    | `align-content: flex-start;`    | Semua baris ditempatkan di **atas container**.                                       |
+| `content-end`      | `align-content: flex-end;`      | Semua baris ditempatkan di **bawah container**.                                      |
+| `content-between`  | `align-content: space-between;` | Baris tersebar → baris pertama di atas, terakhir di bawah, sisanya merata di antara. |
+| `content-around`   | `align-content: space-around;`  | Baris tersebar dengan jarak **seimbang** (ada padding di atas & bawah).              |
+| `content-evenly`   | `align-content: space-evenly;`  | Baris tersebar **dengan jarak sama rata** antar baris termasuk tepi container.       |
+| `content-baseline` | `align-content: baseline;`      | Baris disejajarkan mengikuti baseline teks di dalamnya.                              |
+| `content-stretch`  | `align-content: stretch;`       | Default → baris **meluas otomatis** agar memenuhi tinggi container.                  |
+
+    -->
+    <h1>Contoh Penggunan</h1>
+    <section class="mt-20">
+      <h2>1. content-center</h2>
+      <div class="grid grid-cols-3 h-64 content-center gap-2 bg-black">
+        <div class="bg-blue-400 p-2">1</div>
+        <div class="bg-blue-500 p-2">2</div>
+        <div class="bg-blue-600 p-2">3</div>
+        <div class="bg-blue-700 p-2">4</div>
+        <div class="bg-blue-800 p-2">5</div>
+      </div>
+      <p>➡️ Semua baris ditaruh di tengah vertikal container.</p>
+    </section>
+    <section class="mt-20 bg-green-700">
+      <h2>2. content-end</h2>
+      <div class="grid grid-cols-3 h-64 content-end gap-2">
+        <div class="bg-green-400 p-2">1</div>
+        <div class="bg-green-500 p-2">2</div>
+        <div class="bg-green-600 p-2">3</div>
+        <div class="bg-green-700 p-2">4</div>
+        <div class="bg-green-800 p-2">5</div>
+      </div>
+      <p>➡️ Semua baris menempel ke bawah container.</p>
+    </section>
+    <section class="mt-20">
+      <h2>3. content-evenly</h2>
+      <div class="grid grid-cols-3 h-64 content-evenly gap-2 bg-blue-700">
+        <div class="bg-purple-400 p-2">1</div>
+        <div class="bg-purple-500 p-2">2</div>
+        <div class="bg-purple-600 p-2">3</div>
+        <div class="bg-purple-700 p-2">4</div>
+        <div class="bg-purple-800 p-2">5</div>
+      </div>
+      <p>➡️ Baris memiliki jarak sama rata termasuk tepi atas & bawah.</p>
+    </section>
+    <section class="mt-20">
+      <h2>4. content-streach</h2>
+      <div class="grid grid-cols-3 h-64 content-stretch gap-2 bg-yellow-200">
+        <div class="bg-orange-400 p-2">1</div>
+        <div class="bg-orange-500 p-2">2</div>
+        <div class="bg-orange-600 p-2">3</div>
+        <div class="bg-orange-700 p-2">4</div>
+        <div class="bg-orange-800 p-2">5</div>
+      </div>
+
+      <p>➡️ Baris meluas sehingga memenuhi tinggi container.</p>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <h1>Cheet sheet Tailwind tentang grid</h1>
+    <!-- 
+    | No | Utility           | Class Contoh            | CSS                             | Fungsi / Keterangan                                                        |
+| -- | ----------------- | ----------------------- | ------------------------------- | -------------------------------------------------------------------------- |
+| 1  | **justify-items** | `justify-items-center`  | `justify-items: center;`        | Mengatur semua item di container secara horizontal (inline axis).          |
+| 2  |                   | `justify-items-start`   | `justify-items: start;`         | Semua item rata kiri.                                                      |
+| 3  |                   | `justify-items-end`     | `justify-items: end;`           | Semua item rata kanan.                                                     |
+| 4  |                   | `justify-items-stretch` | `justify-items: stretch;`       | Item melebar sesuai sel grid.                                              |
+| 5  | **justify-self**  | `justify-self-center`   | `justify-self: center;`         | Mengatur satu item secara horizontal.                                      |
+| 6  |                   | `justify-self-start`    | `justify-self: start;`          | Item tertentu rata kiri.                                                   |
+| 7  |                   | `justify-self-end`      | `justify-self: end;`            | Item tertentu rata kanan.                                                  |
+| 8  |                   | `justify-self-stretch`  | `justify-self: stretch;`        | Item tertentu melebar sesuai sel grid.                                     |
+| 9  | **align-items**   | `items-center`          | `align-items: center;`          | Semua item di container rata vertikal (block axis).                        |
+| 10 |                   | `items-start`           | `align-items: flex-start;`      | Semua item di atas.                                                        |
+| 11 |                   | `items-end`             | `align-items: flex-end;`        | Semua item di bawah.                                                       |
+| 12 |                   | `items-stretch`         | `align-items: stretch;`         | Item melebar sesuai tinggi container.                                      |
+| 13 | **align-self**    | `self-center`           | `align-self: center;`           | Mengatur satu item vertikal.                                               |
+| 14 |                   | `self-start`            | `align-self: flex-start;`       | Item tertentu di atas.                                                     |
+| 15 |                   | `self-end`              | `align-self: flex-end;`         | Item tertentu di bawah.                                                    |
+| 16 |                   | `self-stretch`          | `align-self: stretch;`          | Item tertentu melebar sesuai tinggi sel grid.                              |
+| 17 | **align-content** | `content-center`        | `align-content: center;`        | Mengatur semua baris di container vertikal.                                |
+| 18 |                   | `content-start`         | `align-content: flex-start;`    | Semua baris di atas.                                                       |
+| 19 |                   | `content-end`           | `align-content: flex-end;`      | Semua baris di bawah.                                                      |
+| 20 |                   | `content-between`       | `align-content: space-between;` | Baris tersebar merata antar container.                                     |
+| 21 |                   | `content-around`        | `align-content: space-around;`  | Baris tersebar dengan ruang seimbang.                                      |
+| 22 |                   | `content-evenly`        | `align-content: space-evenly;`  | Baris tersebar sama rata termasuk tepi container.                          |
+| 23 |                   | `content-stretch`       | `align-content: stretch;`       | Baris meregang memenuhi tinggi container.                                  |
+| 24 | **place-items**   | `place-items-center`    | `place-items: center;`          | Gabungan `align-items + justify-items`, semua item di tengah.              |
+| 25 |                   | `place-items-start`     | `place-items: start;`           | Semua item di atas-kiri.                                                   |
+| 26 |                   | `place-items-end`       | `place-items: end;`             | Semua item di bawah-kanan.                                                 |
+| 27 |                   | `place-items-stretch`   | `place-items: stretch;`         | Semua item melebar sesuai sel grid.                                        |
+| 28 |                   | `place-items-baseline`  | `place-items: baseline;`        | Semua item mengikuti baseline teks.                                        |
+| 29 | **place-self**    | `place-self-center`     | `place-self: center;`           | Gabungan `align-self + justify-self`, untuk satu item.                     |
+| 30 |                   | `place-self-start`      | `place-self: start;`            | Item tertentu di atas-kiri.                                                |
+| 31 |                   | `place-self-end`        | `place-self: end;`              | Item tertentu di bawah-kanan.                                              |
+| 32 |                   | `place-self-stretch`    | `place-self: stretch;`          | Item tertentu melebar sesuai sel grid.                                     |
+| 33 | **place-content** | `place-content-center`  | `place-content: center;`        | Gabungan `align-content + justify-content`, semua baris & kolom di tengah. |
+| 34 |                   | `place-content-start`   | `place-content: start;`         | Semua baris & kolom di atas-kiri.                                          |
+| 35 |                   | `place-content-end`     | `place-content: end;`           | Semua baris & kolom di bawah-kanan.                                        |
+| 36 |                   | `place-content-between` | `place-content: space-between;` | Baris & kolom tersebar merata antar container.                             |
+| 37 |                   | `place-content-around`  | `place-content: space-around;`  | Baris & kolom tersebar seimbang.                                           |
+| 38 |                   | `place-content-evenly`  | `place-content: space-evenly;`  | Baris & kolom tersebar sama rata.                                          |
+| 39 |                   | `place-content-stretch` | `place-content: stretch;`       | Baris & kolom melebar sesuai container.                                    |
+
+💡 Tips membaca tabel ini:
+
+items / justify-items → semua item pada sumbu tertentu.
+
+self / justify-self / place-self → item tertentu override alignment.
+
+content / place-content → mengatur seluruh baris/kolom di container.
+
+place-items → gabungan horizontal & vertical untuk semua item.
+
+    -->
+  </body>
+</html>

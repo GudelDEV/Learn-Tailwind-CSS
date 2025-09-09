@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- 
+    grid-row 
+    Utility ini dipakai untuk mengontrol posisi dan ukuran elemen pada baris grid (mirip dengan grid-column, tapi untuk baris). 
+
+    📌 Tabel Utility grid-row
+    | Class                          | CSS yang dihasilkan                                                    | Keterangan                                                                         |
+| ------------------------------ | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `row-span-<number>`            | `grid-row: span <number> / span <number>;`                             | Elemen membentang beberapa baris. Contoh: `row-span-2` → elemen menempati 2 baris. |
+| `row-span-full`                | `grid-row: 1 / -1;`                                                    | Elemen membentang dari baris pertama sampai terakhir (full height grid).           |
+| `row-span-(<custom-property>)` | `grid-row: span var(<custom-property>) / span var(<custom-property>);` | Pakai CSS variable custom.                                                         |
+| `row-span-[<value>]`           | `grid-row: span <value> / span <value>;`                               | Custom manual span.                 
+    
+    📌 Singkatnya:
+
+    ~ row-span-* = berapa baris ditempati.
+
+    ~ row-start-* = di baris mana mulai.
+
+    ~ row-end-* = di baris mana selesai.
+
+    ~ row-* = kontrol penuh baris.|
+
+    -->
+    <h1>. 📌 Contoh Penggunaan</h1>
+    <section class="mt-20">
+      <h2>1. Membentang 2 baris (row-span)</h2>
+      <div class="grid grid-cols-3 grid-rows-3 gap-2 h-64">
+        <div class="bg-blue-300 row-span-2">Span 2 Baris</div>
+        <div class="bg-blue-500">Item</div>
+        <div class="bg-blue-500">Item</div>
+        <div class="bg-blue-500">Item</div>
+        <div class="bg-blue-500">Item</div>
+      </div>
+      <p>➡️ Item pertama menempati 2 baris penuh.</p>
+    </section>
+    <section class="mt-20">
+      <h2>2. Mulai dari baris ke-2 (row-start)</h2>
+      <div class="grid grid-cols-2 grid-rows-3 gap-2 h-64">
+        <div class="bg-green-300 row-start-2">Mulai baris ke-2</div>
+        <div class="bg-green-500">Item</div>
+        <div class="bg-green-500">Item</div>
+      </div>
+      <p>➡️ Item hijau ditempatkan mulai baris kedua.</p>
+    </section>
+    <section class="mt-20">
+      <h2>3. Membentang full tinggi grid (row-span-full)</h2>
+      <div class="grid grid-cols-3 grid-rows-3 gap-2 h-64">
+        <div class="bg-purple-400 row-span-full">Full Tinggi</div>
+        <div class="bg-purple-600">Item</div>
+        <div class="bg-purple-600">Item</div>
+      </div>
+      <p>➡️ Item ungu membentang dari baris pertama sampai terakhir.</p>
+    </section>
+  </body>
+</html>

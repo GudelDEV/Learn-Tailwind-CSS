@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- Apa itu utylity Place self 
+      utylity Place self hampir mirip penggunaan nya dengan place items cuman jika place items itu semua items sedangkan place self itu hanya untuk item tertentu saja atau item yang kita kasih place-self
+      
+      📌 Tabel Utility place-self
+      | Class                    | CSS yang dihasilkan        | Keterangan                                              |
+| ------------------------ | -------------------------- | ------------------------------------------------------- |
+| `place-self-auto`        | `place-self: auto;`        | Ikuti aturan default dari `place-items` atau container. |
+| `place-self-start`       | `place-self: start;`       | Item berada di **atas-kiri** sel grid.                  |
+| `place-self-end`         | `place-self: end;`         | Item berada di **bawah-kanan** sel grid.                |
+| `place-self-end-safe`    | `place-self: safe end;`    | Sama seperti end tapi aman dari overflow.               |
+| `place-self-center`      | `place-self: center;`      | Item berada di **tengah sel grid**.                     |
+| `place-self-center-safe` | `place-self: safe center;` | Sama seperti center tapi lebih aman.                    |
+| `place-self-stretch`     | `place-self: stretch;`     | Item melebar **mengisi seluruh sel**.                   |
+
+✅ Catatan Penting:
+
+place-items → semua item.
+
+place-self → satu item tertentu override alignment.
+
+Bisa mengatur horizontal & vertical sekaligus dalam satu class.
+    -->
+    <h1>Contoh Penggunaan</h1>
+    <section class="mt-20">
+      <h2>1. place-self-center</h2>
+      <div class="grid grid-cols-3 h-64 place-items-start gap-2 bg-blue-900">
+        <div class="bg-blue-400 p-4">1</div>
+        <div class="bg-blue-500 p-4 place-self-center">2</div>
+        <div class="bg-blue-600 p-4">3</div>
+      </div>
+      <p>➡️ Item kedua berada di tengah sel grid, sementara item lain mengikuti place-items container (atas-kiri).</p>
+    </section>
+
+    <section class="mt-20">
+      <h2>2. place-self-start</h2>
+      <div class="grid grid-cols-3 h-64 place-items-center gap-2 bg-green-900">
+        <div class="bg-green-400 p-4">1</div>
+        <div class="bg-green-500 p-4 place-self-start">2</div>
+        <div class="bg-green-600 p-4">3</div>
+      </div>
+      <p>➡️ Item kedua menempel ke atas-kiri, sementara item lain berada di tengah.</p>
+    </section>
+
+    <section class="mt-20">
+      <h2>3. place-self-end</h2>
+      <div class="grid grid-cols-3 h-64 place-items-center gap-2 bg-purple-900">
+        <div class="bg-purple-400 p-4">1</div>
+        <div class="bg-purple-500 p-4 place-self-end">2</div>
+        <div class="bg-purple-600 p-4">3</div>
+      </div>
+      <p>➡️ Item kedua menempel ke bawah-kanan, sementara item lain berada di tengah.</p>
+    </section>
+
+    <section class="mt-20">
+      <h2>4. place-self-stretch</h2>
+      <div class="grid grid-cols-3 h-64 place-items-center gap-2 bg-orange-900">
+        <div class="bg-orange-400 p-4">1</div>
+        <div class="bg-orange-500 p-4 place-self-stretch">2</div>
+        <div class="bg-orange-600 p-4">3</div>
+      </div>
+      <p>➡️ Item kedua melebar penuh sesuai sel grid, sementara item lain berada di tengah.</p>
+    </section>
+
+    <h1>✅ Catatan Penting:</h1>
+    <ul>
+      <li>place-items → semua item.</li>
+      <li>place-self → satu item tertentu override alignment.</li>
+      <li>Bisa mengatur horizontal & vertical sekaligus dalam satu class.</li>
+    </ul>
+  </body>
+</html>

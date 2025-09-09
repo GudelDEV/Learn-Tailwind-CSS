@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../output.css"
+    />
+  </head>
+  <body>
+    <!-- Apa itu Justify Content 
+    justify-content digunakan untuk mengatur perataan (alignment) flex items di sepanjang main axis (horizontal kalau flex-row, vertikal kalau flex-col).
+    
+    | Class                         | CSS yang dihasilkan                        | Keterangan                                                               |
+| ----------------------------- | ------------------------------------------ | ------------------------------------------------------------------------ |
+| `justify-start`               | `justify-content: flex-start;`             | Semua item dirapatkan ke awal (default).                                 |
+| `justify-end`                 | `justify-content: flex-end;`               | Semua item dirapatkan ke akhir.                                          |
+| `justify-center`              | `justify-content: center;`                 | Semua item ditengah.                                                     |
+| `justify-between`             | `justify-content: space-between;`          | Item diberi jarak, item pertama di awal & terakhir di akhir.             |
+| `justify-around`              | `justify-content: space-around;`           | Item diberi jarak seimbang dengan **ruang di kiri & kanan**.             |
+| `justify-evenly`              | `justify-content: space-evenly;`           | Semua item diberi jarak sama rata, termasuk sisi kiri & kanan container. |
+| `justify-normal`              | `justify-content: normal;`                 | Reset ke default (bergantung browser).                                   |
+| `justify-stretch`             | `justify-content: stretch;`                | Item direntangkan sepanjang axis (jarang dipakai, lebih ke grid).        |
+| `justify-(<custom-property>)` | `justify-content: var(<custom-property>);` | Gunakan variabel CSS custom.                                             |
+| `justify-[<value>]`           | `justify-content: <value>;`                | Gunakan nilai custom (misal: `justify-[space-around]`).                  |
+    
+    -->
+    <h1>Contoh Penggunaan</h1>
+    <section class="mt-20">
+      <h2>Justify-start</h2>
+      <div class="flex justify-start bg-blue-200 p-2">
+        <div class="bg-white p-4">Box 1</div>
+        <div class="bg-white p-4">Box 2</div>
+        <div class="bg-white p-4">Box 3</div>
+      </div>
+      <p>➡️ Semua box menempel di kiri.</p>
+    </section>
+    <section class="mt-20">
+      <h2>Justify-end</h2>
+      <div class="flex justify-end bg-green-200 p-2">
+        <div class="bg-white p-4">Box 1</div>
+        <div class="bg-white p-4">Box 2</div>
+        <div class="bg-white p-4">Box 3</div>
+      </div>
+
+      <p>➡️ Semua box menempel di kanan.</p>
+    </section>
+    <section class="mt-20">
+      <h2>Justify-center</h2>
+      <div class="flex justify-center bg-yellow-200 p-2">
+        <div class="bg-white p-4">Box 1</div>
+        <div class="bg-white p-4">Box 2</div>
+        <div class="bg-white p-4">Box 3</div>
+      </div>
+      <p>➡️ Semua box di tengah container.</p>
+    </section>
+    <section class="mt-20">
+      <h2>Justify-between</h2>
+      <div class="flex justify-between bg-pink-200 p-2">
+        <div class="bg-white p-4">Box 1</div>
+        <div class="bg-white p-4">Box 2</div>
+        <div class="bg-white p-4">Box 3</div>
+      </div>
+      <p>➡️ Box 1 di kiri, Box 3 di kanan, Box 2 di tengah dengan ruang di antaranya.</p>
+    </section>
+    <section class="mt-20">
+      <h2>Justify-arround</h2>
+      <div class="flex justify-around bg-purple-200 p-2">
+        <div class="bg-white p-4">Box 1</div>
+        <div class="bg-white p-4">Box 2</div>
+        <div class="bg-white p-4">Box 3</div>
+      </div>
+      <p>➡️ Ada ruang seimbang di kiri-kanan tiap box.</p>
+    </section>
+    <section class="mt-20">
+      <h2>Justify-evenly</h2>
+      <div class="flex justify-evenly bg-orange-200 p-2">
+        <div class="bg-white p-4">Box 1</div>
+        <div class="bg-white p-4">Box 2</div>
+        <div class="bg-white p-4">Box 3</div>
+      </div>
+      <p>➡️ Semua box dan sisi kiri/kanan container punya jarak sama rata.</p>
+    </section>
+  </body>
+</html>
